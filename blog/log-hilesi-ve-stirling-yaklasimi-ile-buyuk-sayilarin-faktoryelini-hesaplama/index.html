@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr-TR">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="İsmail Arı&#039;nın anasayfası" />
+<meta name="generator" content="WordPress 3.8.5" /><!-- Please leave for stats -->
+<link rel="icon" type="image/png" href="../../wp-content/themes/iacom/assets/img/iacom.png">
+
+<title>Log hilesi ve Stirling yaklaşımı ile büyük sayıların faktöryelini hesaplama | ismailari.com</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ 
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    showProcessingMessages : false,
+    messageStyle : "none" ,    
+    showMathMenu: false ,
+    TeX: { 
+      equationNumbers: {autoNumber: "all"},
+      Macros: {
+      R: "{\\mathbb R}",
+      sign: "{\\mathop{\\mathrm{sign}}}",
+      argmax: "\\mathop{\\rm arg \\, max \\,}\\limits",
+      argmin: "\\mathop{\\rm arg \\, min \\,}\\limits",	
+      },
+      extensions: ["AMSmath.js", "AMSsymbols.js"]
+    },
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-orig.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/docs.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/tomorrow.css" type="text/css" rel="stylesheet" />
+
+
+<style type="text/css">
+  body {
+	padding-bottom: 40px;
+  }
+</style>
+
+
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/lang-matlab.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com &raquo; Log hilesi ve Stirling yaklaşımı ile büyük sayıların faktöryelini hesaplama Yorum Beslemesi" href="feed/index.html" />
+<link rel='stylesheet' id='usernoise-button-css'  href='../../wp-content/plugins/usernoise/css/button-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='usernoise-form-css'  href='../../wp-content/plugins/usernoise/css/form-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/plugins/usernoise/vendor/font-awesome/css/font-awesome-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='../../wp-content/plugins/tablepress/css/default.min-ver=1.3.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var usernoiseButton = {"text":"ileti\u015fim","style":"background-color: #404040; color: #FFFFFF","class":"un-left un-has-border","windowUrl":"\/wp-admin\/admin-ajax.php?action=un_load_window","showButton":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/usernoise.js?ver=3.7.9'></script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/button.js?ver=3.7.9'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc-rsd.php.html" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Kalıcı değişkenler' href='../kalici-degiskenler/index.html' />
+<link rel='next' title='Fonksiyon tutucular ve anonim fonksiyonlar' href='../fonksiyon-tutucular-ve-anonim-fonksiyonlar/index.html' />
+<meta name="generator" content="WordPress 3.8.5" />
+<link rel='shortlink' href='http://wp.me/pGadj-Mm' />
+<style type="text/css">
+* {
+	text-rendering: optimizeLegibility;
+}
+sup {
+	vertical-align: 60%;
+	font-size: 75%;
+	line-height: 100%;
+}
+sub {
+	vertical-align: -10%;
+	font-size: 75%;
+	line-height: 100%;
+}
+.amp {
+	font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", "Warnock Pro", serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 1.1em;
+	line-height: 1em;
+}
+.caps {
+	font-size: 90%;
+}
+.dquo {
+	margin-left:-.40em;
+}
+.quo {
+	margin-left:-.2em;
+}
+/* because formatting .numbers should consider your current font settings, we will not style it here */
+</style>
+
+<!-- All in One SEO Pack 2.1.1 by Michael Torbert of Semper Fi Web Design[551,679] -->
+<meta name="description" content="Faktöryel fonksiyonu çok hızlı büyüyen bir fonksiyon: $n$ çok büyük olmamasına rağmen $n!$ kısa sürede pratik olarak hesaplanamaz duruma gelebiliyor." />
+
+<meta name="keywords" content="faktöryel,log hilesi,matlab" />
+
+<link rel="canonical" href="index.html" />
+<!-- /all in one seo pack -->
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {
+    prefer: {Firefox: "HTML"}
+  }
+});
+</script>
+
+
+<script src="../../wp-content/themes/iacom/assets/js/iacom.js"></script>
+
+<link rel="stylesheet" href="../../wp-content/themes/iacom/style.css" type="text/css" media="screen" />
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com RSS Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="ismailari.com Comments RSS Feed" href="../../comments/feed/index.html"  />
+
+<link rel="pingback" href="../../xmlrpc.php.html" />	
+
+
+</head>
+
+<body onload="prettyPrint()">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a class="" href="../../index.html">İsmail Arı</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Yazılar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../index.html">Son Yazılar</a></li>
+              <li><a href="../../tum-yazilar/index.html">Tüm Yazılar</a></li>
+              <li class="divider"></li>
+              <li><a href="http://feeds.feedburner.com/ismailari">Yazılara Abone Ol</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notlar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-header">MATLAB Notları</li>
+              <li><a href="../matlab-programlamaya-giris/index.html">MATLAB Programlamaya Giriş</a></li>
+              <li><a href="../matlab-ile-imge-islemeye-giris/index.html">MATLAB ile İmge İşlemeye Giriş</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Yapay Öğrenme</li>
+              <li><a href="../temel-bilesenler-analizi/index.html">Temel Bileşenler Analizi (PCA)</a></li>
+              <li><a href="../tekil-deger-ayrisimi-1/index.html">Tekil Değer Ayrışımı (SVD)</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Akademisyene Reçeteler</li>
+              <li><a href="../bir-makaleyi-nasil-okumali/index.html">Bir Makaleyi Nasıl Okumalı?</a></li>
+            </ul>
+          </li>
+          <li><a href="../../acik-ders/index.html">Açık Ders</a></li>
+          <li><a href="../../baglantilar/index.html">Bağlantılar</a></li>
+        </ul>
+        <form class="navbar-search" method="get" action="http://ismailari.com">
+          <input type="text" class="search-query span2" placeholder="Ara" id="s" name="s" type="text"  value="">
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	 <div class="container">
+	<div id="content" class="row">
+	<div class="span8">
+		
+				<div id="post-2998" class="post">
+			<h1 class="post-title">Log hilesi ve Stirling yaklaşımı ile büyük sayıların faktöryelini hesaplama</h1>								
+			<div class="post-meta-top">İsmail Arı, 28 Eylül 2011</div>
+			<div class="post-content">
+				<p>Faktöryel fonksiyonu çok hızlı büyüyen bir fonksiyon: $n$ çok büyük olmamasına rağmen $n!$ kısa sürede pratik olarak hesaplanamaz duruma gelebiliyor.  Örneğin MATLAB'deki <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/help/techdoc/ref/factorial.html');"  href="http://www.mathworks.com/help/techdoc/ref/factorial.html"><code>factorial</code></a> fonksiyonu $n\leq 21$ için doğru hesaplanabilirken daha büyük $n$ değerleri için  yalnızca ilk 15 basamağa kadar doğru sonuç alınabiliyor.</p>
+<p>Bu durumda Stirling yaklaşımı olarak bilinen alttaki formülden yararlanmak düşünülebilir.</p>
+<p>$$n! \approx \sqrt{2\pi n}  \ n^n e^{-n}$$</p>
+<p>Fakat burda da $n^n$ ile üs alımı var ve bu da çok hızlı büyüyen bir fonksiyon. Nümerik işlem yapıyorsak üs almaktan ve çarpma yapmaktan mümkün olduğunca sakınmalıyız. Bu durumda <em>log hilesi</em>ni kullanmak iyi olacak. Yani işlemleri doğrudan yapmak yerine loglarını alarak yapmak. Bu durumda çarpmalar toplamaya dönüşecek, üsler de çarpmaya dönüşecek ve son durumda elimizde $n$ üslü bir terim olmayacak. Kulağa harika geliyor. Stirling'in log alınmış haline bakalım:</p>
+<p>$$log(n!) \approx \frac{1}{2} \log(2\pi n) + n^2 - n$$</p>
+<p>Şimdi bunu pratikte sınayalım. Önce fonksiyonu yazalım:</p>
+<pre class="prettyprint lang-matlab">log_factorial_by_stirling_approximation = @(n)(log(2*pi*n)/2 + n.*log(n) - n);</pre>
+<p>Fonksiyonu anonim bir fonksiyon tutucusu olarak yazdım, isterseniz ayrı bir fonksiyon olarak yazabilirsiniz. $n \log(n)$ çarpımında vektörizasyon kullanıldığına dikkat edin.</p>
+<p>Şimdi bu fonksiyonu MATLAB'ın faktöryel fonksiyonu ile karşılaştıralım ve farklarına bakalım:</p>
+<pre class="prettyprint lang-matlab">n = 1:250;
+y1 = log(factorial(n));
+y2 = log_factorial_by_stirling_approximation(n);
+
+subplot(3,1,1),
+    plot(n,y1, 'k-'), axis([0 max(n) 0 max(y2)]), title('MATLAB faktöryelinin logu')
+subplot(3,1,2),
+    plot(n,y2, 'b-'), axis([0 max(n) 0 max(y2)]), title('Stirling yaklaşımının logu')
+subplot(3,1,3),
+    plot(n,abs(y1-y2), 'r-'), title('Fark')</pre>
+<p><img class="aligncenter size-full wp-image-3007" title="Faktöryelin logu" src="../../wp-content/uploads/2011/09/faktoryel.png" alt="" width="561" height="409" /></p>
+<p>Görüldüğü üzere $n$ büyüdükçe  yaklaşımdaki fark küçülüyor, yani Stirling yaklaşımı gerçekten de başarılı!</p>
+<p>Figürde MATLAB'daki faktöryelin 170lerde çuvalladığı (bu değerler için sonuç <code>Inf</code> çıktığı için çizilmiyor) görülüyor, ama log hilesi ile bunu aşmak mümkün. Dahası yaptığımız log hilesi ile çok çok büyük $n$ değerleri için dahi faktöryel hesaplayabiliyoruz.</p>
+<p>Unutmamak gerekir ki bu faktöryel değil, faktöryelin logu. Eğer bu değerleri üstel fonksiyona sokarsak pratikte yine patlar. Ama buna genelde ihtiyacımız olmuyor. Düşünün ki elimizde içinde faktöryel hesaplamamız gereken birkısım yöntem var ve biz en iyisinin hangisi olduğunu arıyoruz. Yani karşılaştırma yapıyoruz. Bizim için önemli olan birinin özel olarak değeri değil, diğerlerinden büyük veya küçük oluşu. log fonksiyonu karşılaştırmayı etkilemiyor, yani  $\log(x) &gt; \log(y)$ ise $x &gt; y$ sonucuna varabiliyoruz.</p>
+<p>log hilesi sadece faktöryel hesabında değil üs almanın bulunduğu tüm pratik işlemlerde işe yarayabilecek güzel bir araç.</p>
+<p>Konuyla ilgili olaraktan şunlar da dikkate değer:</p>
+<ul>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.youtube.com/watch?v=-RVM21Voo7Q');"  href="http://www.youtube.com/watch?v=-RVM21Voo7Q">logsumexp hilesi</a> ve <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/matlabcentral/fileexchange/14920');"  href="http://www.mathworks.com/matlabcentral/fileexchange/14920">MATLAB kodu</a></li>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/matlabcentral/fileexchange/14920');"  href="http://www.mathworks.com/matlabcentral/fileexchange/14920">Büyük sayıların logfaktöryelini alma</a></li>
+</ul>
+<p> </p>
+<div class="related-posts">
+<div id="related-posts-MRP_all" class="related-posts-type">
+<h3>İlgili Yazılar</h3>
+<ul>
+<li><a href="../underflow-ve-log-sum-exp-hilesi/index.html">"Underflow" ve "log-sum-exp" hilesi</a></li>
+</ul></div>
+</div>
+			
+			</div>
+
+
+			<div class="post-meta-bottom well well-small"><span class="pull-left">Kategori: <a href="../../kategori/programlama/index.html" title="Programlama kategorisindeki tüm yazıları göster" rel="category tag">Programlama</a>  <span class="separator">|</span> Etiketler: <a href="../../etiket/faktoryel/index.html" rel="tag">faktöryel</a>, <a href="../../etiket/log-hilesi/index.html" rel="tag">log hilesi</a>, <a href="../../etiket/matlab/index.html" rel="tag">matlab</a></span>
+                        <span class="pull-right">Son güncelleme: 5 Nisan 2013                                                </span></br>
+			<span class="pull-left"> &laquo; <a href="../kalici-degiskenler/index.html" rel="prev">Kalıcı değişkenler</a></span>
+			<span class="pull-right"><a href="../fonksiyon-tutucular-ve-anonim-fonksiyonlar/index.html" rel="next">Fonksiyon tutucular ve anonim fonksiyonlar</a> &raquo;</span><br/>
+			</div>
+			<div class="clear"></div>
+		</div><!-- .post -->
+		<p><!-- Hupso Share Buttons - http://www.hupso.com/share/ --><a class="hupso_counters" href="http://www.hupso.com/share/"><img src="../../wp-content/uploads/2013/05/paylas.png" style="border:0px; padding-top:2px; float:left;" alt="Share Button"/></a><script type="text/javascript">var hupso_services_c=new Array("twitter","facebook_like","google");var hupso_counters_lang = "tr_TR";</script><script type="text/javascript" src="http://static.hupso.com/share/js/counters.js"></script><!-- Hupso Share Buttons --></p>
+		<p><a href="http://feeds.feedburner.com/ismailari"><img src=../../wp-content/uploads/2013/05/abone_ol.png></a> <a href="http://feeds.feedburner.com/ismailari"><img src="http://feeds.feedburner.com/~fc/ismailari?bg=FFFFFF&fg=003300&anim=0&label=okur" height="26" width="88" style="border:0" alt="Yazılara abone ol" title="Yazılara abone ol" /></a></p>
+
+		<div id="comments">
+
+
+<!-- You can start editing here. -->
+
+	<h2 class="section-title">2 yorum</h2>
+
+	<ol>
+
+	
+		<li class="alt" id="comment-485">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/2ae0bfa4ea2dee9571397fb104502897?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">A. Tahir İnce, 29 Eylül 2011</div>
+								
+				<p>Elinize sağlık İsmail Bey; yazınız öğretici olmuş.<br />
+Yanlız daima gördüğüm fakat daha uygulayamadığım bir şey soracaktım;</p>
+<p>' @ '  Matlab'ta ne amaçla kullanılıyor? Bu zamana kadar bilinçsizce kullanmıştım sadece..</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-486">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 29 Eylül 2011</div>
+								
+				<p>@ A. Tahir İnce: Teşekkür ederim. Hemen anlatayım: @ işareti "<a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/help/techdoc/ref/function_handle.html');"  href="http://www.mathworks.com/help/techdoc/ref/function_handle.html" rel="nofollow">function handle</a>" olarak kullanılıyor. Ben buna fonksiyon tutucu diyorum :) Örneğin <code>sin</code> bir fonksiyonken <code>@sin</code> o fonksiyonun tutucusu oluyor. Bir aralıkta fonksiyonun en küçük değerini bulan <code>fminbnd</code> fonksiyonu da girdi olarak bir fonksiyon alıyor. Şöyle yaparak @'in ne işe yaradığını deneyebilirsiniz.</p>
+<pre>f = @sin;
+f(pi/2)</pre>
+<p>Burada <code>f</code> artık <code>sin</code> fonksiyonu yerine kullanılabiliyor. Geliştirdiğiniz yöntemdeki fonksiyon değişebilir olduğunda (örneğin <code>fminbnd</code> öyle bir fonksiyon) fonksiyon tutucu ile çalışmak iyi olabiliyor.</p>
+<p>Bir diğer durum da <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/help/techdoc/matlab_prog/f4-70115.html');"  href="http://www.mathworks.com/help/techdoc/matlab_prog/f4-70115.html" rel="nofollow">anonim fonksiyonlar</a>. Yazıdaki kullanım o aslında.</p>
+<p>Sanırım bu kullanımlar çok bilinmiyor. En kısa zamanda bunlarla ilgili daha detaylı bir yazı yazayım en iyisi :)</p>
+			</div>
+		</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+
+
+
+<div id="respond">
+
+	<h2 class="section-title">Yorum ekle</h2>
+
+	<form method="post" action="http://ismailari.com/wp-comments-post.php">	
+	
+		<div id="comment-form">
+	
+			
+		<label for="author">İsim (gerekli)</label></br>
+		<input type="text" name="author" id="author" value="" size="40" tabindex="1" aria-required='true' />
+
+		<label for="email">E-posta (yayınlanmayacaktır) (gerekli)</label></br>
+		<input type="text" name="email" id="email" value="" size="40" tabindex="2" aria-required='true' />
+
+		<label for="url">İnternet sitesi</label>
+		<input type="text" name="url" id="url" value="" size="40" tabindex="3" /></br>
+		
+				<label for="comment">Yorum</label>
+		<textarea name="comment" id="comment" cols="80%" rows="10" class="span8" tabindex="4"></textarea>
+		
+		</div>							
+
+		<input name="submit" type="submit" id="submit" tabindex="5" value="Yorumu gönder" />
+		<input type="hidden" name="comment_post_ID" value="2998" />
+		<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="efc6ddb43a" /></p><!-- BEGIN: subscribe to comments reloaded --><p><input style='width:30px' type='checkbox' name='subscribe-reloaded' id='subscribe-reloaded' value='yes' /> Yorumları bana e-posta ile yolla. Yorum girmeden de <a href='../../index-page_id=345&srp=2998&sra=s.html'>abone</a> olabilirsiniz.</p><!-- END: subscribe to comments reloaded -->
+	</form>
+
+</div>
+
+
+
+		
+
+<div id="footer">
+<br />
+<hr noshade="noshade" color="#CCCCCC"/>	
+    ismailari.com &copy; 2015</div><!-- #footer -->
+</div></div>
+<script>function hefo_popup(url, width, height) {
+var left = Math.round(screen.width/2-width/2); var top = 0;
+if (screen.height > height) top = Math.round(screen.height/2-height/2);
+window.open(url, "share", "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+return false;
+}</script>
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1563790-10");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<div id="un-thankyou" style="display: none;">
+	<h2>Teşekkürler</h2>
+	<p>
+		Geribildiriminiz iletilmiştir.	</p>
+	<a href="#" id="un-feedback-close"><img src="../../wp-content/plugins/usernoise/images/ok.png" id="thankyou-image" alt="Close"></a>
+</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201515'></script>
+
+	<script src="http://stats.wordpress.com/e-201515.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7.2',blog:'10049041',post:'2998',tz:'2'});
+	var load_cmc = function(){linktracker_init(10049041,2998,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+<script src="../../wp-content/themes/iacom/assets/js/jquery.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-transition.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-alert.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-modal.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-dropdown.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-scrollspy.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tab.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tooltip.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-popover.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-button.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-collapse.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-carousel.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-typeahead.js"></script>
+
+<script>
+$('.gist').each(
+ function() { if($(this).find('.gist-data').height() < 80) {
+                  $(this).find('.line-numbers').hide(); 
+              }
+            }
+);
+$('.gist-meta').hide();
+</script>
+
+
+</body>
+</html>
+<!-- Localized -->

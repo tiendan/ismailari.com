@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr-TR">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="İsmail Arı&#039;nın anasayfası" />
+<meta name="generator" content="WordPress 3.8.5" /><!-- Please leave for stats -->
+<link rel="icon" type="image/png" href="../../wp-content/themes/iacom/assets/img/iacom.png">
+
+<title>İlgin (affine) dönüşümler: Ölçekleme, Döndürme ve Öteleme | ismailari.com</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ 
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    showProcessingMessages : false,
+    messageStyle : "none" ,    
+    showMathMenu: false ,
+    TeX: { 
+      equationNumbers: {autoNumber: "all"},
+      Macros: {
+      R: "{\\mathbb R}",
+      sign: "{\\mathop{\\mathrm{sign}}}",
+      argmax: "\\mathop{\\rm arg \\, max \\,}\\limits",
+      argmin: "\\mathop{\\rm arg \\, min \\,}\\limits",	
+      },
+      extensions: ["AMSmath.js", "AMSsymbols.js"]
+    },
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-orig.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/docs.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/tomorrow.css" type="text/css" rel="stylesheet" />
+
+
+<style type="text/css">
+  body {
+	padding-bottom: 40px;
+  }
+</style>
+
+
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/lang-matlab.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com &raquo; İlgin (affine) dönüşümler: Ölçekleme, Döndürme ve Öteleme Yorum Beslemesi" href="feed/index.html" />
+<link rel='stylesheet' id='usernoise-button-css'  href='../../wp-content/plugins/usernoise/css/button-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='usernoise-form-css'  href='../../wp-content/plugins/usernoise/css/form-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/plugins/usernoise/vendor/font-awesome/css/font-awesome-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='../../wp-content/plugins/tablepress/css/default.min-ver=1.3.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var usernoiseButton = {"text":"ileti\u015fim","style":"background-color: #404040; color: #FFFFFF","class":"un-left un-has-border","windowUrl":"\/wp-admin\/admin-ajax.php?action=un_load_window","showButton":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/usernoise.js?ver=3.7.9'></script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/button.js?ver=3.7.9'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc-rsd.php.html" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Altıgen ızgara oluşturma' href='../altigen-izgara-olusturma/index.html' />
+<link rel='next' title='Dışbükey çokgen (convex hull) bulma ve çokgenin içinde noktalar oluşturma' href='../disbukey-cokgen-convex-hull-bulma-ve-cokgenin-icinde-noktalar-olusturma/index.html' />
+<meta name="generator" content="WordPress 3.8.5" />
+<link rel='shortlink' href='http://wp.me/pGadj-wM' />
+<style type="text/css">
+* {
+	text-rendering: optimizeLegibility;
+}
+sup {
+	vertical-align: 60%;
+	font-size: 75%;
+	line-height: 100%;
+}
+sub {
+	vertical-align: -10%;
+	font-size: 75%;
+	line-height: 100%;
+}
+.amp {
+	font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", "Warnock Pro", serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 1.1em;
+	line-height: 1em;
+}
+.caps {
+	font-size: 90%;
+}
+.dquo {
+	margin-left:-.40em;
+}
+.quo {
+	margin-left:-.2em;
+}
+/* because formatting .numbers should consider your current font settings, we will not style it here */
+</style>
+
+<!-- All in One SEO Pack 2.1.1 by Michael Torbert of Semper Fi Web Design[551,661] -->
+<meta name="description" content="Açıklama: İlgin (affine) dönüşümler: ölçekleme, döndürme ve öteleme. Bu dönüşümlere Öklid veya benzerlik (similarity) dönüşümleri de denir. İşlemlerde" />
+
+<meta name="keywords" content="matlab" />
+
+<link rel="canonical" href="index.html" />
+<!-- /all in one seo pack -->
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {
+    prefer: {Firefox: "HTML"}
+  }
+});
+</script>
+
+
+<script src="../../wp-content/themes/iacom/assets/js/iacom.js"></script>
+
+<link rel="stylesheet" href="../../wp-content/themes/iacom/style.css" type="text/css" media="screen" />
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com RSS Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="ismailari.com Comments RSS Feed" href="../../comments/feed/index.html"  />
+
+<link rel="pingback" href="../../xmlrpc.php.html" />	
+
+
+</head>
+
+<body onload="prettyPrint()">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a class="" href="../../index.html">İsmail Arı</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Yazılar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../index.html">Son Yazılar</a></li>
+              <li><a href="../../tum-yazilar/index.html">Tüm Yazılar</a></li>
+              <li class="divider"></li>
+              <li><a href="http://feeds.feedburner.com/ismailari">Yazılara Abone Ol</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notlar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-header">MATLAB Notları</li>
+              <li><a href="../matlab-programlamaya-giris/index.html">MATLAB Programlamaya Giriş</a></li>
+              <li><a href="../matlab-ile-imge-islemeye-giris/index.html">MATLAB ile İmge İşlemeye Giriş</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Yapay Öğrenme</li>
+              <li><a href="../temel-bilesenler-analizi/index.html">Temel Bileşenler Analizi (PCA)</a></li>
+              <li><a href="../tekil-deger-ayrisimi-1/index.html">Tekil Değer Ayrışımı (SVD)</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Akademisyene Reçeteler</li>
+              <li><a href="../bir-makaleyi-nasil-okumali/index.html">Bir Makaleyi Nasıl Okumalı?</a></li>
+            </ul>
+          </li>
+          <li><a href="../../acik-ders/index.html">Açık Ders</a></li>
+          <li><a href="../../baglantilar/index.html">Bağlantılar</a></li>
+        </ul>
+        <form class="navbar-search" method="get" action="http://ismailari.com">
+          <input type="text" class="search-query span2" placeholder="Ara" id="s" name="s" type="text"  value="">
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	 <div class="container">
+	<div id="content" class="row">
+	<div class="span8">
+		
+				<div id="post-2032" class="post">
+			<h1 class="post-title">İlgin (affine) dönüşümler: Ölçekleme, Döndürme ve Öteleme</h1>								
+			<div class="post-meta-top">İsmail Arı, 30 Aralık 2008</div>
+			<div class="post-content">
+				<p><strong>Açıklama:</strong> İlgin (affine) dönüşümler: ölçekleme,  döndürme ve öteleme. Bu dönüşümlere Öklid veya benzerlik (similarity)  dönüşümleri de denir.</p>
+<p>İşlemlerde öncelikle <code>maketform</code>‘a tanım kümesinden (girdi uzayı) değer kümesine (çıktı uzayı) dönüşüm yapacak matrisi sağlayarak başlayacağız.</p>
+<p>% Her iki yönde de 2 kat ölçekleme yap<br />
+A = [2 0 0; 0 2 0; 0 0 1];<br />
+tform = maketform('affine', A);</p>
+<p>Daha sonra <code>tformfwd</code> ile dönüşüm sonucu oluşacak değerleri bulacağız. <code>(x,y)</code> noktaları tanımlanan noktalar, <code>(u,v)</code> ise hedef noktalar olsun.</p>
+<pre class="brush:matlab; gutter:false">xy = [2 3];
+uv = tformfwd(tform, xy)
+uv =
+
+4     6</pre>
+<p>Bulunan noktalardan geri dönüşüm yapmak istersek de <code>tforminv</code> fonksiyonunu kullanabiliriz.</p>
+<pre class="brush:matlab; gutter:false">xyp = tforminv(tform, uv)
+xyp =
+
+2     3</pre>
+<p>Daha ayrıntılı örnekler kodda mevcut.</p>
+<p><strong>Kaynak:</strong> <a onclick="javascript:pageTracker._trackPageview('/outgoing/blogs.mathworks.com/steve/2006/02/14/spatial-transformations-maketform-tformfwd-and-tforminv/');"  href="http://blogs.mathworks.com/steve/2006/02/14/spatial-transformations-maketform-tformfwd-and-tforminv/" target="_blank">Steve on Image Processing, Spatial transformations: maketform, tformfwd, and tforminv</a></p>
+<p><em>English description: Similarity transformations using MATLAB</em></p>
+<h3>Kaynak kod</h3>
+<pre class="brush:matlab; gutter:false">% affineTransformations.m: Matlab ile İlgin (affine) dönüşümler: Ölçekleme,
+% Döndürme ve Öteleme
+ 
+% ANLATIM
+ 
+% İşlemlerde öncelikle maketform'a tanım kümesinden (girdi uzayı) değer
+% kümesine (çıktı uzayı) dönüşüm yapacak matrisi sağlayarak başlayacağız.
+%    A = [2 0 0; 0 2 0; 0 0 1];  % Her iki yönde de 2 kat ölçekleme yap
+%    tform = maketform('affine', A);
+% Daha sonra tformfwd ile dönüşüm sonucu oluşacak değerleri bulacağız.
+% (x,y) noktaları tanımlanan noktalar, (u,v) ise hedef noktalar olsun.
+%    xy = [2 3];
+%    uv = tformfwd(tform, xy)
+%    uv =
+%
+%     4     6
+%
+% Bulunan noktalardan geri dönüşüm yapmak istersek de tforminv fonksiyonunu
+% kullanabiliriz.
+%    xyp = tforminv(tform, uv)
+%    xyp =
+%
+%      2     3
+ 
+ 
+% ÖRNEKLER
+ 
+% Önce dönüşüme sokacağımız şekli çizelim: basir bir ev olsun
+x = [-0.6 -0.6 0.6  0.6 -0.9  0    0.9  0.6]';
+y = [-0.2  0.8 0.8 -0.2 -0.2 -0.8 -0.2 -0.2]';
+ 
+% plot(x,y), axis ij, axis equal, axis([-1 1 -1 1]), grid on
+ 
+ 
+% Ölçekleme: yatay yönde 1.5 kat, dikey yönde 2 kat
+A1 = [1.5 0 0; 0 2 0; 0 0 1];
+tform1 = maketform('affine', A1);
+uv1 = tformfwd(tform1, [x y]);
+ 
+subplot(2,2,1)
+plot(x,y), axis ij, axis equal, axis([-2 2 -2 2]), grid on, title('Ev')
+ 
+subplot(2,2,3)
+plot(uv1(:,1), uv1(:,2)), axis ij, axis equal, axis([-2 2 -2 2])
+grid on
+title('Yatay yönde 1.5 kat, dikey yönde 2 kat ölçeklendikten sonra')
+ 
+ 
+% Döndürme: 45 derece
+% Dikkat: y ekseni yukarı değil aşağı yönde artıyor.
+theta = pi/4;
+A2 = [cos(theta) sin(theta) 0; -sin(theta) cos(theta) 0; 0 0 1];
+tform2 = maketform('affine', A2);
+uv2 = tformfwd(tform2, [x y]);
+ 
+subplot(2,2,2)
+plot(uv2(:,1), uv2(:,2)), axis ij, axis equal, axis([-2 2 -2 2])
+grid on
+title('45\circ döndükten sonra')
+ 
+% Öteleme: yatay yönde 1, dikey yönde -1
+A3 = [1 0 0; 0 1 0; 1 -1 1];
+tform3 = maketform('affine', A3);
+uv3 = tformfwd(tform3, [x y]);
+ 
+subplot(2,2,4)
+plot(uv3(:,1), uv3(:,2)), axis ij, axis equal, axis([-2 2 -2 2])
+grid on
+title('Yatay yönde 1, dikey yönde -1 ötelenmiş')</pre>
+
+			
+			</div>
+
+
+			<div class="post-meta-bottom well well-small"><span class="pull-left">Kategori: <a href="../../kategori/programlama/index.html" title="Programlama kategorisindeki tüm yazıları göster" rel="category tag">Programlama</a>  <span class="separator">|</span> Etiketler: <a href="../../etiket/matlab/index.html" rel="tag">matlab</a></span>
+                        <span class="pull-right">Son güncelleme: 15 Eylül 2010                                                </span></br>
+			<span class="pull-left"> &laquo; <a href="../altigen-izgara-olusturma/index.html" rel="prev">Altıgen ızgara oluşturma</a></span>
+			<span class="pull-right"><a href="../disbukey-cokgen-convex-hull-bulma-ve-cokgenin-icinde-noktalar-olusturma/index.html" rel="next">Dışbükey çokgen (convex hull) bulma ve çokgenin içinde noktalar oluşturma</a> &raquo;</span><br/>
+			</div>
+			<div class="clear"></div>
+		</div><!-- .post -->
+		<p><!-- Hupso Share Buttons - http://www.hupso.com/share/ --><a class="hupso_counters" href="http://www.hupso.com/share/"><img src="../../wp-content/uploads/2013/05/paylas.png" style="border:0px; padding-top:2px; float:left;" alt="Share Button"/></a><script type="text/javascript">var hupso_services_c=new Array("twitter","facebook_like","google");var hupso_counters_lang = "tr_TR";</script><script type="text/javascript" src="http://static.hupso.com/share/js/counters.js"></script><!-- Hupso Share Buttons --></p>
+		<p><a href="http://feeds.feedburner.com/ismailari"><img src=../../wp-content/uploads/2013/05/abone_ol.png></a> <a href="http://feeds.feedburner.com/ismailari"><img src="http://feeds.feedburner.com/~fc/ismailari?bg=FFFFFF&fg=003300&anim=0&label=okur" height="26" width="88" style="border:0" alt="Yazılara abone ol" title="Yazılara abone ol" /></a></p>
+
+		<div id="comments">
+
+
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are open, but there are no comments. -->
+
+	 
+</div>
+
+
+
+
+<div id="respond">
+
+	<h2 class="section-title">Yorum ekle</h2>
+
+	<form method="post" action="http://ismailari.com/wp-comments-post.php">	
+	
+		<div id="comment-form">
+	
+			
+		<label for="author">İsim (gerekli)</label></br>
+		<input type="text" name="author" id="author" value="" size="40" tabindex="1" aria-required='true' />
+
+		<label for="email">E-posta (yayınlanmayacaktır) (gerekli)</label></br>
+		<input type="text" name="email" id="email" value="" size="40" tabindex="2" aria-required='true' />
+
+		<label for="url">İnternet sitesi</label>
+		<input type="text" name="url" id="url" value="" size="40" tabindex="3" /></br>
+		
+				<label for="comment">Yorum</label>
+		<textarea name="comment" id="comment" cols="80%" rows="10" class="span8" tabindex="4"></textarea>
+		
+		</div>							
+
+		<input name="submit" type="submit" id="submit" tabindex="5" value="Yorumu gönder" />
+		<input type="hidden" name="comment_post_ID" value="2032" />
+		<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b221521859" /></p><!-- BEGIN: subscribe to comments reloaded --><p><input style='width:30px' type='checkbox' name='subscribe-reloaded' id='subscribe-reloaded' value='yes' /> Yorumları bana e-posta ile yolla. Yorum girmeden de <a href='../../index-page_id=345&srp=2032&sra=s.html'>abone</a> olabilirsiniz.</p><!-- END: subscribe to comments reloaded -->
+	</form>
+
+</div>
+
+
+
+		
+
+<div id="footer">
+<br />
+<hr noshade="noshade" color="#CCCCCC"/>	
+    ismailari.com &copy; 2015</div><!-- #footer -->
+</div></div>
+<script>function hefo_popup(url, width, height) {
+var left = Math.round(screen.width/2-width/2); var top = 0;
+if (screen.height > height) top = Math.round(screen.height/2-height/2);
+window.open(url, "share", "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+return false;
+}</script>
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1563790-10");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<div id="un-thankyou" style="display: none;">
+	<h2>Teşekkürler</h2>
+	<p>
+		Geribildiriminiz iletilmiştir.	</p>
+	<a href="#" id="un-feedback-close"><img src="../../wp-content/plugins/usernoise/images/ok.png" id="thankyou-image" alt="Close"></a>
+</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201515'></script>
+
+	<script src="http://stats.wordpress.com/e-201515.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7.2',blog:'10049041',post:'2032',tz:'2'});
+	var load_cmc = function(){linktracker_init(10049041,2032,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+<script src="../../wp-content/themes/iacom/assets/js/jquery.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-transition.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-alert.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-modal.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-dropdown.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-scrollspy.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tab.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tooltip.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-popover.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-button.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-collapse.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-carousel.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-typeahead.js"></script>
+
+<script>
+$('.gist').each(
+ function() { if($(this).find('.gist-data').height() < 80) {
+                  $(this).find('.line-numbers').hide(); 
+              }
+            }
+);
+$('.gist-meta').hide();
+</script>
+
+
+</body>
+</html>
+<!-- Localized -->

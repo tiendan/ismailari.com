@@ -1,0 +1,1053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr-TR">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="İsmail Arı&#039;nın anasayfası" />
+<meta name="generator" content="WordPress 3.8.5" /><!-- Please leave for stats -->
+<link rel="icon" type="image/png" href="../../wp-content/themes/iacom/assets/img/iacom.png">
+
+<title>Tekil Değer Ayrışımı - 3 | ismailari.com</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ 
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    showProcessingMessages : false,
+    messageStyle : "none" ,    
+    showMathMenu: false ,
+    TeX: { 
+      equationNumbers: {autoNumber: "all"},
+      Macros: {
+      R: "{\\mathbb R}",
+      sign: "{\\mathop{\\mathrm{sign}}}",
+      argmax: "\\mathop{\\rm arg \\, max \\,}\\limits",
+      argmin: "\\mathop{\\rm arg \\, min \\,}\\limits",	
+      },
+      extensions: ["AMSmath.js", "AMSsymbols.js"]
+    },
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-orig.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/docs.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/tomorrow.css" type="text/css" rel="stylesheet" />
+
+
+<style type="text/css">
+  body {
+	padding-bottom: 40px;
+  }
+</style>
+
+
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/lang-matlab.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com &raquo; Tekil Değer Ayrışımı - 3 Yorum Beslemesi" href="feed/index.html" />
+<link rel='stylesheet' id='usernoise-button-css'  href='../../wp-content/plugins/usernoise/css/button-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='usernoise-form-css'  href='../../wp-content/plugins/usernoise/css/form-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/plugins/usernoise/vendor/font-awesome/css/font-awesome-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='../../wp-content/plugins/tablepress/css/default.min-ver=1.3.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var usernoiseButton = {"text":"ileti\u015fim","style":"background-color: #404040; color: #FFFFFF","class":"un-left un-has-border","windowUrl":"\/wp-admin\/admin-ajax.php?action=un_load_window","showButton":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/usernoise.js?ver=3.7.9'></script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/button.js?ver=3.7.9'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc-rsd.php.html" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Tekil Değer Ayrışımı - 2' href='../tekil-deger-ayrisimi-2/index.html' />
+<link rel='next' title='Temel Bileşenler Analizi' href='../temel-bilesenler-analizi/index.html' />
+<meta name="generator" content="WordPress 3.8.5" />
+<link rel='shortlink' href='http://wp.me/pGadj-BM' />
+<style type="text/css">
+* {
+	text-rendering: optimizeLegibility;
+}
+sup {
+	vertical-align: 60%;
+	font-size: 75%;
+	line-height: 100%;
+}
+sub {
+	vertical-align: -10%;
+	font-size: 75%;
+	line-height: 100%;
+}
+.amp {
+	font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", "Warnock Pro", serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 1.1em;
+	line-height: 1em;
+}
+.caps {
+	font-size: 90%;
+}
+.dquo {
+	margin-left:-.40em;
+}
+.quo {
+	margin-left:-.2em;
+}
+/* because formatting .numbers should consider your current font settings, we will not style it here */
+</style>
+
+<!-- All in One SEO Pack 2.1.1 by Michael Torbert of Semper Fi Web Design[551,634] -->
+<meta name="description" content="Tekil değer ayrışımının matematiksel zeminini ilk iki yazıda atmıştım (#1, #2) ve en son legolarla elimizdeki oyuncağı yapmaya gelmişti konu. İkinci yazıy" />
+
+<meta name="keywords" content="matlab,tekil değer ayrışımı" />
+
+<link rel="canonical" href="index.html" />
+<!-- /all in one seo pack -->
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {
+    prefer: {Firefox: "HTML"}
+  }
+});
+</script>
+
+
+<script src="../../wp-content/themes/iacom/assets/js/iacom.js"></script>
+
+<link rel="stylesheet" href="../../wp-content/themes/iacom/style.css" type="text/css" media="screen" />
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com RSS Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="ismailari.com Comments RSS Feed" href="../../comments/feed/index.html"  />
+
+<link rel="pingback" href="../../xmlrpc.php.html" />	
+
+
+</head>
+
+<body onload="prettyPrint()">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a class="" href="../../index.html">İsmail Arı</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Yazılar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../index.html">Son Yazılar</a></li>
+              <li><a href="../../tum-yazilar/index.html">Tüm Yazılar</a></li>
+              <li class="divider"></li>
+              <li><a href="http://feeds.feedburner.com/ismailari">Yazılara Abone Ol</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notlar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-header">MATLAB Notları</li>
+              <li><a href="../matlab-programlamaya-giris/index.html">MATLAB Programlamaya Giriş</a></li>
+              <li><a href="../matlab-ile-imge-islemeye-giris/index.html">MATLAB ile İmge İşlemeye Giriş</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Yapay Öğrenme</li>
+              <li><a href="../temel-bilesenler-analizi/index.html">Temel Bileşenler Analizi (PCA)</a></li>
+              <li><a href="../tekil-deger-ayrisimi-1/index.html">Tekil Değer Ayrışımı (SVD)</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Akademisyene Reçeteler</li>
+              <li><a href="../bir-makaleyi-nasil-okumali/index.html">Bir Makaleyi Nasıl Okumalı?</a></li>
+            </ul>
+          </li>
+          <li><a href="../../acik-ders/index.html">Açık Ders</a></li>
+          <li><a href="../../baglantilar/index.html">Bağlantılar</a></li>
+        </ul>
+        <form class="navbar-search" method="get" action="http://ismailari.com">
+          <input type="text" class="search-query span2" placeholder="Ara" id="s" name="s" type="text"  value="">
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	 <div class="container">
+	<div id="content" class="row">
+	<div class="span8">
+		
+				<div id="post-2342" class="post">
+			<h1 class="post-title">Tekil Değer Ayrışımı - 3</h1>								
+			<div class="post-meta-top">İsmail Arı, 5 Kasım 2010</div>
+			<div class="post-content">
+				<p>Tekil değer ayrışımının matematiksel zeminini ilk iki yazıda atmıştım (<a href="../tekil-deger-ayrisimi-1/index.html">#1</a>, <a href="../tekil-deger-ayrisimi-2/index.html">#2</a>) ve en son legolarla elimizdeki oyuncağı yapmaya gelmişti konu. İkinci yazıyı bitirmeden önce eldeki matrisi 1. dereceden matrislerin doğrusal kombinasyonu şeklinde yazabileceğimizi görmüştük. Bu yazıda hiç formüle girmeden örneklerle tekil değer ayrışımının nasıl çalıştığını ve bize nasıl bilgiler verdiğini göstereceğim. Bu örneklerde kahramanlarımız bana yardım edecekler. Konuyu Matlab kodlarıyla birlikte ilerleteceğim. Neyse, konuya girelim.</p>
+<p style="text-align: center;"><img class="alignnone size-thumbnail wp-image-2362" title="tarkan" src="../../wp-content/uploads/2010/11/tarkan-150x150.jpg" alt="" width="150" height="150" /> <img class="alignnone size-thumbnail wp-image-2361" title="robinhood" src="../../wp-content/uploads/2010/11/robinhood-150x150.jpg" alt="" width="150" height="150" /> <img class="alignnone size-thumbnail wp-image-2360" title="karamurat" src="../../wp-content/uploads/2010/11/karamurat-150x150.jpg" alt="" width="150" height="150" /></p>
+<p>Günlerden bir gün Atilla'nın sağ kolu Tarkan, Fatih'in fedaisi Kara Murat ve fakirlerin sevgili dostu Robin Hood ok yarışına dalaşırlar. 9 tane -üstünde 1'den 5'e kadar sayı bulunan- hedef vardır. Sırayla atışırlar. Hedefler matrisin satırları olacak şekilde; Tarkan, Robin Hood ve Kara Murat da sırasıyla sütunları olacak şekilde yazarsak şöyle bir skor elde ederler.</p>
+<p><span id="more-2342"></span></p>
+<pre class="prettyprint lang-matlab">A = [4 4 4
+     4 4 4
+     3 3 3
+     4 4 4
+     5 5 5
+     4 4 4
+     4 4 4
+     3 3 3
+     2 2 2];</pre>
+<p>Dikkatinizi çekerse bu matris 1. dereceden bir matris, çünkü diğer sütunlar ilk sütunun aynısı.</p>
+<p>Şimdi hangi kahramaranın hangi hedefte ne kadar başarılı olacağı sorusu ile ilgilenelim. İki tane merak ettiğimiz değer olsun: Birisi <em>hedef kolaylığı</em>, ikincisi ise <em>kahramanın kabiliyet</em>i. Bu iki değeri bildiğimiz takdirde kahramanımızın elde ettiği skoru</p>
+<p style="text-align: center;"><em>tahmini skor = hedef kolaylığı </em>×<em> kahramanın kabiliyeti</em></p>
+<p>formülü ile tahmin edebiliriz. Şimdilik hedef kolaylığını hedefte elde edilen skor, kahramanın kabiliyetini de 1 alalım. Örneğin, Tarkan'ın yapmış olduğu birinci atıştaki değer 4; demek ki Tarkan 4'ü vurdu ve kabiliyeti 1. Bunu matrisin tüm elemanları için ayrı ayrı düşünebiliriz. Bu şekilde ayrı ayrı yazmak yerine tüm matrisi <em>hedef kolaylıkları</em> vektörü ve <em>kahramanların kabiliyetleri</em> vektörü şeklinde yazabiliriz.</p>
+<table style="border: none;" border="0">
+<tbody>
+<tr style="border: none;">
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr style="text-align: center;">
+<td>Tarkan</td>
+<td>Robin Hood</td>
+<td>Kara Murat</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td style="text-align: center;">4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr style="text-align: center;">
+<td>2</td>
+<td>2</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">=</td>
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;">Hedef Kolaylığı</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">×</td>
+<td style="border: none;" valign="middle">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="3">Kahramanın Kabiliyeti</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tarkan</td>
+<td style="text-align: center;">Robin Hood</td>
+<td style="text-align: center;">Kara Murat</td>
+</tr>
+<tr style="text-align: center;">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><small></small><br />
+Matematikçiler değerleri düzenli tutmayı severler. Vektörleri normalize ederek, yani birim vektör olarak tutmak da bunlardan biridir. İlgilendiğimiz vektörleri normalize eder ve ağırlıklarını dışa alırsak şöyle bir ayrışım elde ederiz.</p>
+<table style="border: none;" border="0">
+<tbody>
+<tr style="border: none;">
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr style="text-align: center;">
+<td>Tarkan</td>
+<td>Robin Hood</td>
+<td>Kara Murat</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td style="text-align: center;">4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr style="text-align: center;">
+<td>2</td>
+<td>2</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">=</td>
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;">Hedef Kolaylığı</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3549</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3549</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.2662</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.3549</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.4437</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.3549</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.3549</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.2662</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.1775</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">×</td>
+<td style="border: none;" valign="middle">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;">Ölçek</td>
+</tr>
+<tr>
+<td style="text-align: center;">19.5192</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">×</td>
+<td style="border: none;" valign="middle">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="3">Kahramanın Kabiliyeti</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tarkan</td>
+<td style="text-align: center;">Robin Hood</td>
+<td style="text-align: center;">Kara Murat</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.5774</td>
+<td>0.5774</td>
+<td>0.5774</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>Bu değerleri elle hesaplamadık tabii ki, kodladık:</p>
+<pre class="prettyprint lang-matlab">[U, S, V] = svd(A);U(:,1)SV(:,1)</pre>
+<pre class="brush:plain; gutter:false">ans =
+
+    0.3549
+    0.3549
+    0.2662
+    0.3549
+    0.4437
+    0.3549
+    0.3549
+    0.2662
+    0.1775
+
+S =
+
+   19.5192         0         0
+         0    0.0000         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+
+ans =
+
+    0.5774
+    0.5774
+    0.5774</pre>
+<p>Bahsi geçen <em>hedef kolaylığı</em> değerleri sol tekil vektör, <em>kahramanların kabiliyetleri</em> ise sağ tekil vektör olarak adlandırılan vektörler.</p>
+<p>Farkettiyseniz tekil değerlerden yalnızca biri sıfırdan farklı. Çünkü bu matris 1. dereceden bir matris. Elbette gerçekte kahramanlarımızın tümü aynı puanı almadı. Çekişme çetin oldu.</p>
+<pre class="prettyprint lang-matlab">A = [2 3 4
+     3 4 5
+     4 3 4
+     4 4 5
+     5 5 5
+     2 3 5
+     3 4 4
+     3 3 4
+     1 2 3];</pre>
+<p>Şimdi skorları, tekil değer ayrışımının ilk vektörleri ile ifade etmeye çalışalım. Altta sizin için bunları verdim. Anlaşılması için tekil değeri, <em>hedef kolaylığı</em> ve <em>kahramanın kabiliyeti</em> vektörlerinin içine paylaştırdım.</p>
+<pre class="prettyprint lang-matlab">[U, S, V] = svd(A);
+
+scale = 1/mean(V(:,1));
+U(:,1) * S(1,1) * 1/scale
+V(:,1) * scale
+A1 = U(:,1) * S(1,1) * V(:,1)'</pre>
+<pre class="brush:plain; gutter:false">ans =
+
+    3.0522
+    4.0338
+    3.6125
+    4.3140
+    4.9082
+    3.4395
+    3.6464
+    3.3323
+    2.0705
+
+ans =
+
+    0.8562
+    0.9599
+    1.1839
+
+A1 =
+
+    2.6134    2.9297    3.6134
+    3.4539    3.8720    4.7755
+    3.0932    3.4676    4.2767
+    3.6938    4.1409    5.1072
+    4.2026    4.7114    5.8107
+    2.9451    3.3016    4.0720
+    3.1222    3.5001    4.3169
+    2.8533    3.1987    3.9451
+    1.7728    1.9874    2.4512</pre>
+<table style="border: none;" border="0">
+<tbody>
+<tr>
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;">Tarkan</td>
+<td style="text-align: center;">Robin Hood</td>
+<td style="text-align: center;">Kara Murat</td>
+</tr>
+<tr style="text-align: center;">
+<td style="text-align: center;">2.6134</td>
+<td style="text-align: center;">2.9297</td>
+<td style="text-align: center;">3.6134</td>
+</tr>
+<tr style="text-align: center;">
+<td style="text-align: center;">3.4539</td>
+<td>3.8720</td>
+<td>4.7755</td>
+</tr>
+<tr style="text-align: center;">
+<td>3.0932</td>
+<td>3.4676</td>
+<td>4.2767</td>
+</tr>
+<tr style="text-align: center;">
+<td style="text-align: center;">3.6938</td>
+<td>4.1409</td>
+<td>5.1072</td>
+</tr>
+<tr style="text-align: center;">
+<td>4.2026</td>
+<td>4.7114</td>
+<td>5.8107</td>
+</tr>
+<tr style="text-align: center;">
+<td>2.9451</td>
+<td>3.3016</td>
+<td>4.0720</td>
+</tr>
+<tr style="text-align: center;">
+<td>3.1222</td>
+<td>3.5001</td>
+<td>4.3169</td>
+</tr>
+<tr style="text-align: center;">
+<td>2.8533</td>
+<td>3.1987</td>
+<td>3.9451</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.7728</td>
+<td style="text-align: center;">1.9874</td>
+<td style="text-align: center;">2.4512</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">=</td>
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;">Hedef Kolaylığı</td>
+</tr>
+<tr style="text-align: center;">
+<td>3.0522</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.0338</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.6125</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.3140</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.9082</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.4395</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.6464</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.3323</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.0705</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">×</td>
+<td style="border: none;" valign="middle">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="3">Kahramanın Kabiliyeti</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tarkan</td>
+<td style="text-align: center;">Robin Hood</td>
+<td style="text-align: center;">Kara Murat</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.8562</td>
+<td style="text-align: center;">0.9599</td>
+<td style="text-align: center;">1.1839</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><small></small><br />
+Sonuçlara bakılırsa Tarkan geride kalırken, Robin Hood biraz daha iyi. Ama Kara Murat'tan ötesi yok :) Beşinci hedef en kolay hedefken, sonuncusu en zor olarak gözüküyor. Bu küçük örnekte gözle bakarak da bu bilgilere erişebilirdik fakat daha fazla kahramanın olduğunu ve çok daha fazla hedef olduğunu düşünürseniz bu işi akıllıca yapmak için tekil değer ayrışımı birebir.</p>
+<p>Bir boyutlu TDA kullandığımız ve matrisimiz 3. dereceden olduğu için matrisi tam olarak ifade edemeyip yaklaşık olarak tahmin ettik. 3 tekil teğeri de kullanarak ifade edecek olsaydık şöyle olacaktı.</p>
+<table style="border: none;" border="0">
+<tbody>
+<tr style="border: none;">
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr style="text-align: center;">
+<td>Tarkan</td>
+<td>Robin Hood</td>
+<td>Kara Murat</td>
+</tr>
+<tr style="text-align: center;">
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr style="text-align: center;">
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr style="text-align: center;">
+<td>2</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td style="text-align: center;">4</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr style="text-align: center;">
+<td>1</td>
+<td>2</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">=</td>
+<td style="border: none;">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="3">Hedef Kolaylığı</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.2765</td>
+<td>-0.3050</td>
+<td>-0.1120</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3654</td>
+<td>-0.2088</td>
+<td>-0.1710</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3273</td>
+<td>0.3701</td>
+<td>0.5874</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3908</td>
+<td>0.1287</td>
+<td>0.1787</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.4446</td>
+<td>0.4808</td>
+<td>-0.2952</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3116</td>
+<td>-0.5608</td>
+<td>0.3028</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3303</td>
+<td>0.0471</td>
+<td>-0.5858</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3019</td>
+<td>0.0326</td>
+<td>0.2377</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.1876</td>
+<td>-0.4011</td>
+<td>-0.0530</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">×</td>
+<td style="border: none;" valign="middle">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="3">Ölçek</td>
+</tr>
+<tr style="text-align: center;">
+<td>19.2978</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr style="text-align: center;">
+<td>0</td>
+<td>2.3595</td>
+<td>0</td>
+</tr>
+<tr style="text-align: center;">
+<td>0</td>
+<td>0</td>
+<td>1.0140</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="border: none;" valign="middle">×</td>
+<td style="border: none;" valign="middle">
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="3">Kahramanın Kabiliyeti</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tarkan</td>
+<td style="text-align: center;">Robin Hood</td>
+<td style="text-align: center;">Kara Murat</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.4898</td>
+<td>0.5491</td>
+<td>0.6772</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.7965</td>
+<td>0.0341</td>
+<td>-0.6037</td>
+</tr>
+<tr style="text-align: center;">
+<td>0.3546</td>
+<td>-0.8351</td>
+<td>0.4206</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>Tekil değer ayrışımı ile eldeki veriyi anlamlı baz vektörler cinsinden ifade ettik. Örneğin ilk satırdaki 2 skoru (0.2765 * <strong>19.2978</strong> * <em>0.4898</em>) + (-0.3050 * <strong>2.3595</strong> * <em>0.7965</em>) + (-0.1120 * <strong>1.0140</strong> * <em>0.3546</em>) biçiminde hesaplandı. Dikkat ederseniz burada [<em>0.4898 0.7965 0.3546</em>] vektörüne bir izdüşüm (iç çarpım) var. Bu skoru her bir boyut için Tarkan'ın kabiliyet değerlerine (italik) karşılık gelen değerleri bulacak şekilde çözümledik. Kalın yazdıklarım da bunların katkıları oldu. Önceki yazılarda elipsoidin yarıçapı demiştik ya, işte bu değerler elde edilen dikey tekil vektörler boyunca hesaplanan standart sapmalar olarak da yorumlanabilir.</p>
+<p>Hesaplanan yaklaşık değer ile matrisin gerçek değerleri arasındaki farka bakmak iyi bir alıştırma olabilir. Boyutu arttırıp değerlerle oynayarak sonuçları gözlemlemek ve hesaba katılan tekil değer sayısını arttırarak hata payının nasıl değiştiğini görmek de ayrı bir alıştırma.</p>
+<p>Özetlersek eldeki veriyi TDA ile bileşenlerine ayırdık ve verideki her örneğin bu bileşenler için katsayılarını bulduk. Alternatif olarak bunu özdeğer ayrışımı ile de yapabilirdik. Bir sonraki yazıda birtakım noktalara doğru oturtmaya çalışacağız ve matematiksel ve sezgisel altyapıyı artık tamamlamanın verdiği rahatlıkla <em>temel bileşenler analizi</em>ne geçeceğiz.</p>
+<p><em>Not: Bu yazıyı yazarken <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.puffinwarellc.com/index.php/news-and-articles/articles/30-singular-value-decomposition-tutorial.html');"  href="http://www.puffinwarellc.com/index.php/news-and-articles/articles/30-singular-value-decomposition-tutorial.html">şu belgeden</a> birçok konuda yararlandım.</em></p>
+<div class="related-posts">
+<div id="related-posts-MRP_all" class="related-posts-type">
+<h3>İlgili Yazılar</h3>
+<ul>
+<li><a href="../tekil-deger-ayrisimi-2/index.html">Tekil Değer Ayrışımı - 2</a></li>
+<li><a href="../tekil-deger-ayrisimi-1/index.html">Tekil Değer Ayrışımı - 1</a></li>
+</ul></div>
+</div>
+			
+			</div>
+
+
+			<div class="post-meta-bottom well well-small"><span class="pull-left">Kategori: <a href="../../kategori/teori/index.html" title="Teori kategorisindeki tüm yazıları göster" rel="category tag">Teori</a>  <span class="separator">|</span> Etiketler: <a href="../../etiket/matlab/index.html" rel="tag">matlab</a>, <a href="../../etiket/tekil-deger-ayrisimi/index.html" rel="tag">tekil değer ayrışımı</a></span>
+                        <span class="pull-right">Son güncelleme: 5 Nisan 2013                                                </span></br>
+			<span class="pull-left"> &laquo; <a href="../tekil-deger-ayrisimi-2/index.html" rel="prev">Tekil Değer Ayrışımı - 2</a></span>
+			<span class="pull-right"><a href="../temel-bilesenler-analizi/index.html" rel="next">Temel Bileşenler Analizi</a> &raquo;</span><br/>
+			</div>
+			<div class="clear"></div>
+		</div><!-- .post -->
+		<p><!-- Hupso Share Buttons - http://www.hupso.com/share/ --><a class="hupso_counters" href="http://www.hupso.com/share/"><img src="../../wp-content/uploads/2013/05/paylas.png" style="border:0px; padding-top:2px; float:left;" alt="Share Button"/></a><script type="text/javascript">var hupso_services_c=new Array("twitter","facebook_like","google");var hupso_counters_lang = "tr_TR";</script><script type="text/javascript" src="http://static.hupso.com/share/js/counters.js"></script><!-- Hupso Share Buttons --></p>
+		<p><a href="http://feeds.feedburner.com/ismailari"><img src=../../wp-content/uploads/2013/05/abone_ol.png></a> <a href="http://feeds.feedburner.com/ismailari"><img src="http://feeds.feedburner.com/~fc/ismailari?bg=FFFFFF&fg=003300&anim=0&label=okur" height="26" width="88" style="border:0" alt="Yazılara abone ol" title="Yazılara abone ol" /></a></p>
+
+		<div id="comments">
+
+
+<!-- You can start editing here. -->
+
+	<h2 class="section-title">5 yorum</h2>
+
+	<ol>
+
+	
+		<li class="alt" id="comment-821">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/05ff82effa4eab234c0f881739ee809d?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Seccad, 05 Aralık 2012</div>
+								
+				<p>Teşekkürler çok güzel ve faydalı bir paylaşım olmuş. Bu konuyla ilgili daha fazla bilgi edinebileceğim Türkçe bir kaynak biliyor musunuz acaba şimdiden teşekkürler.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-822">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 05 Aralık 2012</div>
+								
+				<p>Tekil değer ayrışımı ile ilgili maalesef başka Türkçe kaynak bilmiyorum.</p>
+<p>Fakat PCA ile ilgili Anlak'taki <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.anlak.com/temel-bilesenler-analizi-pca-cikarimi/');"  href="http://www.anlak.com/temel-bilesenler-analizi-pca-cikarimi/" rel="nofollow">PCA çıkarımı</a> makalesine bakabilirsiniz.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-823">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/05ff82effa4eab234c0f881739ee809d?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Seccad, 05 Aralık 2012</div>
+								
+				<p>süper-çözünürlüklü görüntü oluşturmak için tekil değer ayrışımını temel alan bir yöntem uygulamam gerekiyor bu konuda daha fazla bilgiye ve örnek kodlara nasıl ulaşabilirim acaba</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-824">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 05 Aralık 2012</div>
+								
+				<p>Bilemiyorum. İlk defa duyuyorum SVD'nin süper çözünürlükte de işe yaradığını. Eğer öğrenirseniz bizimle de paylaşırsanız sevinirim.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-825">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/05ff82effa4eab234c0f881739ee809d?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Seccad, 05 Aralık 2012</div>
+								
+				<p>ilginiz için teşekkür ettim. bu konuda bilgi edinirsem sizinle de paylaşacağım.</p>
+			</div>
+		</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+
+
+
+<div id="respond">
+
+	<h2 class="section-title">Yorum ekle</h2>
+
+	<form method="post" action="http://ismailari.com/wp-comments-post.php">	
+	
+		<div id="comment-form">
+	
+			
+		<label for="author">İsim (gerekli)</label></br>
+		<input type="text" name="author" id="author" value="" size="40" tabindex="1" aria-required='true' />
+
+		<label for="email">E-posta (yayınlanmayacaktır) (gerekli)</label></br>
+		<input type="text" name="email" id="email" value="" size="40" tabindex="2" aria-required='true' />
+
+		<label for="url">İnternet sitesi</label>
+		<input type="text" name="url" id="url" value="" size="40" tabindex="3" /></br>
+		
+				<label for="comment">Yorum</label>
+		<textarea name="comment" id="comment" cols="80%" rows="10" class="span8" tabindex="4"></textarea>
+		
+		</div>							
+
+		<input name="submit" type="submit" id="submit" tabindex="5" value="Yorumu gönder" />
+		<input type="hidden" name="comment_post_ID" value="2342" />
+		<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fb7712873a" /></p><!-- BEGIN: subscribe to comments reloaded --><p><input style='width:30px' type='checkbox' name='subscribe-reloaded' id='subscribe-reloaded' value='yes' /> Yorumları bana e-posta ile yolla. Yorum girmeden de <a href='../../index-page_id=345&srp=2342&sra=s.html'>abone</a> olabilirsiniz.</p><!-- END: subscribe to comments reloaded -->
+	</form>
+
+</div>
+
+
+
+		
+
+<div id="footer">
+<br />
+<hr noshade="noshade" color="#CCCCCC"/>	
+    ismailari.com &copy; 2015</div><!-- #footer -->
+</div></div>
+<script>function hefo_popup(url, width, height) {
+var left = Math.round(screen.width/2-width/2); var top = 0;
+if (screen.height > height) top = Math.round(screen.height/2-height/2);
+window.open(url, "share", "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+return false;
+}</script>
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1563790-10");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<div id="un-thankyou" style="display: none;">
+	<h2>Teşekkürler</h2>
+	<p>
+		Geribildiriminiz iletilmiştir.	</p>
+	<a href="#" id="un-feedback-close"><img src="../../wp-content/plugins/usernoise/images/ok.png" id="thankyou-image" alt="Close"></a>
+</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201515'></script>
+
+	<script src="http://stats.wordpress.com/e-201515.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7.2',blog:'10049041',post:'2342',tz:'2'});
+	var load_cmc = function(){linktracker_init(10049041,2342,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+<script src="../../wp-content/themes/iacom/assets/js/jquery.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-transition.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-alert.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-modal.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-dropdown.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-scrollspy.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tab.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tooltip.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-popover.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-button.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-collapse.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-carousel.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-typeahead.js"></script>
+
+<script>
+$('.gist').each(
+ function() { if($(this).find('.gist-data').height() < 80) {
+                  $(this).find('.line-numbers').hide(); 
+              }
+            }
+);
+$('.gist-meta').hide();
+</script>
+
+
+</body>
+</html>
+<!-- Localized -->

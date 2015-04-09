@@ -1,0 +1,1527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr-TR">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="İsmail Arı&#039;nın anasayfası" />
+<meta name="generator" content="WordPress 3.8.5" /><!-- Please leave for stats -->
+<link rel="icon" type="image/png" href="../../wp-content/themes/iacom/assets/img/iacom.png">
+
+<title>MATLAB Programlamaya Giriş | ismailari.com</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ 
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    showProcessingMessages : false,
+    messageStyle : "none" ,    
+    showMathMenu: false ,
+    TeX: { 
+      equationNumbers: {autoNumber: "all"},
+      Macros: {
+      R: "{\\mathbb R}",
+      sign: "{\\mathop{\\mathrm{sign}}}",
+      argmax: "\\mathop{\\rm arg \\, max \\,}\\limits",
+      argmin: "\\mathop{\\rm arg \\, min \\,}\\limits",	
+      },
+      extensions: ["AMSmath.js", "AMSsymbols.js"]
+    },
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-orig.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/docs.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/tomorrow.css" type="text/css" rel="stylesheet" />
+
+
+<style type="text/css">
+  body {
+	padding-bottom: 40px;
+  }
+</style>
+
+
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/lang-matlab.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com &raquo; MATLAB Programlamaya Giriş Yorum Beslemesi" href="feed/index.html" />
+<link rel='stylesheet' id='usernoise-button-css'  href='../../wp-content/plugins/usernoise/css/button-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='usernoise-form-css'  href='../../wp-content/plugins/usernoise/css/form-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/plugins/usernoise/vendor/font-awesome/css/font-awesome-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='../../wp-content/plugins/tablepress/css/default.min-ver=1.3.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var usernoiseButton = {"text":"ileti\u015fim","style":"background-color: #404040; color: #FFFFFF","class":"un-left un-has-border","windowUrl":"\/wp-admin\/admin-ajax.php?action=un_load_window","showButton":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/usernoise.js?ver=3.7.9'></script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/button.js?ver=3.7.9'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc-rsd.php.html" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Türkçe harflerin unicode karşılıkları' href='../turkce-harflerin-unicode-karsiliklari/index.html' />
+<link rel='next' title='MATLAB ile İmge İşlemeye Giriş' href='../matlab-ile-imge-islemeye-giris/index.html' />
+<meta name="generator" content="WordPress 3.8.5" />
+<link rel='shortlink' href='http://wp.me/pGadj-op' />
+<style type="text/css">
+* {
+	text-rendering: optimizeLegibility;
+}
+sup {
+	vertical-align: 60%;
+	font-size: 75%;
+	line-height: 100%;
+}
+sub {
+	vertical-align: -10%;
+	font-size: 75%;
+	line-height: 100%;
+}
+.amp {
+	font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", "Warnock Pro", serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 1.1em;
+	line-height: 1em;
+}
+.caps {
+	font-size: 90%;
+}
+.dquo {
+	margin-left:-.40em;
+}
+.quo {
+	margin-left:-.2em;
+}
+/* because formatting .numbers should consider your current font settings, we will not style it here */
+</style>
+
+<!-- All in One SEO Pack 2.1.1 by Michael Torbert of Semper Fi Web Design[551,630] -->
+<meta name="description" content="Not: Bu kaynaktan dilediğiniz şekilde yararlanabilirsiniz. MATLAB ile ilgili eğitim videoları için Açık Ders projesine göz atabilirsiniz. Görüntü işleme kod" />
+
+<meta name="keywords" content="matlab, programlama, ders notu, çalışma notları, programlama notları" />
+
+<link rel="canonical" href="index.html" />
+<!-- /all in one seo pack -->
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {
+    prefer: {Firefox: "HTML"}
+  }
+});
+</script>
+
+
+<script src="../../wp-content/themes/iacom/assets/js/iacom.js"></script>
+
+<link rel="stylesheet" href="../../wp-content/themes/iacom/style.css" type="text/css" media="screen" />
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com RSS Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="ismailari.com Comments RSS Feed" href="../../comments/feed/index.html"  />
+
+<link rel="pingback" href="../../xmlrpc.php.html" />	
+
+
+</head>
+
+<body onload="prettyPrint()">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a class="" href="../../index.html">İsmail Arı</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Yazılar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../index.html">Son Yazılar</a></li>
+              <li><a href="../../tum-yazilar/index.html">Tüm Yazılar</a></li>
+              <li class="divider"></li>
+              <li><a href="http://feeds.feedburner.com/ismailari">Yazılara Abone Ol</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notlar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-header">MATLAB Notları</li>
+              <li><a href="index.html">MATLAB Programlamaya Giriş</a></li>
+              <li><a href="../matlab-ile-imge-islemeye-giris/index.html">MATLAB ile İmge İşlemeye Giriş</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Yapay Öğrenme</li>
+              <li><a href="../temel-bilesenler-analizi/index.html">Temel Bileşenler Analizi (PCA)</a></li>
+              <li><a href="../tekil-deger-ayrisimi-1/index.html">Tekil Değer Ayrışımı (SVD)</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Akademisyene Reçeteler</li>
+              <li><a href="../bir-makaleyi-nasil-okumali/index.html">Bir Makaleyi Nasıl Okumalı?</a></li>
+            </ul>
+          </li>
+          <li><a href="../../acik-ders/index.html">Açık Ders</a></li>
+          <li><a href="../../baglantilar/index.html">Bağlantılar</a></li>
+        </ul>
+        <form class="navbar-search" method="get" action="http://ismailari.com">
+          <input type="text" class="search-query span2" placeholder="Ara" id="s" name="s" type="text"  value="">
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	 <div class="container">
+	<div id="content" class="row">
+	<div class="span8">
+		
+				<div id="post-1513" class="post">
+			<h1 class="post-title">MATLAB Programlamaya Giriş</h1>								
+			<div class="post-meta-top">İsmail Arı, 1 Nisan 2008</div>
+			<div class="post-content">
+				<p><em><strong>Not:</strong> Bu kaynaktan dilediğiniz şekilde yararlanabilirsiniz. MATLAB ile ilgili eğitim videoları için <a href="../../acik-ders/index.html">Açık Ders</a> projesine göz atabilirsiniz.</em></p>
+<p>Görüntü işleme kodlarını anlamak için öncelikle MATLAB bilmek gerekiyor. Biraz baktım da, internette derli toplu Türkçe bir MATLAB programlama kaynağı yok. Daha doğrusu olanlar o kadar yavaş ilerliyor ki... Programlama bilip de hızlıca MATLAB öğrenmek isteyenlere pek uygun gözükmüyor. Güzel bir kaynak olduğunu düşündüğüm kodları açıklamalarıyla birlikte göndereyim istedim.<br />
+<span id="more-1513"></span></p>
+<p>Aşağıdaki kodları MATLAB komut satırına sırası ile girip sonuçlarını gözlemleyerek güzel bir başlangıç yapabilirsiniz.</p>
+<div class=note>Eğer MATLAB çalışma ortamı hakkında hiç bilginiz bulunmuyorsa veya programlama bilmiyorsanız bu yazı size uygun olmayabilir.</div>
+<p>Şimdilik yüzeysel bir ders ('tutorial') oldu.. Biraz (!) zamanımı alıyor açıkçası. Eklemeler olursa sonraki yazı(lar)da genişletirim.</p>
+<p>Buyurun, temel MATLAB programlamaya <strong>hızlıca</strong> giriş notları...</p>
+<h2>Başlamadan</h2>
+<p><code>%</code> sembolü yorumlar icin kullanılır (satır sonuna kadar). İpucu: Birden fazla satır icin <code>hataAyiklama</code> diye global bir değişken tanımlayıp</p>
+<pre class="prettyprint lang-matlab">if hataAyiklama
+   islemler
+end</pre>
+<p>şeklinde yazabilirsiniz.</p>
+<p>Tek satırda kullanmak için oldukça uzun olan bir işlem yazacağınız zaman alt satıra geçtiğinizi belirtmek amacıyla satır sonuna <code>...</code> ekleyin. Ör:</p>
+<pre class="prettyprint lang-matlab">A = [1, 2; ...
+     3, 4];</pre>
+<p>İşlem sonuna noktalı virgül konulursa MATLAB sonucu ekrana basmaz. Eğer <code>;</code> eklemezseniz sonuç görüntülenir. Değişkenlerin değerlerini görmek için faydalıdır. Ör:</p>
+<pre class="prettyprint lang-matlab">A</pre>
+<p>İşlere girişmeden önce <tt>clear</tt> ile ortamdaki değişkenleri temizleyelim ve <tt>clc</tt> ile de komut ekranını temizleyelim</p>
+<pre class="prettyprint lang-matlab">clear
+clc</pre>
+<p>MATLAB komut satırı komut sistemine (kabuk) benzetilebilir:</p>
+<ul>
+<li>Komutları tekrar yazmak yerine yukarı oku kullanın ( benzer şekilde geçmişte ileriye gitmek için ise aşağı oku kullanabilirsiniz) Önce birkaç karakter yazarsanız, yukarı/aşağı okla o karakterlerle başlayan komutları gezebilirsiniz. Bu size çok hız kazandıracaktır.</li>
+</ul>
+<p>Komut satırındayken "tab" komut tamamlamaya yarar.</p>
+<p>Basit hata ayıklama: Eğer <code>dbstop if error</code> çalışma sırasında hata veren bir betiği/fonksiyonu çalıştırmadan önce yazılmışsa, program hatanın olduğu yerde durur. Hata ayıklamak için çok işe yarayabilir. Ama bana kalırsa en temizi "breakpoint" koyarak hata ayıklamaktır. Program o noktaya geldiğinde istediğiniz değişkeni gözlemleyebilirsiniz. Ayrıntılı kullanım için <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.youtube.com/watch?v=4n54H8c6bJw');"  href="http://www.youtube.com/watch?v=4n54H8c6bJw">şu</a> ve <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.youtube.com/watch?v=Bc9EEPNOwPA');"  href="http://www.youtube.com/watch?v=Bc9EEPNOwPA">şu</a> videoyu izlemenizi tavsiye ederim.</p>
+<h2>MATLAB'de Temel Veri Yapıları</h2>
+<h3>MATLAB'de temel yapılar:</h3>
+<p>Skalar sayılar ( genellikle "double"-kesinliğinde gerçel sayılar), vektörler ve matrislerdir:</p>
+<p><em>Not: Aslında bunların hepsi birer matristir. Örneğin skalar bir sayı 1x1'lik bir matrisdir.</em></p>
+<p>2x2'lik matrisler yaratalım. Matris yaratmanın en basit yolu elemanlarını kare parantez içinde yazmaktır. <code>;</code> sembolu satırları, (isteğe bağlı) <code>,</code> ise sütunlari ayırır.</p>
+<pre class="prettyprint lang-matlab">A = [1 2; 3 4];
+B = [1,2; 3,4];</pre>
+<p>Görüldüğü üzere noktalı virgülle bitirdiğimiz için sonuçlar ekrana basılmadı. Şimdi skalar bir değer oluşturalım.</p>
+<p>Ben örneklerde, sonuçları görmek için sonlarına <code>;</code> eklemeyeceğim. Siz isterseniz ekleyebilirsiniz. Sonuçları bize döndürdüğü için MATLAB'i çok gelişmiş bir hesap makinesi olarak düşünebiliriz.</p>
+<pre class="prettyprint lang-matlab">N = 5</pre>
+<pre class="codeoutput">N =
+
+5</pre>
+<p>Satır ve sütun vektörleri oluşturalım. Matris tanımı içinde <code>;</code> kullanırsak alt satıra geç demek oluyor.</p>
+<pre class="prettyprint lang-matlab">v = [1 0 0]
+v = [1; 2; 3]</pre>
+<pre class="codeoutput">v =
+
+1     0     0
+
+v =
+
+1
+2
+3</pre>
+<p><code>v</code> vektörünün transpozesini alalım.</p>
+<p><strong>Dikkat:</strong> Tek tırnak sembolü eşlenik transpoze (<em>conjugate tronspose</em>) içindir. Karmaşık sayılarla çalışırken hangisini kullandığınız önemlidir.</p>
+<pre class="prettyprint lang-matlab">v = v.'</pre>
+<pre class="codeoutput">v =
+
+1     2     3</pre>
+<p>Vektör değerlerini teker teker yazmak zor sanki böyle. Gelin kolayına kaçıp belli aralıklar ile doldurulmus vektör oluşturalım.</p>
+<p>Kullanım: <code>[baslangic:adım:bitis]</code></p>
+<pre class="prettyprint lang-matlab">v = 1:.5:3
+v = pi*[-4:2:4]/4</pre>
+<pre class="codeoutput">v =
+
+1.0000    1.5000    2.0000    2.5000    3.0000
+
+v =
+
+-3.1416   -1.5708         0    1.5708    3.1416</pre>
+<p>Başka bir yol da mümkün: <code>linspace(baslangic,bitis,kac_parca)</code></p>
+<pre class="prettyprint lang-matlab">v = linspace(1,3,5)</pre>
+<pre class="codeoutput">v =
+
+1.0000    1.5000    2.0000    2.5000    3.0000</pre>
+<p>Peki boş değişken oluşturmak isteseydik</p>
+<pre class="prettyprint lang-matlab">v = []</pre>
+<pre class="codeoutput">v =
+
+[]</pre>
+<h3>Özel matrisler oluşturma:</h3>
+<p>İlk parametre satır sayısını, 2. parametre sütun sayısını belirtir.</p>
+<p>2x3'lük sıfır ve bir matrisleri oluşturalım:</p>
+<pre class="prettyprint lang-matlab">m = zeros(2, 3)
+v = ones(2, 3)</pre>
+<pre class="codeoutput">m =
+
+0     0     0
+0     0     0
+
+v =
+
+1     1     1
+1     1     1</pre>
+<p>3x3'lük birim matris oluşturalım:</p>
+<pre class="prettyprint lang-matlab">m = eye(3)</pre>
+<pre class="codeoutput">m =
+
+1     0     0
+0     1     0
+0     0     1</pre>
+<p>Rastgele sayılar içeren 3x1'lik bir matris (sütun vektörü) oluşturalım. </p>
+<div class="note2">Ayrıntılar için <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/help/matlab/ref/rand.html');"  href="http://www.mathworks.com/help/matlab/ref/rand.html"><code>rand</code></a>'ın yardım tanımına bakınız.</div>
+<pre class="prettyprint lang-matlab">v = rand(3, 1)</pre>
+<pre class="codeoutput">v =
+
+0.9436
+0.4269
+0.0331</pre>
+<p><strong>Dikkat:</strong> Eğer iki değil de bir parametre verirsek, örnekteki 3x3'lük matris gibi sıfır matrisi oluşturur (vektör değil!)</p>
+<pre class="prettyprint lang-matlab">m = zeros(3)</pre>
+<pre class="codeoutput">m =
+
+0     0     0
+0     0     0
+0     0     0</pre>
+<h3>Vektör ve matrisleri indisleme:</h3>
+<p><strong>Uyarı:</strong> İndisler her zaman 1 ile başlar (0 ile değil)!</p>
+<p>Vektör elemanına ulaşma</p>
+<pre class="prettyprint lang-matlab">v = [1 2 3];
+v(3)</pre>
+<pre class="codeoutput">ans =
+
+3</pre>
+<p>2. elemanı silmek isteseydik</p>
+<pre class="prettyprint lang-matlab">v(2) = []</pre>
+<pre class="codeoutput">v =
+
+1     3</pre>
+<p>Matrisin bir elemanına ulaşmak için <code>matris(satırNo, sutunNo)</code></p>
+<pre class="prettyprint lang-matlab">m = [1 2 3 4; 5 7 8 8; 9 10 11 12; 13 14 15 16]
+m(1, 3)</pre>
+<pre class="codeoutput">m =
+
+1     2     3     4
+5     7     8     8
+9    10    11    12
+13    14    15    16
+
+ans =
+
+3</pre>
+<p>Matrisin bir satırının tümüne ulaşma (2. satır) ve bir sütununun tümüne ulaşma (1. sütun)</p>
+<pre class="prettyprint lang-matlab">m(2, :)
+m(:, 1)</pre>
+<pre class="codeoutput">ans =
+
+5     7     8     8
+
+ans =
+
+1
+5
+9
+13</pre>
+<p>1. satırın 1'den 3'e kadar (dahil) elemanları</p>
+<pre class="prettyprint lang-matlab">m(1, 1:3)</pre>
+<pre class="codeoutput">ans =
+
+1     2     3</pre>
+<p>2. sütunun 2'den 3'e kadar (dahil) elemanları</p>
+<pre class="prettyprint lang-matlab">m(2:3, 2)</pre>
+<pre class="codeoutput">ans =
+
+7
+10</pre>
+<p>Anahtar sözcük <code>end</code> satır/sütun'daki son elemana kadar demektir:</p>
+<pre class="prettyprint lang-matlab">m(2:end, 3)</pre>
+<pre class="codeoutput">ans =
+
+8
+11
+15</pre>
+<p>Matrisin boyutunu gösterelim</p>
+<pre class="prettyprint lang-matlab">m = [1 2 3; 4 5 6]
+size(m)</pre>
+<pre class="codeoutput">m =
+
+1     2     3
+4     5     6
+
+ans =
+
+2     3</pre>
+<p>Satır sayısı:</p>
+<pre class="prettyprint lang-matlab">size(m, 1)</pre>
+<pre class="codeoutput">ans =
+
+2</pre>
+<p>Sütun sayısı:</p>
+<pre class="prettyprint lang-matlab">size(m, 2)</pre>
+<pre class="codeoutput">ans =
+
+3</pre>
+<p><code>m</code> ile aynı boyutta yeni bir matris oluşturmak istersek:</p>
+<pre class="prettyprint lang-matlab">m1 = zeros(size(m))</pre>
+<pre class="codeoutput">m1 =
+
+0     0     0
+0     0     0</pre>
+<p>Şu ana kadar bir hayli çalıştık. Çalışma alanındaki değişkenleri görelim:</p>
+<pre class="prettyprint lang-matlab">who</pre>
+<pre class="codeoutput">Your variables are:
+
+A    B    N    ans  m    m1   v</pre>
+<p>Değişkenleri boyut, tip, vb. bilgileriyle görelim:</p>
+<pre class="prettyprint lang-matlab">whos</pre>
+<pre class="codeoutput">  Name      SizeBytes  Class     Attributes
+
+A         2x2    32  double
+B         2x2    32  double
+N         1x1     8  double
+ans       1x1     8  double
+m         2x3    48  double
+m1        2x3    48  double
+v         1x2    16  double</pre>
+<p>Bu arada, <code>ans</code> diye gözüken değişken en son yaptığımız ve herhangi bir değişkene atamadığımız değer. Yani <em>answer</em> demek.</p>
+<h2>Vektör ve Matrisler Üzerinde Basit İşlemler<a name="34"></a></h2>
+<h3>Eleman bazında yapılan işlemler:</h3>
+<p>Bu işlemler "eleman eleman" yapılan işlemlerdir. Eğer iki vektör/matris toplama, çıkarma, çarpma veya bölme işlemine sokulacaksa aynı boyutta olmalıdır.</p>
+<p>Sütun vektörünü skalar ile çarpma ve skalara bölme:</p>
+<pre class="prettyprint lang-matlab">a = [1 2 3 4]';
+2 * a</pre>
+<pre class="codeoutput">ans =
+
+2
+4
+6
+8</pre>
+<pre class="prettyprint lang-matlab">a / 4</pre>
+<pre class="codeoutput">ans =
+
+0.2500
+0.5000
+0.7500
+1.0000</pre>
+<p>Vektörlerde toplama (matrislerde de aynı) ve çıkarma:</p>
+<pre class="prettyprint lang-matlab">b = [5 6 7 8]';
+a + b</pre>
+<pre class="codeoutput">ans =
+
+6
+8
+10
+12</pre>
+<pre class="prettyprint lang-matlab">a - b</pre>
+<pre class="codeoutput">ans =
+
+-4
+-4
+-4
+-4</pre>
+<p>Eleman eleman kare alma, çarpma ve bölme. <code>.</code>'ya dikkat edin! Normal semboller matris çarpma ve bölmesi demek!</p>
+<pre class="prettyprint lang-matlab">a .^ 2</pre>
+<pre class="codeoutput">ans =
+
+1
+4
+9
+16</pre>
+<pre class="prettyprint lang-matlab">a .* b</pre>
+<pre class="codeoutput">ans =
+
+5
+12
+21
+32</pre>
+<pre class="prettyprint lang-matlab">a ./ b</pre>
+<pre class="codeoutput">ans =
+
+0.2000
+0.3333
+0.4286
+0.5000</pre>
+<p>Eleman eleman logaritma alma ve en yakın tamsayıya yuvarlama:</p>
+<pre class="prettyprint lang-matlab">log([1 2 3 4])</pre>
+<pre class="codeoutput">ans =
+
+0    0.6931    1.0986    1.3863</pre>
+<pre class="prettyprint lang-matlab">round([1.5 2; 2.2 3.1])</pre>
+<pre class="codeoutput">ans =
+
+2     2
+2     3</pre>
+<p>Benzer sekilde eleman eleman işlem yapabilen birçok fonksiyon vardır. Örneğin  <code>floor</code> ve <code>ceil</code></p>
+<p><strong>ipucu:</strong> MATLAB yorumlayıcı olduğu için döngülerde yavaş çalışır. O yüzden kullanacağınız işlemleri eleman bazında işlemler şeklinde tanımlamak işleri hızlandırır. Bakınız: (4) Vektörleme.</p>
+<h3>Vektör işlemleri</h3>
+<p>Vektörlerde işlem yapan önceden tanımlı bazı MATLAB fonksiyonlarına bakalım.</p>
+<pre class="prettyprint lang-matlab">a = [1 4 6 3]</pre>
+<pre class="codeoutput">a =
+
+1     4     6     3</pre>
+<p>Vektör elemanlarının toplamı:</p>
+<pre class="prettyprint lang-matlab">sum(a)</pre>
+<pre class="codeoutput">ans =
+
+14</pre>
+<p>Vektör elemanlarının aritmetik ortalaması:</p>
+<pre class="prettyprint lang-matlab">mean(a)</pre>
+<pre class="codeoutput">ans =
+
+3.5000</pre>
+<p>Vektör elemanlarının değişintisi (varyans):</p>
+<pre class="prettyprint lang-matlab">var(a)</pre>
+<pre class="codeoutput">ans =
+
+4.3333</pre>
+<p>Standart sapma:</p>
+<pre class="prettyprint lang-matlab">std(a)</pre>
+<pre class="codeoutput">ans =
+
+2.0817</pre>
+<p>En yüksek ve en düşük değerler:</p>
+<pre class="prettyprint lang-matlab">max(a)</pre>
+<pre class="codeoutput">ans =
+
+6</pre>
+<pre class="prettyprint lang-matlab">min(a)</pre>
+<pre class="codeoutput">ans =
+
+1</pre>
+<p>Eğer matris üzerinde işlem yapılırsa, bu fonksiyonlar matrisin her bir sütununda işlem yaparlar ve sonuç olarak bir satır vektörü döndürürler</p>
+<pre class="prettyprint lang-matlab">a = [1 2 3; 4 5 6]</pre>
+<pre class="codeoutput">a =
+
+1     2     3
+4     5     6</pre>
+<p>Her sütunun ortalaması:</p>
+<pre class="prettyprint lang-matlab">mean(a)</pre>
+<pre class="codeoutput">ans =
+
+2.5000    3.5000    4.5000</pre>
+<p>Her sütunun en yüksek değeri:</p>
+<pre class="prettyprint lang-matlab">max(a)</pre>
+<pre class="codeoutput">ans =
+
+4     5     6</pre>
+<p>Matristeki en yüksek değer:</p>
+<pre class="prettyprint lang-matlab">max(max(a))</pre>
+<pre class="codeoutput">ans =
+
+6</pre>
+<p>veya</p>
+<pre class="prettyprint lang-matlab">max(a(:))</pre>
+<pre class="codeoutput">ans =
+
+6</pre>
+<p>Her satırın ortalaması (ikinci argüman hangi boyutta işlem yapılacagını gösterir):</p>
+<pre class="prettyprint lang-matlab">mean(a, 2)</pre>
+<pre class="codeoutput">ans =
+
+2
+5</pre>
+<p>Vektörlerde çarpma ve bölme işlemlerine geçelim. 1x3'lük satır vektörü ile 3x1'lik sütun vektörü çarpımı sonucu skalar elde ederiz. İç çarpım olarak da bilinir. <code>.</code> kullanmadığımıza dikkat edin.</p>
+<pre class="prettyprint lang-matlab">[1 2 3] * [4 5 6]'</pre>
+<pre class="codeoutput">ans =
+
+32</pre>
+<p>3x1 sütun vektörü ile 1x3'lük satır vektörü çarpımı 3x3'lük matris oluşturur.</p>
+<pre class="prettyprint lang-matlab">[1 2 3]' * [4 5 6]</pre>
+<pre class="codeoutput">ans =
+
+4     5     6
+8    10    12
+12    15    18</pre>
+<h3>Matris işlemleri:</h3>
+<p>İki tane rasgele matris oluşturup çarpalım. Alttaki örnekte çarpım sonucu 3x4'lük bir matris olacak:</p>
+<pre class="prettyprint lang-matlab">a = rand(3,2)
+b = rand(2,4)
+c = a * b</pre>
+<pre class="codeoutput">a =
+
+0.9294    0.2600
+0.9250    0.7869
+0.3583    0.5116
+
+b =
+
+0.5625    0.0924    0.9429    0.8459
+0.6848    0.8726    0.0966    0.9094
+
+c =
+
+0.7009    0.3127    0.9015    1.0226
+1.0592    0.7721    0.9482    1.4980
+0.5519    0.4795    0.3873    0.7683</pre>
+<p>Vektör ve matrislerle başka denemeler yapalım:</p>
+<pre class="prettyprint lang-matlab">a = [1 2; 3 4; 5 6];
+b = [5 6 7];
+b * a</pre>
+<pre class="codeoutput">ans =
+
+58    76</pre>
+<pre class="prettyprint lang-matlab">c = [8; 9];
+a * c</pre>
+<pre class="codeoutput">ans =
+
+26
+60
+94</pre>
+<p>Matrisin tersini hesaplayalım:</p>
+<pre class="prettyprint lang-matlab">a = [1 3 2; 6 5 4; 7 8 9];
+inv(a)</pre>
+<pre class="codeoutput">ans =
+
+-0.3333    0.2821   -0.0513
+0.6667    0.1282   -0.2051
+-0.3333   -0.3333    0.3333</pre>
+<p><code>a</code>'nın özdeğerlerinden oluşan vektör:</p>
+<pre class="prettyprint lang-matlab">eig(a)</pre>
+<pre class="codeoutput">ans =
+
+15.1601
+-1.6860
+1.5258</pre>
+<p>Hesaplamışken özvektörleri de bulalım. <code>D</code> matrisi köşegende özvektörleri barındırır; <code>V</code> matrisi özvektörleri içerir. Bu, MATLAB ile birden çok değişken döndürülmesine de güzel bir ornek!</p>
+<div class=note2>Kullanımını unuttuğunuz herhangi bir fonksiyon için <code>F1</code>'e basarak MATLAB Yardım belgelerini açabilir ve arama yapabilirsiniz.</div>
+<pre class="prettyprint lang-matlab">[V, D] = eig(a)</pre>
+<pre class="codeoutput">V =
+
+-0.2199   -0.7374   -0.2033
+-0.4671    0.6751   -0.5675
+-0.8564   -0.0224    0.7979
+
+D =
+
+15.1601         0         0
+0   -1.6860         0
+0         0    1.5258</pre>
+<p><code>a</code>'nın <a href="../tekil-deger-ayrisimi-1/index.html">tekil değer ayrışımı</a> sonucu. <tt>a = U * S * V'</tt>, <tt>a</tt>'nın "singular" değerleri <tt>S</tt>'de bulunur</p>
+<pre class="prettyprint lang-matlab">[U, S, V] = svd(a)</pre>
+<pre class="codeoutput">U =
+
+-0.2097    0.4071   -0.8890
+-0.5147   -0.8190   -0.2536
+-0.8313    0.4044    0.3813
+
+S =
+
+16.7157         0         0
+0    2.0802         0
+0         0    1.1216
+
+V =
+
+-0.5454   -0.8059    0.2302
+-0.5895    0.1736   -0.7889
+-0.5959    0.5660    0.5697</pre>
+<p>Başka başka da matris fonksiyonları var: <code>det</code>, <code>norm</code>, <code>rank</code>, ...</p>
+<h3>Matrisleri yeniden şekillendirme ve birleştirme:</h3>
+<p>Önce bir matris oluşturalım. Daha sonra onu doğrusal bir vektöre çevirelim.</p>
+<p><strong>Dikkat:</strong> Matrisleri diğer dillerdeki (c, c++, vb.) gibi satır satır değil de sütun sütun düşünmek gerekir. <code>a</code>'nın sütunlarını ekleyerek yeni bir sütun vektörü oluşturuyoruz:</p>
+<pre class="prettyprint lang-matlab">a = [1 2; 3 4; 5 6];
+b = a(:)</pre>
+<pre class="codeoutput">b =
+
+1
+3
+5
+2
+4
+6</pre>
+<p>Tüm elemanların toplamını almak isteseydik:</p>
+<pre class="prettyprint lang-matlab">sum(a(:))</pre>
+<pre class="codeoutput">ans =
+
+21</pre>
+<p><tt>b</tt> vektörünün elemanlarından 2x3'lük bir matris oluşturalım (yine sütun sütun):</p>
+<pre class="prettyprint lang-matlab">a = reshape(b, 2, 3)</pre>
+<pre class="codeoutput">a =
+
+1     5     4
+3     2     6</pre>
+<div class=note2>Ayrıntılar için <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/help/matlab/ref/horzcat.html');"  href="http://www.mathworks.com/help/matlab/ref/horzcat.html"><code>horzcat</code></a>'a bakınız.</div>
+<p> İki tane satır vektörünü yatay olarak birleştirelim. </p>
+<pre class="prettyprint lang-matlab">a = [1 2]; b = [3 4];
+c = [a b]</pre>
+<pre class="codeoutput">c =
+
+1     2     3     4</pre>
+<div class=note2>Ayrıntılar için <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/help/matlab/ref/vertcat.html');"  href="http://www.mathworks.com/help/matlab/ref/vertcat.html"><code>vertcat</code></a>'a bakınız.</div>
+<p>İki tane sütun vektörünü dikey olarak birleştirelim.</p>
+<pre class="prettyprint lang-matlab">a = [1; 2; 3];
+b = [4; 5]
+c = [a; b]</pre>
+<pre class="codeoutput">b =
+
+4
+5
+
+c =
+
+1
+2
+3
+4
+5</pre>
+<p>Benzer şekilde matrisleri de birleştirebiliriz:</p>
+<pre class="prettyprint lang-matlab">a = [eye(3) rand(3)]</pre>
+<pre class="codeoutput">a =
+
+1.0000    0         0    0.0113    0.3851    0.5757
+0    1.0000         0    0.5237    0.6493    0.6319
+0         0    1.0000    0.6503    0.7629    0.2782</pre>
+<pre class="prettyprint lang-matlab">b = [eye(3); ones(1, 3)]</pre>
+<pre class="codeoutput">b =
+
+1     0     0
+0     1     0
+0     0     1
+1     1     1</pre>
+<p><code>repmat</code> kullanarak bir değişkeni ızgara şeklinde kopyalayabiliriz. Örneğin tüm değerleri 5 olan 3x2'lik bir matris yapalım.</p>
+<pre class="prettyprint lang-matlab">b = repmat(5, 3, 2)</pre>
+<pre class="codeoutput">b =
+
+5     5
+5     5
+5     5</pre>
+<p>İlla ki tek değer olması gerekmezdi. Bir matrisi de klonlayabilirdik.</p>
+<p>Kullanım:  <code>repmat(kopyalanacak_veri, satir_sayisi, sutun_sayisi)</code></p>
+<pre class="prettyprint lang-matlab">b = repmat([1 2; 3 4], 1, 2)</pre>
+<pre class="codeoutput">b =
+
+1     2     1     2
+3     4     3     4</pre>
+<p>Verilen vektörle 3x3'lük bir köşegen matrisi oluşturalım:</p>
+<pre class="prettyprint lang-matlab">b = diag([1 2 3])</pre>
+<pre class="codeoutput">b =
+
+1     0     0
+0     2     0
+0     0     3</pre>
+<h2>Kontrol İşlemleri ve Vektörleme (Vectorization)</h2>
+<p>Döngüleri en azından bir dilde bildiğinizi bilerek hızlıca MATLAB'de nasıl olduğuna bakalım.</p>
+<h3>Kontrol işlemlerinin sözdizimi:</h3>
+<pre class="prettyprint lang-matlab">for değişken = değerler
+   işlem
+   ...
+   işlem
+end</pre>
+<p><code>deferler</code> döngünün hangi değerler icin yapılacağı vektör olmalıdır, örneğin: <code>1:10</code> veya <code>-1:0.5:1</code> veya <code>[1 4 7]</code></p>
+<pre class="prettyprint lang-matlab">while kosul
+   islemler
+end</pre>
+<pre class="prettyprint lang-matlab">if kosul
+   islemler
+elseif kosul
+   islemler
+else
+   islemler
+end</pre>
+<p><code>elseif</code> ve <code>else</code> kısımları isteğe bağlıdır, <code>end</code> ise gereklidir.</p>
+<p><code>kosullar</code> genellikle ilişkilerden oluşur, örneğin <code>a < b</code>.</p>
+<p>Operatörler: <code>~, <, >, <=, >=, ==, ~=</code> (C'deki <code>!</code> yerine <code>~</code> kullanılır.) <code>kosullar</code>, <code>&amp;&amp;</code> (ve) <code>||</code> (veya) ile kullanılabilir. Ör. <code>a < b &amp;&amp; ( c != d || e >= f)</code></p>
+<p><strong>Uyarı:</strong> Döngüler MATLAB'de çok yavaş çalışır. İşlemlerinizi hızlandırmak için mümkün olan yerlerde vektörleme yapmalısınız. Ör: Kodunuzu matris işlemleriyle tekrar yazmalısınız. Aşağıda birkaç örnek bulacaksınız.</p>
+<p>1'den 7'ye kadar 2 atlayarak döngü oluşturalım ve <code>i</code>'yi ekrana basalım:</p>
+<pre class="prettyprint lang-matlab">for i=1:2:7
+   i
+end</pre>
+<pre class="codeoutput">i =
+
+1
+
+i =
+
+3
+
+i =
+
+5
+
+i =
+
+7</pre>
+<p>Verilen bir vektör üstünde döngü oluşturalım. İçine bir de <code>if</code> kontrolü koyalım.</p>
+<pre class="prettyprint lang-matlab">for i=[5 13 -1]
+   if (i > 10)
+      disp([int2str(i) ' sayısı 10dan büyük'])
+   elseif i < 0
+      disp([int2str(i) ' sayısı negatif bir sayı'])
+   else
+      disp([int2str(i) ' sayısı 0 ile 10 arasında'])
+   end
+end</pre>
+<pre class="codeoutput">5 sayısı 0 ile 10 arasında
+13 sayısı 10dan büyük
+-1 sayısı negatif bir sayı</pre>
+<p>Başka bir örnek: <code>A</code> adında mxn'lik bir matris ve <code>v</code> adında 1xn'lik bir vektör verilmiş olsun, <code>v</code>'yi <code>A</code>'nın her satırından çıkarmak istiyoruz.</p>
+<pre class="prettyprint lang-matlab">m = 6; n = 3;
+A = ones(m, n)
+v = 2 * rand(1, n)</pre>
+<pre class="codeoutput">A =
+
+1     1     1
+1     1     1
+1     1     1
+1     1     1
+1     1     1
+1     1     1
+
+v =
+
+1.6797    0.8537    1.2632</pre>
+<p>Döngü kullanarak şöyle yapabiliriz</p>
+<pre class="prettyprint lang-matlab">for i=1:m
+   A(i,:) = A(i,:) - v;
+end</pre>
+<p>Aynı işlemi yalnızca matris işlemleri kullanarak da yapabilirdik. Peki nasıl?</p>
+<pre class="prettyprint lang-matlab">A = ones(m, n) - repmat(v, m, 1)</pre>
+<pre class="codeoutput">A =
+
+-0.6797    0.1463   -0.2632
+-0.6797    0.1463   -0.2632
+-0.6797    0.1463   -0.2632
+-0.6797    0.1463   -0.2632
+-0.6797    0.1463   -0.2632
+-0.6797    0.1463   -0.2632</pre>
+<p>Bu hali (özellikle bu işleme çok kez ihtiyaciniz varsa) işinizi hızlandıracaktır!</p>
+<p>İşlemlere harcanan zamanı ölçmek isterseniz <code>tic</code> ve <code>toc</code> komutlarını kullanabilirsiniz. Ayrıntılı bilgi için <a href="../zaman-olcer/index.html">bu yazıy</a>a bakabilirsiniz.</p>
+<p>Döngüler koşullu işlemler içerse dahi vektörleme yapabiliriz.</p>
+<p>Ör: mxn'lik <code>A</code> matrisi verilsin, aynı boyutta tüm değerleri sıfır olan bir <code>B</code> matrisi oluşturalım. Daha sonra <code>B</code>'ye, <code>A</code>'nın sıfırdan büyük olan elemanlarını kopyalayalım.</p>
+<p>Döngü kullanarak hesaplama:</p>
+<pre class="prettyprint lang-matlab">B = zeros(m,n);
+for i=1:m
+   for j=1:n
+      if A(i,j) > 0
+         B(i,j) = A(i,j);
+      end
+   end
+end
+B</pre>
+<pre class="codeoutput">B =
+
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0</pre>
+<p>Tüm bu işlemler hiç dongu kullanmadan yapılabilir! <code>A</code>'nın 0'dan büyük elemanlarının indislerini buluruz. <code>B</code>'ye, <code>A</code>'da bulunan indislerdeki elemanları kopyalarız:</p>
+<pre class="prettyprint lang-matlab">B = zeros(m,n);
+ind = A > 0</pre>
+<pre class="codeoutput">ind =
+
+0     1     0
+0     1     0
+0     1     0
+0     1     0
+0     1     0
+0     1     0</pre>
+<pre class="prettyprint lang-matlab">B(ind) = A(ind)</pre>
+<pre class="codeoutput">B =
+
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0
+0    0.1463         0</pre>
+<h2>Değişkenleri/Oturumu Kaydetmek</h2>
+<p>Bugün oturduk, çalıştık... Yorulduk, aynı değişkenlerle sonradan çalışalım dedik...</p>
+<p>Alttaki kullanım tüm calışma alanı değişkenlerini <code>dosyam.mat</code> dosyasına kaydeder. Bulunduğunuz klasöre bir göz atın, dosya orada duruyor mu bakalım?</p>
+<pre class="prettyprint lang-matlab">save dosyam</pre>
+<p>Sadece <tt>a</tt> ve <tt>b</tt> değişkenlerini kaydetmek isteseydik:</p>
+<pre class="prettyprint lang-matlab">save dosyam a b</pre>
+<p>Peki bu iki değişkeni kaydetmek değil de silmek isteseydik:</p>
+<pre class="prettyprint lang-matlab">clear a b</pre>
+<p>Tüm değişkenleri silelim:</p>
+<pre class="prettyprint lang-matlab">clear</pre>
+<p>Kaydettiğimiz değişkenleri geri yükleyelim</p>
+<pre class="prettyprint lang-matlab">load dosyam</pre>
+<h2>m-dosyaları ile Betikler ve Fonksiyonlar Yazma:</h2>
+<h3>MATLAB ile betik dosyası oluşturma</h3>
+<p>MATLAB betikleri ".m" uzantısı olan ve MATLAB kodları içeren dosyalardır. Dosya içindeki değişkenler global çalışırlar ve o anki MATLAB oturumunda ortamda bulunan aynı isimdeki değiskenleri değiştirir. <code>betigim.m</code> adındaki bir betiği <code>betigim</code> yazarak komut satırından çalıştırabilirsiniz.</p>
+<p>Mesela alttaki kodu<code> betigim.m</code> olarak kaydedin.</p>
+<pre class="prettyprint lang-matlab">a = 10;
+b = 2*a;</pre>
+<p>Şimdi de komut satırından şunları girelim</p>
+<pre class="prettyprint lang-matlab">a = 2;
+b = 3;
+betigim();
+a</pre>
+<pre class="codeoutput">a =
+
+10</pre>
+<pre class="prettyprint lang-matlab">b</pre>
+<pre class="codeoutput">b =
+
+20</pre>
+<p>Görüldüğü üzere tanımladığımız değişkenler betik içinde yeni değerlere atandı. Bu tehlikeli olabilir. Gelin fonksiyon yazmaya geçelim.</p>
+<h3>MATLAB ile fonksiyon yazma</h3>
+<div class="note2">Ayrıntılı video dersler için AçıkDers'teki fonksiyon videolarına (<a onclick="javascript:pageTracker._trackPageview('/outgoing/www.youtube.com/watch?v=KxBvHEcrRvk');"  href="http://www.youtube.com/watch?v=KxBvHEcrRvk">1. Kısım</a>,<a onclick="javascript:pageTracker._trackPageview('/outgoing/www.youtube.com/watch?v=GepGJBaxLa8');"  href="http://www.youtube.com/watch?v=GepGJBaxLa8"> 2. Kısım</a>, <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.youtube.com/watch?v=GuXYS7gvzw8');"  href="http://www.youtube.com/watch?v=GuXYS7gvzw8">3. Kısım</a>) bakabilirsiniz.</div>
+<p>Fonksiyonlar da m-dosyalarıdır. Farklı olarak bir fonksiyonun ilk satırı söyle olmalıdır:</p>
+<pre class="prettyprint lang-matlab">function [sonuc1, sonuc2, ..., sonucm] = fonksiyonum(arg1, arg2,...,argn)</pre>
+<p>Fonksiyonun adı dosya adı ile aynı olmalıdır. Örnegin <code>fonksiyonum</code> fonksiyonu <code>fonksiyonum.m</code> dosyasına koyulmalıdır. Örnek<br />
+olarak <code>fonksiyonum.m</code> ve <code>digerfonksiyonum.m</code> dosyalarına bakiniz.</p>
+<p>Fonksiyonlar lokal ortamda çalışırlar. Yani ana çalışma alanındaki aynı isimdeki bir değişkeni kaybetme riskiniz yoktur.<br />
+Fonksiyonun sonucunda sadece sonuç olarak dönen değişkenler, çağıran fonksiyonun çalışma alanında görülür.</p>
+<p>Örnekleri yapmadan önce aşağıdaki fonksiyonları çalışma dizininize kaydedin.</p>
+<h3>fonksiyonum.m:</h3>
+<p>Tek girdi argumanı alan ve tek değer döndüren örnek fonksiyon</p>
+<pre class="prettyprint lang-matlab">function y = fonksiyonum(x)
+a = [-2 -1 0 1];
+y = a + x;</pre>
+<h3>digerfonksiyonum.m:</h3>
+<p>2 girdi argumanı alan ve 2 değer döndüren örnek fonksiyon</p>
+<pre class="prettyprint lang-matlab">function [y, z] = digerfonksiyonum(a, b)
+y = a + b;
+z = a - b;</pre>
+<pre class="prettyprint lang-matlab">a = [1 2 3 4];
+b = fonksiyonum(2 * a)
+a</pre>
+<pre class="codeoutput">b =
+
+0     3     6     9
+
+a =
+
+1     2     3     4</pre>
+<p>Görüldüğü üzere <code>a</code> değeri değişmedi. Şimdi de iki değişken döndüren örneğimizi çağıralım</p>
+<pre class="prettyprint lang-matlab">[c, d] = digerfonksiyonum(a, b)</pre>
+<pre class="codeoutput">c =
+
+1     5     9    13
+
+d =
+
+1    -1    -3    -5</pre>
+<h2>Grafik Çizdirme</h2>
+<div class="note">MATLAB ile 2B grafik çizimlerine ayrıntılı bakmak için <a href="../matlab-ile-2b-grafik-cizimleri/index.html">bu yazıyı</a> okuyabilirsiniz.</div>
+<p>Belki MATLAB'in en güçlü yanı çizebildiği çeşitli güzel grafiklerdir. Önce temel çizim fonksiyonumuz <code>plot</code> ile başlayalım.</p>
+<pre class="prettyprint lang-matlab">y = [0 1 5 2 3];</pre>
+<p><code>y</code>'yi indis değerleri ile grafik olarak çizelim. Yani dikey eksen <code>y</code>'nin değerleri olsun, yatay eksense 1'den başlayıp <code>y</code>'nin boyuna kadar gitsin.</p>
+<pre class="prettyprint lang-matlab">plot(y)</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_01.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_01.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_01.png" alt="" height="250"  /></a></p>
+<p>İstersek yatay eksen değerlerini de verebiliriz. Üstüne <code>axis</code> ile görüntülenen sınırları belirleyebiliriz. Kullanımı: <code>axis([enkucukx enbuyukx enkucuky enbuyuky])</code>:</p>
+<pre class="prettyprint lang-matlab">x = linspace(0,1,length(y));
+plot(x, y);
+axis([-0.5 1.5 -0.2 5.2]);</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_02.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_02.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_02.png" height="250" /></a></p>
+<p>Normalde yeni bir figür çizdiğimizde en son aktif olan figürün üstüne çizilir. Eğer yeni bir figür açmak istersek <code>figure</code> yazabiliriz. Şimdi de bir sinüs grafiği çizelim ve biraz da süsleyelim.</p>
+<pre class="prettyprint lang-matlab">figure
+x = pi*[-24:24]/24;
+plot(x, sin(x))
+xlabel('radyan')
+ylabel('sinüs değeri')
+title('Sinüs Grafiği')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_03.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_03.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_03.png"  height="250" /></a></p>
+<p>Bazen aynı figüre bir çizim yapmak yerine küçük pencereler halinde daha çok çizim yapmak  isteyebiliriz. Bunun için de <code>subplot</code> imdadımıza yetişiyor. Kullanım: <code>subplot(satır_sayisi, sütun_sayisi, su_an_cizilecek_olanin_indisi)</code></p>
+<pre class="prettyprint lang-matlab">subplot(1, 2, 1)
+plot(x, sin(x))
+axis square
+title('Sin grafiği')
+subplot(1, 2, 2);
+plot(x, cos(x));
+axis square
+title('Cos grafiği')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_04.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_04.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_04.png" height="250" /></a></p>
+<p>Yukarıda görüntülenen alanları kare yaptık. Başka seçenekler de koyabilirdik. <code>F1</code>'e basıp yardım belgelerinde arayarak veya komut satırına <code>help axis</code> yazarak ayrıntılı kullanımını görebilirsiniz.</p>
+<p>Şimdi de aynı çizim alanına birden fazla çizim yapalım. Bunun için <tt>hold on</tt> ve <tt>hold off</tt> kullanmamız gerekecek. Bu komutlarla yeni çizim yapılırken eski çizimin üstüne yapılıp yapılmayacağı belirlenir. İstersek<br />
+<code>plot(x1,y1,x2,y2,x3,y3,...)</code> şeklinde de birden çok çizim yapabilirdik. Fakat böyle tercih etmemin sebebi çizimlerin özelliklerini ayrı ayrı belirleyebilmek.</p>
+<p>Alttaki örnekte <code>:</code> parametresi kesik çizgili doğru çizer. <code>help plot</code> ile doğru ve nokta şekillerine bakabilirsiniz. Pek çok güzel seçenek mevcut. <code>legend</code> ile de çizimlerin adlarını koyabiliriz.</p>
+<pre class="prettyprint lang-matlab">figure
+plot(x, sin(x), '-g');
+hold on
+plot(x, cos(x), '--r')
+legend('sin', 'cos')
+hold off</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_05.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_05.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_05.png"  height="250" /></a></p>
+<p>Bundan sonra tekrar çizim yapan fonksiyonlardan herhangi birini (<code>plot</code>, <code>stem</code>, <code>bar</code>, <code>stairs</code>, vb.) cağırırsanız eski çizim silinir ve sadece yeni çizim gözükür. Haydi örnek olarak <code>stem</code> fonksiyonunu çizelim, biraz da varyete ekleyelim.</p>
+<pre class="prettyprint lang-matlab">stem(x,sin(x), '--ro','LineWidth',2,...
+'MarkerEdgeColor','k',...
+'MarkerFaceColor','g',...
+'MarkerSize',7)
+
+title('Sin grafiği')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_06.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_06.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_06.png" height="250" /></a></p>
+<p>Matrisleri resim gibi çizmeye bakalım:</p>
+<pre class="prettyprint lang-matlab">m = rand(16,16);
+imagesc(m)</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_07.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_07.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_07.png" height="250" /></a></p>
+<p>Renklendirme haritasi olarak gri kullanalım, eksenleri silelim ve oranları pikseller kare görünecek şekilde sabitleyelim:</p>
+<pre class="prettyprint lang-matlab">colormap gray
+axis image
+axis off</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlabprogramlama_08.png');"  href="../../wp-content/uploads/2008/04/matlabprogramlama_08.png"><img src="../../wp-content/uploads/2008/04/matlabprogramlama_08.png"  height="250" /></a></p>
+<p>İşimiz bitti, tüm figürleri kapatalım. <em>Not: Sadece <code>close</code> kullansaydık şu anki figürü kapatırdık.</em></p>
+<pre class="prettyprint lang-matlab">close all</pre>
+<p><strong>İpucu:</strong> Eğer döngülerin içinde <code>plot</code> fonksiyonunu (veya diğer çizim fonksiyonlarını) cağırırsanız her döngüdeki sonuç yerine son sonucu gorebilirsiniz. Tüm çizim sonuçlarını animasyon şeklinde görmek için <code>plot</code> fonksiyonundan sonra döngü içine <code>drawnow</code> komutunu giriniz.</p>
+<h2>Karmaşık Sayılarla İşlemler</h2>
+<p>MATLAB'de gerçel sayılar dışında karmaşık sayılarla da işlem yapılabilir. Karmaşık sayılar için "complex" veri tipi vardır. Karmaşık sayıları tanımlarken sanal değerleri için <code>i</code> veya <code>j</code> kullanılabilir. Daha önceden <code>i</code> veya <code>j</code>'yi başka değerlere atadıysanız (örneğin bir döngüde sayaç olarak) sanal birim olarak kullanamazsınız. Bu sebeple alternatif olarak <tt>1i</tt> veya <tt>1j</tt> seçeneklerini kullanmak daha iyi olacaktır. i'nin katları için de <code>4i</code>, <code>7j</code> gibi kullanabilirsiniz. </p>
+<pre class="prettyprint lang-matlab">1i</pre>
+<pre class="codeoutput">i =
+
+        0 + 1.0000i</pre>
+<pre class="prettyprint lang-matlab">1j</pre>
+<pre class="codeoutput">j =
+
+        0 + 1.0000i</pre>
+<p>Değişik karmaşık sayılar oluşturalım</p>
+<pre class="prettyprint lang-matlab">x = 1 + 4i</pre>
+<pre class="codeoutput">x =
+
+1.0000 + 4.0000i</pre>
+<pre class="prettyprint lang-matlab">x = real(x) + imag(x)*1i</pre>
+<pre class="codeoutput">x =
+
+25</pre>
+<pre class="prettyprint lang-matlab">theta = pi/4
+y = cos(theta) + sin(theta)*1j</pre>
+<pre class="codeoutput">theta =
+
+0.7854
+
+y =
+
+2.8284</pre>
+<p>Yukarıdaki örneği, Euler formülünü kullanarak da hesaplayalım, bakalım aynı mı?</p>
+<pre class="prettyprint lang-matlab">y = exp(1i*theta)</pre>
+<pre class="codeoutput">y =
+
+111.3178</pre>
+<p>Skalar değerler gibi, vektör ve matrisleri oluşturmak da mümkün:</p>
+<pre class="prettyprint lang-matlab">v = [x y 5-7i]</pre>
+<pre class="codeoutput">v =
+
+1.0e+002 *
+
+0.2500 1.1132 0.0500 - 0.0700i</pre>
+<pre class="prettyprint lang-matlab">A = [v;4+1i 3-8j -2-2j]</pre>
+<pre class="codeoutput">A =
+
+1.0e+002 *
+
+0.2500 1.1132 0.0500 - 0.0700i
+0.1000 0.0300 - 0.0800i  -0.0200 - 0.0200i</pre>
+<pre class="prettyprint lang-matlab">B = rand(size(A)) + rand(size(A))*1i</pre>
+<pre class="codeoutput">B =
+
+1.2382    5.5190    1.2364
+4.4993    3.3112    2.2622</pre>
+<p>Şimdi transpoze ve eşlenik transpozeyi tekrardan hatırlayalım. Sadece tek tırnak koyarsak, bu elemanların eşleniğini de alır.<br />
+Eşlenik almadan transpoze yapmak istersek <code>.'</code> kullanmalıyız.</p>
+<pre class="prettyprint lang-matlab">C1 = B'</pre>
+<pre class="codeoutput">C1 =
+
+1.2382    4.4993
+5.5190    3.3112
+1.2364    2.2622</pre>
+<pre class="prettyprint lang-matlab">C2 = B.'</pre>
+<pre class="codeoutput">C2 =
+
+1.2382    4.4993
+5.5190    3.3112
+1.2364    2.2622</pre>
+<p>Gerçel sayılardaki tüm işlemler karmaşık sayılarla da yapılabilir. Örneğin toplama, çıkarma, matris çarpımı, eleman eleman çarpım, fonksiyonlar, vb.</p>
+<pre class="prettyprint lang-matlab">A + B</pre>
+<pre class="codeoutput">ans =
+
+1.0e+002 *
+
+0.2624 1.1684 0.0624 - 0.0700i
+0.1450 0.0631 - 0.0800i   0.0026 - 0.0200i</pre>
+<pre class="prettyprint lang-matlab">B</pre>
+<pre class="codeoutput">ans =
+
+1.0e+002 *
+
+0.2376 1.0580 0.0376 - 0.0700i
+0.0550-0.0031 - 0.0800i  -0.0426 - 0.0200i</pre>
+<pre class="prettyprint lang-matlab">A * A'</pre>
+<pre class="codeoutput">ans =
+
+1.0e+004 *
+
+1.3091 0.0588 + 0.0915i
+0.0588 - 0.0915i   0.0181</pre>
+<pre class="prettyprint lang-matlab">A .* B</pre>
+<pre class="codeoutput">ans =
+
+1.0e+002 *
+
+0.3095 6.1436 0.0618 - 0.0865i
+0.4499 0.0993 - 0.2649i  -0.0452 - 0.0452i</pre>
+<pre class="prettyprint lang-matlab">sum(sum(A(:,1) * B(2,:)))</pre>
+<pre class="codeoutput">ans =
+
+352.5467</pre>
+<pre class="prettyprint lang-matlab">mean(B(:))</pre>
+<pre class="codeoutput">ans =
+
+3.0110</pre>
+<p>Bazı fonksiyonlar karmaşık değerler döndürebilir. Örneğin hızlı Fourier dönüşümü karmaşık sayılar döndürür.</p>
+<pre class="prettyprint lang-matlab">x = rand(8,1)</pre>
+<pre class="codeoutput">x =
+
+0.7319
+0.0405
+0.4245
+0.5402
+0.9538
+0.2089
+0.1163
+0.6462</pre>
+<pre class="prettyprint lang-matlab">y = fft(x)</pre>
+<pre class="codeoutput">y =
+
+3.6624
+-0.2661 - 0.1141i
+1.1448 + 0.9370i
+-0.1778 + 0.5022i
+0.7907
+-0.1778 - 0.5022i
+1.1448 - 0.9370i
+-0.2661 + 0.1141i</pre>
+<p>Sanırım başlangıç için bu kadar yeterli! Takıldığınız yerde MATLAB'in yardımını kullanabilirsiniz.</p>
+<p>Artık rahatça resimleri matris şeklinde okuma ve üzerinde işlem yapma konularına geçebiliriz. Bir dahaki yazıda kaldığımız yerden devam edelim.</p>
+
+			
+			</div>
+
+
+			<div class="post-meta-bottom well well-small"><span class="pull-left">Kategori: <a href="../../kategori/programlama/index.html" title="Programlama kategorisindeki tüm yazıları göster" rel="category tag">Programlama</a>  <span class="separator">|</span> Etiketler: <a href="../../etiket/matlab/index.html" rel="tag">matlab</a></span>
+                        <span class="pull-right">Son güncelleme: 14 Kasım 2013                                                </span></br>
+			<span class="pull-left"> &laquo; <a href="../turkce-harflerin-unicode-karsiliklari/index.html" rel="prev">Türkçe harflerin unicode karşılıkları</a></span>
+			<span class="pull-right"><a href="../matlab-ile-imge-islemeye-giris/index.html" rel="next">MATLAB ile İmge İşlemeye Giriş</a> &raquo;</span><br/>
+			</div>
+			<div class="clear"></div>
+		</div><!-- .post -->
+		<p><!-- Hupso Share Buttons - http://www.hupso.com/share/ --><a class="hupso_counters" href="http://www.hupso.com/share/"><img src="../../wp-content/uploads/2013/05/paylas.png" style="border:0px; padding-top:2px; float:left;" alt="Share Button"/></a><script type="text/javascript">var hupso_services_c=new Array("twitter","facebook_like","google");var hupso_counters_lang = "tr_TR";</script><script type="text/javascript" src="http://static.hupso.com/share/js/counters.js"></script><!-- Hupso Share Buttons --></p>
+		<p><a href="http://feeds.feedburner.com/ismailari"><img src=../../wp-content/uploads/2013/05/abone_ol.png></a> <a href="http://feeds.feedburner.com/ismailari"><img src="http://feeds.feedburner.com/~fc/ismailari?bg=FFFFFF&fg=003300&anim=0&label=okur" height="26" width="88" style="border:0" alt="Yazılara abone ol" title="Yazılara abone ol" /></a></p>
+
+		<div id="comments">
+
+
+<!-- You can start editing here. -->
+
+	<h2 class="section-title">17 yorum</h2>
+
+	<ol>
+
+	
+		<li class="alt" id="comment-76">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/f4df253e81a7887c3a3686e3ecde848a?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Murat Duman, 06 Mayıs 2008</div>
+								
+				<p>ismail bey size yeni bir tutorial konusu için öneri getirmek istiyorum. görüntü işleme işaret işlemenin bir alt dalı ve maalesef işaret işlemede genellikle okullarda olayın matematiksel yönünü olayın kendisiyle ilişkilendirmekten ziyade tamamen matematiksel yönünüyle alakalı bir eğitim veriliyor. işte tam bu noktada yeni konu olarak konvolusyon, fourier transformu, dft, dtft, fft…gibi işaret işlemenin içindeki geçen konuların matematiksel yönünden ziyade mantıksal yönüyle alakalı bir tutorial hazırlamanızın faydalı olacağına inanıyorum ve de neden mantıksal yönü üzerine vurgu yaptığımla alakalı bir örnek vermek istiyorum:<br />
+mesela iki boyutlu görüntü işleme iki uzaysal değişkene sahip fonksiyonun fouirer transformu alınınca ortaya çıkan dönüşüm fonksiyonunda frekans cinsinden w1, w2 değişkenleri bulunur falan filan diye giden bir matematiksel anlatım var ve olayın matematiksel yönüyle alakalı bir sorunum yok lakin neden bu ilahi dönüşüm yapılıyor, yani bu hastalığı iyileştiren mucizevi ilacın sırrı ne…<br />
+bu sadece bir örnekti…işaret işlemede bu gibi kavramların mantıksal yönüyle alakalı bir tutorialin çok işe yarayacağının tekrar üstüne basar çalışmalarınızda başarılar dilerim…</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-77">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 07 Mayıs 2008</div>
+								
+				<p>MATLAB’de bir değişkene atama yapılan herhangi bir satırın sonuna noktalı virgül koymazsan, o değişkenin yeni değerini ekrana basar. Alttaki iki satırı denersen farklarını görebilirsin:</p>
+<pre>resim1 = imread('resmim.jpg');
+resim2 = imread('resmim.jpg')</pre>
+<p>Tabii resim çok büyükse tümünü ekrana basmak yerine bir kısmını da basabilirsin, örneğin ilk 10luk kare bölgeyi görelim:</p>
+<pre>resim1(1:10,1:10)</pre>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-93">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/f4df253e81a7887c3a3686e3ecde848a?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Mustafa Yıldız, 02 Mart 2009</div>
+								
+				<p>İsmail Bey, çok yararlı bir paylaşım yapmışsınız ellerize sağlık. Çok işime yaradı sizin sayenizde matlab öğrenmeye başladım</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-655">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/fbe8d11fdf887d97f32bc74772e2f4c2?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Batuhan, 03 Mayıs 2012</div>
+								
+				<p>Matlab sınavıma çalışıyordum fakat bir sorum olacaktı. Bir program yazıyorum döngüde belli bir sayıdan sonra sonuç örneğin 123456e+018 biçiminde çıkıyor ben bunu tam sayı biçiminde istiyorum ya da rasyonel farketmez bunu m-file'da kodları yazarken nasıl kodlamam gerekiyor.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-656">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 04 Mayıs 2012</div>
+								
+				<p>Öncelikle basamak sayısını bulan bir fonksiyon olsun:</p>
+<pre>basamakSayisi = @(x) length(sprintf('%d', x));</pre>
+<p>Sonra herhangi bir tamsayıyı (tamsayı olduğundan emin olun), şöyle görüntüleyebilirsiniz:</p>
+<pre>sayi = 123456e+018;
+fprintf(['%' num2str(basamakSayisi(sayi)) '.0f\n'],sayi)</pre>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-782">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/80df9d2bd9091422e07362ab3b0c019e?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">cihan, 13 Ekim 2012</div>
+								
+				<p>ismail bey kofaktör dizeyi hakkında bilgi alabilirmiyim? araştırdım, help dosyasını insledim ama bulamadım. yardımcı olursanız çok sevinirim.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-785">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 17 Ekim 2012</div>
+								
+				<p>Kofaktör dizeyinden kastınız "<a onclick="javascript:pageTracker._trackPageview('/outgoing/en.wikipedia.org/wiki/Cofactor_(linear_algebra)#Matrix_of_cofactors');"  href="http://en.wikipedia.org/wiki/Cofactor_(linear_algebra)#Matrix_of_cofactors" rel="nofollow">Matrix of cofactors</a>" olmalı.</p>
+<p>İlgili sayfadaki arabölüme ve hemen altındaki "Adjugate" arabölümüne bakarsanız oradaki formülden kofaktör matrisinin şu şekilde hesaplanabileceğini çıkarabilirsiniz:</p>
+<p>Herhangi bir A dizeyinin koföktörü, bu dizeyin determinantı ile tersinin devriğinin çarpımıdır. Yani kısaca
+<pre>det(A) * inv(A).'</pre>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-837">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/e259a0018224aa91d9be890213a5e2b4?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">ali, 26 Aralık 2012</div>
+								
+				<p>Matlabda global değişkenler nasıl kullanılır ?</p>
+<p>Mesela bir fonksiyonunmuz var<br />
+[P,m]=gonder(str,m)<br />
+ana programdan olsun. Burada P<br />
+P(i).ad=str olsun fonksiyon içinde<br />
+fonksiyondan ana programa donerken P(i).ad= '' boşluk olarak donuyor acaba sorun ne?</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-864">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/e259a0018224aa91d9be890213a5e2b4?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">ali, 30 Ocak 2013</div>
+								
+				<p>Sayafnız cok yararlı ve cok ilgilimi cekti. Bunun için tesekkurler... Paylaşımlarınızda cok yararlı ... Eğer cevaplarsanız cok sevineceğim bir sorum var ... Matlabda struct arrayler ile ilgili ... </p>
+<p>Aşağıdaki örnek yapımız :</p>
+<p>Yapi(i).ad ='Mehmet'<br />
+Yapi(i).sad ='Ak'<br />
+Yapi(i).oran =3.45</p>
+<p>şeklinde oluştuğunu düşünürsek,</p>
+<p>fprintf('%s %d',yapi(i).ad,yapi(i).oran)</p>
+<p>ile ekrana bu bilgileri yazdığımızda karşımıza :</p>
+<p>Mehmet 3.450000 &gt;&gt; geliyor. Normal bir şekilde bunu nasıl yazdırabiliriz ? (; eklemeklemi ?)</p>
+<p>Bunun yanında </p>
+<p>Bu yapi değişkenini fprintf ile bazen yazdırabiliyorum ama bir fonksiyon içinde kullandığım zaman kesinlikle hata mesajı alıyorum buradaki parantezlerden dolayı olduğunu sanıyordum bunun için{ } parantezlerini kullandım bazen oldu ama çoğu zaman olmuyor. (Buda çok garibime gitmişti ...)</p>
+<p>Hata mesajıda :</p>
+<p>??? Error using ==&gt; fprintf<br />
+Function is not defined for 'cell' inputs.<br />
+Error in  ==&gt; Listele at 27<br />
+               fprintf('Kalan %d . kaydin adi : %s orani ise %3.5f\n',i,yapi(i).ad,yapi(i).oran)<br />
+Error in  ==&gt; sistem_a at 151<br />
+               Listele(s)</p>
+<p>Not : Böyle bir struct yapı içindeki dizinin herhangi bir elemanının ad veya oran adlı değerlerini birlikte nasıl yazırabiliriz? Sorun acaba biri float diğeri string diyemi ? ve neden normal program içinde yazıyorda fonksiyona gecince bu hatayı veriyor. İlgilenirseniz çok sevinirim ...  </p>
+<p>Mail adresim  :  <a onclick="javascript:pageTracker._trackPageview('/mailto/andersonhandsom@gmail.com');"  href="mailto:andersonhandsom@gmail.com">andersonhandsom@gmail.com</a></p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1066">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/02b109bd292a95230ad7f41568f4dfd7?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Hakan_tek, 14 Temmuz 2013</div>
+								
+				<p>Yararlı bir yazı. Çok teşekkürler.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1077">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/adcfcff694e0852eee2ed914359c0955?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">kaan, 12 Ağustos 2013</div>
+								
+				<p>yazı için çoook ama çok teşekkürler...<br />
+görüntü işleme ile uğraşmak istiyorum.programlama bilgim giriş seviyesinde.sizce matlab ile mi yoksa opencv ile mi başlamalıyım.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1078">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 15 Ağustos 2013</div>
+								
+				<p>Teşekküler. Bu yapacağınız işe bağlı. Bence konu ile ilgili OpenCV'de halihazırda yazılmış fonksiyonlar var mı diye bakabilirsiniz. Eğer varsa ve işleri "gerçek zamanlı" yapmak gibi bir hedefiniz varsa OpenCV kullanmanızı öneririm. Ama gerçek zamanlı olması hedefiniz yoksa MATLAB kullanabilirsiniz. Resim ve görüntü işlemede MATLAB da çok hünerlidir. Belki aradığınız şeyi yapan bir kaynak MATLAB file exchange'de vardır.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1102">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/15086f716fc38eec5f7081a28094df03?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">dilara, 30 Eylül 2013</div>
+								
+				<p>MATLAB de sadece toplama işlemi kullanılarak sinx değeri nasıl hesaplanır?</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1103">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 30 Eylül 2013</div>
+								
+				<p>Yapamazsınız. Çarpma da lazım. Sinüs'ün Taylor serisi şeklinde yazımına bakın.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1121">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/15086f716fc38eec5f7081a28094df03?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">ayça, 16 Ekim 2013</div>
+								
+				<p>x=0:0.001:2*pi<br />
+sin(x), cos(x), ve exp(x) fonksiyonları her x değeri için aşağıda terim (eleman) sayısı belirtilen seri açılımları kullanılarak hesaplanacak.<br />
+önce seri açılımında 1 elamanı ile daha sonra 3 eleman kullanılarak,<br />
+en sonda ise 10 eleman kullanılarak ayrı ayrı grafikleri çizilecek<br />
+bunu nasıl yapabilirim yardımcı olabilir misiniz?</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1127">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/157fedde3a78f47698d8a6cb43a6fa76?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">kubra, 19 Ekim 2013</div>
+								
+				<p>x=0:0.001:2*pi<br />
+sin(x), cos(x), ve exp(x) fonksiyonları her x değeri için aşağıda terim (eleman) sayısı belirtilen seri açılımları kullanılarak hesaplanacak.<br />
+önce seri açılımında 1 elamanı ile daha sonra 3 eleman kullanılarak,<br />
+en sonda ise 10 eleman kullanılarak ayrı ayrı grafikleri çizilecek<br />
+bunu nasıl yapabilirim yardımcı olabilir misiniz?</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1131">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/82fada8c53918c51058b5bc907f94a58?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Şaban, 29 Ekim 2013</div>
+								
+				<p>Matlab da konvolüsyon konusunu araştırırken sitenizi gördüm de acaba bu konuda bilgi verebilir misiniz diziler üzerinde konvolüsyon yontemini yapmam ve bunu grafik olarak da göstermem gerekiyor nasıl yapabilirim acaba? özellikle grafik kısmı için yardımcı olursanız sevinirim.... Kolay gelsin...</p>
+			</div>
+		</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+
+
+
+<div id="respond">
+
+	<h2 class="section-title">Yorum ekle</h2>
+
+	<form method="post" action="http://ismailari.com/wp-comments-post.php">	
+	
+		<div id="comment-form">
+	
+			
+		<label for="author">İsim (gerekli)</label></br>
+		<input type="text" name="author" id="author" value="" size="40" tabindex="1" aria-required='true' />
+
+		<label for="email">E-posta (yayınlanmayacaktır) (gerekli)</label></br>
+		<input type="text" name="email" id="email" value="" size="40" tabindex="2" aria-required='true' />
+
+		<label for="url">İnternet sitesi</label>
+		<input type="text" name="url" id="url" value="" size="40" tabindex="3" /></br>
+		
+				<label for="comment">Yorum</label>
+		<textarea name="comment" id="comment" cols="80%" rows="10" class="span8" tabindex="4"></textarea>
+		
+		</div>							
+
+		<input name="submit" type="submit" id="submit" tabindex="5" value="Yorumu gönder" />
+		<input type="hidden" name="comment_post_ID" value="1513" />
+		<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b5322a0e0a" /></p><!-- BEGIN: subscribe to comments reloaded --><p><input style='width:30px' type='checkbox' name='subscribe-reloaded' id='subscribe-reloaded' value='yes' /> Yorumları bana e-posta ile yolla. Yorum girmeden de <a href='../../index-page_id=345&srp=1513&sra=s.html'>abone</a> olabilirsiniz.</p><!-- END: subscribe to comments reloaded -->
+	</form>
+
+</div>
+
+
+
+		
+
+<div id="footer">
+<br />
+<hr noshade="noshade" color="#CCCCCC"/>	
+    ismailari.com &copy; 2015</div><!-- #footer -->
+</div></div>
+<script>function hefo_popup(url, width, height) {
+var left = Math.round(screen.width/2-width/2); var top = 0;
+if (screen.height > height) top = Math.round(screen.height/2-height/2);
+window.open(url, "share", "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+return false;
+}</script>
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1563790-10");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<div id="un-thankyou" style="display: none;">
+	<h2>Teşekkürler</h2>
+	<p>
+		Geribildiriminiz iletilmiştir.	</p>
+	<a href="#" id="un-feedback-close"><img src="../../wp-content/plugins/usernoise/images/ok.png" id="thankyou-image" alt="Close"></a>
+</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201515'></script>
+
+	<script src="http://stats.wordpress.com/e-201515.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7.2',blog:'10049041',post:'1513',tz:'2'});
+	var load_cmc = function(){linktracker_init(10049041,1513,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+<script src="../../wp-content/themes/iacom/assets/js/jquery.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-transition.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-alert.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-modal.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-dropdown.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-scrollspy.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tab.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tooltip.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-popover.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-button.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-collapse.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-carousel.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-typeahead.js"></script>
+
+<script>
+$('.gist').each(
+ function() { if($(this).find('.gist-data').height() < 80) {
+                  $(this).find('.line-numbers').hide(); 
+              }
+            }
+);
+$('.gist-meta').hide();
+</script>
+
+
+</body>
+</html>
+<!-- Localized -->

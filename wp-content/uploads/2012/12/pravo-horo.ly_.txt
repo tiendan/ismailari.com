@@ -1,0 +1,163 @@
+\version "2.16.1"
+
+\header {
+  title = "Право Хоро"
+  tagline = ""
+  subtitle = "Bulgar Halk Ezgisi"
+  %subsubtitle = "Nota: İsmail Arı"
+}
+
+\paper{
+  #(set-paper-size "a4")
+  top-margin = 2\cm
+  bottom-margin = 2.3\cm
+  left-margin = 2.0\cm
+  right-margin = 1\cm
+  oddFooterMarkup = ""
+  evenFooterMarkup = \oddFooterMarkup
+  oddHeaderMarkup = \markup { 
+    \fill-line  {
+      \on-the-fly #not-first-page \fontsize #3 \bold \fromproperty #'header:title
+      " "
+      \on-the-fly  #not-first-page \fromproperty #'page:page-number-string
+    }
+  } 
+  evenHeaderMarkup = \oddHeaderMarkup
+  annotate-spacing = ##f
+  markup-system-spacing #'basic-distance = #24
+  top-system-spacing #'basic-distance = #20
+  system-system-spacing #'basic-distance = #15
+}
+
+\language "italiano"
+
+harmonies = \chordmode {
+  \repeat volta 2 {
+    la2 la4 re mi2 mi4 la
+    re2:min mi4 la mi2 la2
+  }
+  \repeat volta 2 {
+    la1 la1
+    la1 mi2 la2
+  }
+  \repeat volta 2 {
+    la1. mi4 la4
+    la1. mi4 la4
+  }
+  \repeat volta 2 {
+    re2 la2 mi2 la2
+    re2 la2 mi2 la2
+  }
+  \repeat volta 2 {
+    la1 la1
+  }
+  \repeat volta 2 {
+    si4 r2 si4 si4 r2 si4
+    si4 r2 si4 la4:min r4 si2
+  }
+  %\repeat volta 2 {
+    la2:min si2 la2:min si2
+    la2:min si2 la2:min si2
+  %}
+  la1 la1
+  \repeat volta 2 {
+    la1:min la1:min 
+    la1:min la1:min 
+  }
+  %\repeat volta 2 {
+    la1:min la1:min
+  %}
+  si1
+  \repeat volta 2 {
+    si4 la2:min si4 la2:min 
+  }
+  \alternative {
+    {si} {si}
+  }
+  \repeat percent 3 {la:min si}
+  la:min si
+}
+
+melody = \relative do'' {
+  \time 2/4
+  \override Slur #'thickness = #2.0
+  \override Tie #'thickness = #2.0
+  
+  \key la \major
+  \repeat volta 2 {
+    dod8.\trill-2 la16-1 dod8.-2 re16-3 | mi8.-2\trill la,16-1 fad'4-3\trill | \times 2/3 {mi8-2( fad-3) fad} fad8. fad16 | mi8.-2\trill( re16-1) dod4-2\trill |
+    si8.\trill-2 la16-1  la8. la16 | 
+    \override Stem #'direction = #DOWN
+    \times 2/3 {si8-2( la-1 si-2)} dod4-3 |
+    \revert Stem #'direction
+    dod8.\trill-2( si16-1) \times 2/3 {si8-1( dod-3 si-1)} | la8.-2\trill mi16-1 la4-2 \break
+  }
+  \repeat volta 2 {
+    si8.-2\trill la16-1  la8. la16 | \times 2/3 {dod8-3( re-4 mi-5)} dod4-3\trill |  si8.-2\trill la16-1  
+    \override Stem #'direction = #DOWN
+    \times 2/3 {la8-2( mi-1 la-2)} | 
+    \revert Stem #'direction
+    \times 2/3 {dod8-3( re-4 si-2)} dod4-3\trill |
+    si8.\trill la16  la8. la16 | \times 2/3 {dod8( re mi)} dod4\trill |  dod8.\trill si16  \times 2/3 {si8-1( dod-3 si-1)} | la8.\trill( mi16) la4 \break 
+  }
+  \repeat volta 2 {
+    \times 2/3 {dod8-2( re-3) si-1} dod8.-2\trill la16-1 | si8.-2\trill la16-1 \times 2/3{ mi'8-5( la,-1) la-1} | \times 2/3 {dod8( re) si} dod8.\trill la16 | si8.-2\trill mi,16-1 la8.-2\trill mi16-1 | \break 
+    \times 2/3 {dod'8( re) si} dod8.\trill la16 | si8.\trill la16 \times 2/3{ mi'8( la,) la} | \times 2/3 {dod8( re) si} dod8.\trill la16 | si8.\trill mi,16 la4-2 \break  
+  }
+  \repeat volta 2 {
+    \times 2/3 {fad'8-2( sol-3) la-4} \times 2/3 {fad8-2( sol-3) mi-1} | fad8.-2\trill( mi16-1) \times 2/3 {mi8-2( la,-1) la-1} | \times 2/3 {dod8-2( re-3) mi-4} \times 2/3 {dod8-2( re-3) si-1} | dod8.-2\trill la16-1 \times 2/3 {mi'8-5( la,-1) la-1} | \break
+    \times 2/3 {fad'8( sol) la} \times 2/3 {fad8( sol) mi} | fad8.\trill( mi16) \times 2/3 {mi8( la,) la} | \times 2/3 {dod8( re) mi} \times 2/3 {dod8( re) si} | dod8.-2\trill la16-1 si8.-2\trill la16-1 \break
+  }
+  \repeat volta 2 {
+    \times 2/3 {dod8( re) mi} \times 2/3 {dod8( re) si} | dod8.\trill( la16) \times 2/3 {mi'8( la,) la} | \times 2/3 {dod8( re) mi} \times 2/3 {dod8( re) si} | dod8.\trill la16 si8.\trill la16 \break
+  }
+  \key sol \major
+  \repeat volta 2 {
+    \times 2/3 {fad'8-3( mi-1) fad-3}  red8.-2\trill si16-1 | \times 2/3 {mi8-3( red-2) do-1}  red8.-2\trill si16-1 | \times 2/3 {fad'8( mi) fad}  red8.\trill si16 | \times 2/3 {mi8( red) do}  red8.\trill si16 |  \break   
+    \times 2/3 {fad'8( mi) fad}  red8.\trill si16 | \times 2/3 {mi8( red) do}  red8.\trill si16 | \times 2/3 {fad'8-3 mi-1 red-2} \times 2/3 {do8-1 si-2 la-1} |   si8.-2\trill fad16-1  si8.-2\trill fad16-1 |  \break   
+  }
+  \repeat volta 2 {
+    \times 2/3 {fad'8-3 mi-1 red-2} \times 2/3 {do8-1 si-2 la-1} | \times 2/3 {si8-2 si si} fad8.-1\trill( si16-3) |\times 2/3 {fad'8-3 mi-1 red-2} \times 2/3 {do8-1 si-2 la-1} | si8.-2\trill( fad16-1) si8.-2\trill( fad16-1) | \break
+    \times 2/3 {fad'8 mi red} \times 2/3 {do8 si la} | \times 2/3 {si8 si si} fad8.\trill( si16) |\times 2/3 {fad'8 mi red} \times 2/3 {do8 si la} | si8.\trill( fad16) si4-2 \break
+  }
+  \key la \major
+  \acciaccatura sold8-2( la2-1~) | la~ | la~ | la |
+  \repeat volta 2 {
+    \times 2/3 {sol'8-3( la-4) fad-2} \times 2/3 {la8-4( sol-3) fad-2} | \times 2/3 {fad8-2( sol-3) fad-2} fad8.-2\trill(mi16-1) |  \times 2/3 {red8-2( mi-1 fad-3)}  \times 2/3 {mi8-1( red-2 do-1)} | si8.-2\trill la16-1 mi'8.-2\trill( la,16-1)       
+    \times 2/3 {sol'8( la) fad} \times 2/3 {la8( sol) fad} | \times 2/3 {fad8( sol) fad} fad8.\trill( mi16) |  \times 2/3 {red8( mi fad)}  \times 2/3 {mi8( red do)} | si8.\trill( la16) la4-1
+  }
+  \key sol \major
+  \repeat volta 2 {
+    \times 2/3 {red8-2( mi-1 fad-3} \times 2/3 {mi8-4 red-2 do-1)} | si8.-2\trill la16-1 mi'8.-2\trill la,16-1\times 2/3 {red8-3( mi fad} \times 2/3 {mi8 red do)} | si8.\trill la16 la4
+  }
+  \acciaccatura la8-1( si2-2~) | si |
+  \repeat volta 2 {
+    si8.-2\trill fad16-1 \times 2/3 {mi'8-4 red-3 do-2} | \times 2/3 {do8-2( la-1) do-3} si8.-2\trill fad16-1 | \times 2/3 {mi'8-4 red-3 do-2} \times 2/3 {do8-2( la-1) do-3}
+  }
+  \alternative {
+    { si8.-2\trill fad16-1 si8.-2\trill fad16-1 }
+    { si4-2 r4 }
+  }
+  \bar "||"
+  \repeat percent 3 { \times 2/3 {mi8 red do} \times 2/3 {do8( la) do} |  si8.\trill fad16 si8.\trill fad16 | }
+  \times 2/3 {mi'8 red do} \times 2/3 {do8( la) do} |  si4-2 r4
+  \bar "|."
+}
+
+\score {
+  %\unfoldRepeats 
+  %\transpose la do'
+  <<
+    \new ChordNames {
+      \set chordChanges = ##t
+      \harmonies
+    }
+    \new Voice {
+      \set Staff.midiInstrument = #"flute"
+      \melody
+    }
+  >>
+  \layout { }
+  %\midi { \tempo 4 = 125 }
+}
+

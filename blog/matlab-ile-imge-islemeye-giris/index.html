@@ -1,0 +1,1233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr-TR">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="İsmail Arı&#039;nın anasayfası" />
+<meta name="generator" content="WordPress 3.8.5" /><!-- Please leave for stats -->
+<link rel="icon" type="image/png" href="../../wp-content/themes/iacom/assets/img/iacom.png">
+
+<title>MATLAB ile İmge İşlemeye Giriş | ismailari.com</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ 
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    showProcessingMessages : false,
+    messageStyle : "none" ,    
+    showMathMenu: false ,
+    TeX: { 
+      equationNumbers: {autoNumber: "all"},
+      Macros: {
+      R: "{\\mathbb R}",
+      sign: "{\\mathop{\\mathrm{sign}}}",
+      argmax: "\\mathop{\\rm arg \\, max \\,}\\limits",
+      argmin: "\\mathop{\\rm arg \\, min \\,}\\limits",	
+      },
+      extensions: ["AMSmath.js", "AMSsymbols.js"]
+    },
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-orig.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/docs.css" rel="stylesheet">
+<link href="../../wp-content/themes/iacom/assets/css/tomorrow.css" type="text/css" rel="stylesheet" />
+
+
+<style type="text/css">
+  body {
+	padding-bottom: 40px;
+  }
+</style>
+
+
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="../../wp-content/themes/iacom/google-code-prettify/lang-matlab.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com &raquo; MATLAB ile İmge İşlemeye Giriş Yorum Beslemesi" href="feed/index.html" />
+<link rel='stylesheet' id='usernoise-button-css'  href='../../wp-content/plugins/usernoise/css/button-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='usernoise-form-css'  href='../../wp-content/plugins/usernoise/css/form-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='../../wp-content/plugins/usernoise/vendor/font-awesome/css/font-awesome-ver=3.7.9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='../../wp-content/plugins/tablepress/css/default.min-ver=1.3.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var usernoiseButton = {"text":"ileti\u015fim","style":"background-color: #404040; color: #FFFFFF","class":"un-left un-has-border","windowUrl":"\/wp-admin\/admin-ajax.php?action=un_load_window","showButton":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/usernoise.js?ver=3.7.9'></script>
+<script type='text/javascript' src='../../wp-content/plugins/usernoise/js/button.js?ver=3.7.9'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc-rsd.php.html" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='MATLAB Programlamaya Giriş' href='../matlab-programlamaya-giris/index.html' />
+<link rel='next' title='En güzeli en sadesi' href='../en-guzeli-en-sadesi/index.html' />
+<meta name="generator" content="WordPress 3.8.5" />
+<link rel='shortlink' href='http://wp.me/pGadj-or' />
+<style type="text/css">
+* {
+	text-rendering: optimizeLegibility;
+}
+sup {
+	vertical-align: 60%;
+	font-size: 75%;
+	line-height: 100%;
+}
+sub {
+	vertical-align: -10%;
+	font-size: 75%;
+	line-height: 100%;
+}
+.amp {
+	font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", "Warnock Pro", serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 1.1em;
+	line-height: 1em;
+}
+.caps {
+	font-size: 90%;
+}
+.dquo {
+	margin-left:-.40em;
+}
+.quo {
+	margin-left:-.2em;
+}
+/* because formatting .numbers should consider your current font settings, we will not style it here */
+</style>
+
+<!-- All in One SEO Pack 2.1.1 by Michael Torbert of Semper Fi Web Design[551,634] -->
+<meta name="description" content="Bu kaynaktan dilediğiniz şekilde yararlanabilirsiniz. MATLAB ile ilgili eğitim videoları için Açık Ders projesine göz atabilirsiniz. İlk yazıda hızlıca M" />
+
+<meta name="keywords" content="matlab" />
+
+<link rel="canonical" href="index.html" />
+<!-- /all in one seo pack -->
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {
+    prefer: {Firefox: "HTML"}
+  }
+});
+</script>
+
+
+<script src="../../wp-content/themes/iacom/assets/js/iacom.js"></script>
+
+<link rel="stylesheet" href="../../wp-content/themes/iacom/style.css" type="text/css" media="screen" />
+
+<link rel="alternate" type="application/rss+xml" title="ismailari.com RSS Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="ismailari.com Comments RSS Feed" href="../../comments/feed/index.html"  />
+
+<link rel="pingback" href="../../xmlrpc.php.html" />	
+
+
+</head>
+
+<body onload="prettyPrint()">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a class="" href="../../index.html">İsmail Arı</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Yazılar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../index.html">Son Yazılar</a></li>
+              <li><a href="../../tum-yazilar/index.html">Tüm Yazılar</a></li>
+              <li class="divider"></li>
+              <li><a href="http://feeds.feedburner.com/ismailari">Yazılara Abone Ol</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notlar<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-header">MATLAB Notları</li>
+              <li><a href="../matlab-programlamaya-giris/index.html">MATLAB Programlamaya Giriş</a></li>
+              <li><a href="index.html">MATLAB ile İmge İşlemeye Giriş</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Yapay Öğrenme</li>
+              <li><a href="../temel-bilesenler-analizi/index.html">Temel Bileşenler Analizi (PCA)</a></li>
+              <li><a href="../tekil-deger-ayrisimi-1/index.html">Tekil Değer Ayrışımı (SVD)</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Akademisyene Reçeteler</li>
+              <li><a href="../bir-makaleyi-nasil-okumali/index.html">Bir Makaleyi Nasıl Okumalı?</a></li>
+            </ul>
+          </li>
+          <li><a href="../../acik-ders/index.html">Açık Ders</a></li>
+          <li><a href="../../baglantilar/index.html">Bağlantılar</a></li>
+        </ul>
+        <form class="navbar-search" method="get" action="http://ismailari.com">
+          <input type="text" class="search-query span2" placeholder="Ara" id="s" name="s" type="text"  value="">
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	 <div class="container">
+	<div id="content" class="row">
+	<div class="span8">
+		
+				<div id="post-1515" class="post">
+			<h1 class="post-title">MATLAB ile İmge İşlemeye Giriş</h1>								
+			<div class="post-meta-top">İsmail Arı, 6 Nisan 2008</div>
+			<div class="post-content">
+				<p><em> Bu kaynaktan dilediğiniz şekilde yararlanabilirsiniz. MATLAB ile ilgili eğitim videoları için <a href="../../acik-ders/index.html">Açık Ders</a> projesine göz atabilirsiniz.</em></p>
+<p><a href="../matlab-programlamaya-giris/index.html">İlk yazıda</a> hızlıca MATLAB programlamanın temellerini atmıştık. Şimdi de sıra geldi görüntü işlemek için gerekli temellere. Bundan böyle ilgi alanımıza resimler ve videolar girecek! Videoların arka arkaya gelen (yani içinde zamansal bilgi barındıran) imge/resim dizisi olduğunu biliyoruz.</p>
+<p>Cevap aradığımız sorular basitçe şöyle:</p>
+<div>
+<ul>
+<li>Resimleri koda nasıl aktarırız?</li>
+<li>Programlarımızda kullanmak istesek nasıl ifade ederiz, renkleri nasıl elde ederiz?</li>
+<li>Resimlere nasıl matematiksek işlemler uygularız?</li>
+</ul>
+</div>
+<p><span id="more-1515"></span></p>
+<p>Bugün resim türleri, diskten resim okuma ve diske geri yazma, resim filtreleme gibi temellere değinelim. Videolarla çalışma işini de başka bahara bırakalım.</p>
+<div class=note>Bu yazıdaki kodları çalıştırabilmeniz için İmge İşleme Araçkutusu (Image Processing Toolbox) yüklü olmalıdır. Bunu, komut satırına <code>ver</code> komutunu girerek öğrenebilirsiniz. Örneğin bendeki MATLAB'de Image Processing Toolbox sürüm 6.0 yüklü.</div>
+<p>Yine <a href="../matlab-programlamaya-giris/index.html">Matlab Programlamaya Giriş</a>'te yaptığımız gibi işlere başlamadan önce <code>clear</code> ile ortamdaki değişkenleri temizleyelim ve <code>clc</code> ile de komut ekranını temizleyelim. Ve artık konumuza geçelim.</p>
+<pre class="prettyprint lang-matlab">clear
+clc</pre>
+<h2>Başlarken<a name="2"></a></h2>
+<p>Bilindiği üzere resimler farklı renklere sahip küçük küçük blokların bir araya gelmesiyle oluşur. Yani resimlerin yapıtaşları piksel adını verdiğimiz bu bloklardır. Eğer ekran çözünürlüğünü biraz azaltıp ekrana yaklaşırsanız pikselleri rahatlıkla gözlemleyebilirsiniz.</p>
+<p>Bahsedilen pikselleri değerler olarak düşünürsek resmi de bu değerlerden oluşan matris olarak düşünmeliyiz. Bu değerleri kaç seçersek deri rengine benzer olur, en yüksek kaç seçebiliriz, skaler mi olmalı yoksa vektör olabilir mi gibi soruları cevaplamalıyız. Ancak bu sorulara çözüm getirdiğimiz takdirde (yani değerlerin ifade edilişi hakkında bir uzlaşıya vardığımızda) ekrandan istediğimiz renkleri göstermesini bekleyebiliriz.</p>
+<h2>MATLAB'de Resim Türleri</h2>
+<p>Resimleri temel olarak dört türe ayırabiliriz:</p>
+<div>
+<ol>
+<li>İkilik resimler</li>
+<li>İndekslenmiş resimler</li>
+<li>Gri seviye resimler</li>
+<li>Gerçek-renkli resimler</li>
+</ol>
+</div>
+<p>Şimdi teker teker bunları ele alalım.</p>
+<h3>İkilik resimler</h3>
+<p>İkilik bir resimde her piksel 0 (siyah) veya 1 (beyaz) değerine sahiptir ve resim <code>logical</code> tipinde saklanır. Yazılarda ikilik resimler için <code>bw</code> önekini kullanacağız.</p>
+<p><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/access/helpdesk/help/toolbox/images/intro4.gif');"  href="http://www.mathworks.com/access/helpdesk/help/toolbox/images/intro4.gif" alt=""><img src="http://www.mathworks.com/access/helpdesk/help/toolbox/images/intro4.gif" alt="" /></a></p>
+<p>Yukarıda ikilik bir resme ve piksel değerlerine güzel bir örnek gösterim var. Şimdi de biz bir örnek yapalım. MATLAB'in yüklenmiş olduğu dizini kök dizin olarak kabul edersek <code>toolbox/images/imdemos</code> dizininde örnek resimler var. Bunlardan <code>circles.png</code> resmini okuyalım.</p>
+<div class=note>Buradaki resimleri okumak için uzun uzun adres yazmaya gerek yok çünkü bu dizin <code>path</code> ile görülebiliyor. MATLAB dosya erişimlerinde, bulunduğunuz dizini baştaymış gibi düşünerek <code>path</code> fonksiyonuyla gözüken dizinleri sırası ile dener.</div>
+<pre class="prettyprint lang-matlab">bwImg = imread('circles.png');
+imshow(bwImg)
+title('İkilik resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_01.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_01.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_01.png" height="250" /></a></p>
+<p>Bakalım <code>bwImg</code>'nin boyutları ve tipi neymiş?</p>
+<pre class="prettyprint lang-matlab">sz = size(bwImg)
+imgType = class(bwImg)</pre>
+<pre class="codeoutput">sz =
+
+256   256
+
+imgType =
+
+logical</pre>
+<p>Peki içerdiği farklı değerler nelermiş?</p>
+<pre class="prettyprint lang-matlab">unique(bwImg)</pre>
+<pre class="codeoutput">ans =
+
+0
+1</pre>
+<p>Görüldüğü üzere bu resim <code>256x256</code>'lık bir matris ve <code>logical</code> tipinde. Yani sadece <code>0</code> ve <code>1</code> değerlerinden oluşuyor. Peki bu matrisin 5. satırındaki elemanlar resimde nereye tekabül ediyor? Beyaza boyayıp görelim.</p>
+<pre class="prettyprint lang-matlab">bwImgCopy = bwImg;
+bwImgCopy(5,:) = 1;
+imshow(bwImgCopy)</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_02.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_02.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_02.png" height="250" /></a></p>
+<p>Peki 7.sütun?</p>
+<pre class="prettyprint lang-matlab">bwImgCopy = bwImg;
+bwImgCopy(:,7) = 1;
+imshow(bwImgCopy)</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_03.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_03.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_03.png" height="250" /></a></p>
+<p>Demek ki resmi ifade eden matrisin satırları resmin yatay elemanlarını, sütunları da resmin dikey elemanlarını oluşturuyor, fakat <code>(1,1)</code> koordinatları resmin sol alt değil de <strong>sol üst</strong> kösesine denk geliyor.</p>
+<p>Görüntü işleme de ikilik resimleri genelde maske olarak kullanırız. Yani işlem yapacağımız bir resimle eş boyutlarda bir maske oluştururuz. Resmi işleme sokarken yalnızca ilgili maskede beyaz olan yerleri kullanırız. İlerideki yazılarda buna uygun örnekler mutlaka denk gelir, şimdilik bitirelim.</p>
+<h3>İndekslenmiş resimler</h3>
+<p>Bu konuya başlamadan bilmemiz gereken birşey var: Bilgisayar ekranında gördüğümüz tüm renkler üç ana rengin belli oranlarda karışımından oluşur. Işıktaki ana renkler kırmızı, yeşil ve mavidir. Literatürde toplamsal (additive) renkler olarak geçer. RGB (R=kırmızı, G=yeşil, B=blue) kısaltması olarak da karşımıza çıkar.</p>
+<p><img title="Toplamsal renkler" src="../../wp-content/uploads/2008/04/color_02.gif" alt="Toplamsan renkler" width=300/></p>
+<p><em>(Halbuki bize resim dersinde yeşil yerine sarıyı göstermişlerdi :) Resim dersinde gördüğümüz renkler çıkarımsal (subtractive) renklerdi. Yazıcıda da kullanılan bu renkler cam böbeği (cyan), magenta ve sarıdır.)</em></p>
+<p><img title="Çıkarımsal renkler" src="../../wp-content/uploads/2008/04/color_01.gif"  width=300alt="Çıkarımsal renkler" /></p>
+<p>Artık herhangi bir rengin 3 farklı bileşenin karışımından oluştuğunu biliyoruz. Şimdi şöyle düşünün, siz bana her piksel için ona ait üç değeri değil de sadece bir değer göndermek istiyorsunuz. Benim gelen renkleri çözümleyebilmem için bir anahtara (eşleştirme haritasına) sahip olmam lazım ki örneğin bana 3 yolladığınız da turuncu demek istediğinizi bileyim. Yani bana yollayacağınız her farklı değer için bir tane de 3 elemanlı anahtar yollamanız gerekli. İşte bu anahtara <code>colormap</code>, skalar değerlerden oluşan bu matrise de indekslenmiş resim diyoruz. Bu değerler <code>logical</code>, <code>uint8</code>, <code>uint16</code>, <code>single</code> veya <code>double</code> tipinden olabilirler. <code>m</code> adet farklı değer olduğunu düşünürsek, indekslenmiş resim <code>single</code> veya <code>double</code> tipinde ise değerler <code>1</code> ile <code>m</code> arasında,  diğer tipler içinse değerler <code>0</code> ile <code>m-1</code> arasında olmalı. <code>colormap</code> de <code>mx3</code>'lük, her satırı bir renge denk düşen <code>double</code> bir matris olmalı.</p>
+<p><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/access/helpdesk/help/toolbox/images/intro2.gif');"  href="http://www.mathworks.com/access/helpdesk/help/toolbox/images/intro2.gif" alt=""><img src="http://www.mathworks.com/access/helpdesk/help/toolbox/images/intro2.gif" alt="" /></a></p>
+<p>Üstteki örnekte görüldüğü üzere <code>5</code> ile ifade edilen renk aslında 5. satırdaki <code>0.2902xR + 0.0627xG + 0.0627xB</code>'dir.</p>
+<p>Şimdi de kendi örneğimize geçelim ve palyaço (<em>clown</em>) resmini yükleyelim. <code>X</code> değerini indekslenmiş resim, <code>map</code>'i de anahtar olarak kullanalım.</p>
+<pre class="prettyprint lang-matlab">s = load('clown')</pre>
+<pre class="codeoutput">s =
+
+X: [200x320 double]
+map: [81x3 double]
+caption: [2x1 char]</pre>
+<p>Dikkat ederseniz resimleri okumak için genelde <code>imread</code> kullanıyoruz, fakat indekslenmiş resimlerin renk anahtarına ihtiyacımız olduğu için önceden hem değerleri hem de anahtarı kaydetmişiz ve şimdi onları <code>load</code> ile yüklüyoruz.</p>
+<p>Mesela palyaço resminin <code>(2,5)</code> koordinatında hangi renk olacakmış, bir bakalım. <em>(Not: <code>s</code> değişkeni bir nesne ve bu nesneye ait değişkenlere ulaşabilmek için nokta operatörünü kullanıyoruz.)</em></p>
+<pre class="prettyprint lang-matlab">s.X(2,5)</pre>
+<pre class="codeoutput">ans =
+
+69</pre>
+<p>Peki <code>69</code> ile ifade edilen renk hangisi?</p>
+<pre class="prettyprint lang-matlab">s.map(69,:)</pre>
+<pre class="codeoutput">ans =
+
+0.9961    0.7031    0.1250</pre>
+<p>O halde bu renk bol miktarda kırmızı ve yeşil, az miktarda da mavi içeriyor.</p>
+<p>Kaç farklı renk bulunduğuna bakalım:</p>
+<pre class="prettyprint lang-matlab">size(s.map,1)</pre>
+<pre class="codeoutput">ans =
+
+81</pre>
+<p>İndekslenmiş resimleri göstermek için iki adım kullanacağız.</p>
+<pre class="prettyprint lang-matlab">image(s.X)
+colormap(s.map)
+title('İndekslenmiş resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_04.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_04.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_04.png" height="250" /></a></p>
+<p>Başka renk anahtarları kullansaydık, başka resimler gözleyebilirdik! <code>colormap</code> fonksiyonunun kullanımına bakarsanız önceden tanımdı bazı değerlerle de kullanabilirsiniz. Haydi birisini deneyelim:</p>
+<pre class="prettyprint lang-matlab">colormap(summer)
+title('''summer'' renk anahtarı ile indekslenmiş resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_05.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_05.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_05.png" height="250" /></a></p>
+<p>Bu alt konuyu bitirmeden önce bu kullanımın faydalarını düşünelim. Her piksel için 3 elemanlı vektör kullansaydık toplamda çok yer kaplayacaktı. Hele bir de bu değerlerin 8 bitlik olacağını düşünürsek her piksel için 24 bit kullanmalıyız. <em>(Antiparantez: Hani hep duyarız 24 bitlik resim diye: 0-255 arası bileşenler, yani 8 bit kırmızı, 8 bit yeşil, 8 bit mavi. 8 bit de şeffaflık kullansaydık 32 bit olurdu.)</em> Fakat indekslenmiş resim kullanırsak, örneğin 60 farklı renk varsa <code>m=2^n</code> ve <code>n>=60</code>, <code>n</code> bir tamsayı olmak üzere piksel başına <code>m=6</code> bit kullanarak işin içinden çıkabiliriz. Tabii ki <code>colormap</code> için kullanacağımız <code>mx3</code> kadar <code>double</code> hafızasını da gözardı etmemeliyiz.</p>
+<p>İşin zor kısmı bitti, şimdi daha aşina olduğunuz gri (aydınlık) seviyeli resimlere geçelim.</p>
+<h3>Gri seviye resimler</h3>
+<p>Gri seviye resimler elemanları belli aralıklar arasındaki aydınlanma değerlerini gösteren matrislerdir. <code>uint8</code>, <code>uint16</code>, <code>int16</code>, <code>single</code> veya <code>double</code> tipi olabilirler. <code>single</code> veya <code>double</code> tipinde ise değerleri 0 siyahı, 1 beyazı belirtmek üzere 0-1 aralığındaki gerçel sayılardır. Diğer tipler ise <code>intmin(class(I))</code> en düşük aydınlanma değerini, yani siyahı, <code>intmax(class(I))</code> ise en yüksek aydınlanma değerini, yani beyazı temsil eder. Örneğin <code>unit8</code> 8 bitlik gri seviye resmin sınıfıdır ve değerleri 0 ile 255 arasında değişen tamsayılardır.</p>
+<p><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/access/helpdesk/help/toolbox/images/intro2.gif');"  href="http://www.mathworks.com/access/helpdesk/help/toolbox/images/intro2.gif" alt=""><img src="http://www.mathworks.com/access/helpdesk/help/toolbox/images/intro2.gif" alt="" /></a></p>
+<p>Yukarıdaki örnekte <code>double</code> tipindeki aydınlanma değerlerini gözlemleyebilirsiniz.</p>
+<p>Şimdi de kendi örneğimizi yapalım. Bunun için de bozuk paraları (<code>coins.png</code>) kullanalım.</p>
+<pre class="prettyprint lang-matlab">img = imread('coins.png');
+imshow(img)
+title('Gri seviye resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_06.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_06.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_06.png" height="250" /></a></p>
+<p>Resmin tipine bakalım:</p>
+<pre class="prettyprint lang-matlab">class(img)</pre>
+<pre class="codeoutput">ans =
+
+uint8</pre>
+<p>Demek ki, MATLAB gri seviye resimleri <code>uint8</code> tipinde yüklüyor. Ortalardan bir bölüme bakalım:</p>
+<pre class="prettyprint lang-matlab">img(51:60,28:33)</pre>
+<pre class="codeoutput">ans =
+
+58   57   61  113  173  189
+58   57   59  109  171  184
+59   59   57  100  168  180
+59   59   56   89  161  181
+58   59   56   80  157  183
+59   60   57   68  140  184
+58   60   60   59  108  174
+58   60   61   57   84  162
+59   60   60   58   65  139
+58   58   60   61   57  100</pre>
+<p>Görüldüğü üzere değerler tamsayı ve şu anki kısımdan görülmediği ama bizim bildiğimiz üzere 0 ile 255 arasındalar. (0,255 dahil)</p>
+<p>Bizim <code>double</code> tipinde bir resme ihtiyacımız olsaydı <code>im2double</code> ile dönüşümü yapabilirdik. Haydi yapalım:</p>
+<pre class="prettyprint lang-matlab">img = im2double(img);
+class(img)</pre>
+<pre class="codeoutput">ans =
+
+double</pre>
+<pre class="prettyprint lang-matlab">img(51:60,28:33)</pre>
+<pre class="codeoutput">ans =
+
+0.2275    0.2235    0.2392    0.4431    0.6784    0.7412
+0.2275    0.2235    0.2314    0.4275    0.6706    0.7216
+0.2314    0.2314    0.2235    0.3922    0.6588    0.7059
+0.2314    0.2314    0.2196    0.3490    0.6314    0.7098
+0.2275    0.2314    0.2196    0.3137    0.6157    0.7176
+0.2314    0.2353    0.2235    0.2667    0.5490    0.7216
+0.2275    0.2353    0.2353    0.2314    0.4235    0.6824
+0.2275    0.2353    0.2392    0.2235    0.3294    0.6353
+0.2314    0.2353    0.2353    0.2275    0.2549    0.5451
+0.2275    0.2275    0.2353    0.2392    0.2235    0.3922</pre>
+<p>Değerlerin <code>[0-1]</code> aralığında <code>double</code> değerlere dönüştüğü gözüküyor. Aynı şekilde <code>im2uint8</code> fonksiyonu ile de ters yönde dönüşüm yapabilirdik. Diğerleri için de yardıma bakabilirsiniz.</p>
+<p>Buradan şöyle bir sonuç çıkarmalıyız. Resimlerde çalışırken hangi tür olduğunun yanısıra elemanlarının sınıfı da (veri tipi) önemlidir. Örneğin bazı fonksiyonlar <code>uint8</code> tipi için çalışmaz, o yüzden resimleri okurken hep aynı tipe dönüştürmek iyi bir alışkanlıktır.</p>
+<p>Haydi bir tane de örnek resmi biz sentezleyelim. Önce bir ızgara oluşturalım:</p>
+<pre class="prettyprint lang-matlab">x = 1:3;
+y = 7:10;
+[X, Y] = meshgrid(x, y)</pre>
+<pre class="codeoutput">X =
+
+1     2     3
+1     2     3
+1     2     3
+1     2     3
+
+Y =
+
+7     7     7
+8     8     8
+9     9     9
+10    10    10</pre>
+<p>Örnekte görüldüğü gibi <code>X</code> ve <code>Y</code>'nin aynı hücredeki elemanlarını yanyana koyarsak <code>x</code> ve <code>y</code>'lerin sıralı kombinasyonları oluşur. Şimdi daha büyük bir ızgara oluşturalım, sonra bir fonksiyon yazalım ve bu ızgarayı<br />
+tanım kümesi olarak kullanalım.</p>
+<pre class="prettyprint lang-matlab">x = linspace(-pi, pi, 300);
+[X, Y] = meshgrid(x);
+A = 10;
+imgSynth = sin(A*(X.^2 + Y.^2));
+imshow(imgSynth)</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_07.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_07.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_07.png" height="250" /></a></p>
+<p>Güzel halkalar çizdik! Çok dağıtmadan veri tipine, en küçük ve en büyük değerlere bakalım ve bitirelim.</p>
+<pre class="prettyprint lang-matlab">class(imgSynth)</pre>
+<pre class="codeoutput">ans =
+
+double</pre>
+<pre class="prettyprint lang-matlab">max(max(imgSynth))</pre>
+<pre class="codeoutput">ans =
+
+1.0000</pre>
+<pre class="prettyprint lang-matlab">min(min(imgSynth))</pre>
+<pre class="codeoutput">ans =
+
+-1.0000</pre>
+<p>Artık biliyoruz ki <code>-1</code> siyah, <code>+1</code> beyaz, aradaki değerler de gri seviyeler oldular.</p>
+<h3>Gerçek-renkli resimler</h3>
+<p>Son olarak gerçek-renkli resimlere değineceğiz. Kırmızı, mavi ve sarıyı oluşturacağımız güzel bir örnekle başlayalım:</p>
+<pre class="prettyprint lang-matlab">RPlane = [1 0 1];
+GPlane = [0 0 1];
+BPlane = [0 1 0];
+rgbImg = cat(3, RPlane, GPlane, BPlane);
+size(rgbImg)</pre>
+<pre class="codeoutput">ans =
+
+1     3     3</pre>
+<pre class="prettyprint lang-matlab">imagesc(rgbImg)
+axis image
+title('Kırmızı, mavi ve sarı renkler')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_08.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_08.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_08.png" height="250" /></a></p>
+<p><code>cat</code> fonksiyonu ile <code>1x3</code>'lük üç vektörü arka arkaya birleştirip <code>1x3x3</code>'lük yeni bir değişken oluşturduk. Evet, gerçek-renkli resimler <code>mxnx3</code>'lük dizilerden başka birşey değil. Bunu (R,G ve B'nin oranlarını ifade eden) üç gri seviye resmin  arka arkaya konulması olarak düşünebiliriz. Örnekte olduğu gibi sarı rengi kırmızı ve yeşilin karışımından elde ederiz. <em>(Not: Bu arada piksellerin orta noktalarının tam değerlere geldiğine dikkat edin! Ayrıca <code>imshow</code>, <code>image</code> ve <code>imagesc</code> arasındaki farkları yardımdan öğrenin.)</em></p>
+<p>Gerçek-renkli resimlerle çalışırken renk anahtarları bir işe yaramaz!</p>
+<pre class="prettyprint lang-matlab">colormap(winter)
+title('Yine kırmızı, yine mavi, yine sarı!')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_09.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_09.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_09.png" height="250" /></a></p>
+<p>Şimdi de alttaki örneğe bakarak gerçek bir resimde bahsettiklerimizin neye tekabül ettiğini görelim:</p>
+<p><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/access/helpdesk/help/toolbox/images/introa.gif');"  href="http://www.mathworks.com/access/helpdesk/help/toolbox/images/introa.gif" alt=""><img src="http://www.mathworks.com/access/helpdesk/help/toolbox/images/introa.gif" alt="" /></a></p>
+<p>Artık kendi örneğimize geçmenin vakti geldi. Bu sefer MATLAB dizinindekilerden değil de bize ait bir resmi kullanalım. Bu resim şu an çalıştığımız dizinin içindeki <code>resimler</code> dizininde bulunsun ve adı <code>ornekresim.jpg</code> olsun.</p>
+<pre class="prettyprint lang-matlab">rgbImg = imread('resimler/ornekresim.jpg');
+imshow(rgbImg)</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_10.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_10.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_10.png" height="250" /></a></p>
+<pre class="prettyprint lang-matlab">size(rgbImg)</pre>
+<pre class="codeoutput">ans =
+
+385   385     3</pre>
+<p>Harika, bize ait bir resmi MATLAB'e aktardık sonunda! Açılan pencerede alttaki gibi '<em>data curser</em>' basılı iken pikselleri seçip koordinatlarına ve renk bileşenlerine bakabilirsiniz.</p>
+<h2>Gri Seviye Resimlerle İşlemler</h2>
+<p>Resimlere ve piksel renklerine ait temelleri öğrendik, dahasını getirelim, biraz da basit işlem yapıp yazıyı sonlandıralım.</p>
+<p>Öncelikle elimizdeki gerçek-renkli resmi griye çevirelim:</p>
+<pre class="prettyprint lang-matlab">img = rgb2gray(rgbImg);
+imshow(img)
+truesize
+title('Örnek resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_11.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_11.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_11.png" height="250" /></a></p>
+<pre class="prettyprint lang-matlab">size(img)</pre>
+<pre class="codeoutput">ans =
+
+385   385</pre>
+<p>Artık üç kanaldan değil de tek kanaldan oluşuyor resmimiz. Resim ekrana basılırken <code>truesize</code> kullandık ki her resim pikseli ekrandaki bir piksele denk gelsin. Mesela ekrandaki <code>0.5x0.5</code> piksellik bölgeye denk gelmesi için şöyle de yapabilirdik:</p>
+<pre class="prettyprint lang-matlab">imshow(img)
+truesize(0.5*size(img))
+title('Ekrandaki bir piksele dört resim pikseli geldi')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_12.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_12.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_12.png" height="250" /></a></p>
+<p>Dikkat edin, resmi ölçeklemedik, sadece ekran görüntüsünü küçülttük. Şimdi de resmi ölçekleyelim. Bunu yaparken de '<em>bilinear</em>' interpolasyon kullanalım.</p>
+<pre class="prettyprint lang-matlab">imgRescaled = imresize(img, 0.75, 'bil');
+imshow(imgRescaled)
+title('0.75 oranda ölçeklenmiş resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_13.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_13.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_13.png" height="250" /></a></p>
+<pre class="prettyprint lang-matlab">imgRescaled = imresize(img, [100 150], 'bil');
+imshow(imgRescaled)
+title('100x150 piksele ölçeklenmiş resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_14.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_14.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_14.png" height="250" /></a></p>
+<p>Resmi döndürseydik, sonra da orijinal boyutuna kırpsaydık:</p>
+<pre class="prettyprint lang-matlab">imgRotated = imrotate(img, 30, 'bil', 'crop');
+imshow(imgRotated)
+title('30 derece döndürülüp orijinal boyutuna kırpılmış resim')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_15.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_15.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_15.png" height="250" /></a></p>
+<p>Geometrik dönüşümleri başka zaman daha uzun konuşuruz. Şimdi matematiksel birkaç işlem uygulayalım resme. Ama bundan önce veri tipine bakalım:</p>
+<pre class="prettyprint lang-matlab">class(img)</pre>
+<pre class="codeoutput">ans =
+
+uint8</pre>
+<p>Uygulayacağımız işlemler <code>double</code> tipinde veri istiyor, o halde dönüşümü yapalım.</p>
+<pre class="prettyprint lang-matlab">img = im2double(img);
+class(img)</pre>
+<pre class="codeoutput">ans =
+
+double</pre>
+<p>Şimdi bu resim için hiçbir anlam ifade etmeyen birkaç işlemin sonucunu gözlemleyelim:</p>
+<pre class="prettyprint lang-matlab">imagesc(img.^2)</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_16.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_16.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_16.png" height="250" /></a></p>
+<pre class="prettyprint lang-matlab">imagesc(log(img))</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_17.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_17.png" height="250"><img src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_17.png" height="250" /></a></p>
+<p>Son olarak anlamlı bir işlem yapalım ve resmi <code>5x5</code>'lik bir Gauss çekirdeği ile filtreleyelim, sonra da yine <code>resimler</code> dizinine kaydedelim. Önce çekirdeği oluşturalım:</p>
+<pre class="prettyprint lang-matlab">gaussKernel = [1 4 7 4 1]' * [1 4 7 4 1] / 273</pre>
+<pre class="codeoutput">gaussKernel =
+
+0.0037    0.0147    0.0256    0.0147    0.0037
+0.0147    0.0586    0.1026    0.0586    0.0147
+0.0256    0.1026    0.1795    0.1026    0.0256
+0.0147    0.0586    0.1026    0.0586    0.0147
+0.0037    0.0147    0.0256    0.0147    0.0037</pre>
+<p>Şimdi bu çekirdeği kullanarak resmi bulandıralım, yani Gauss ile evrişimini (konvolusyonunu) alalım. Sonuç, orijinalle aynı boyutta olsun:</p>
+<pre class="prettyprint lang-matlab">imgBlurred = conv2(img, gaussKernel, 'same');</pre>
+<p>Bu resmi png formatında diske yazalım:</p>
+<pre class="prettyprint lang-matlab">imwrite(imgBlurred, 'resimler/yeniresim.png')</pre>
+<p>Son olarak orijinal resmi ve filtreleme sonucunu yanyana çizelim ve bu çizimi diske kaydedelim.</p>
+<pre class="prettyprint lang-matlab">subplot(1, 2, 1),
+imshow(img), title('Orijinal resim')
+subplot(1, 2, 2),
+imshow(imgBlurred), title('Filtreleme sonucu'), truesize
+saveas(gcf, 'resimler/ikiResimYanyana.jpg')</pre>
+<p><a onclick="javascript:pageTracker._trackPageview('/downloads/wp-content/uploads/2008/04/matlab_ile_imge_isleme_18.png');"  href="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_18.png"><img class="alignnone size-medium wp-image-73" title="Normal boyutlarda görmek için tıklayın" src="../../wp-content/uploads/2008/04/matlab_ile_imge_isleme_18-300x123.png" alt="" width="300" height="123" /></a></p>
+<p>Bu yazıda resim işleme ile ilgili temelleri atmış olduk, artık resimleri daha somut olarak düşünebiliriz. Dahası klasörlerden okuyup, basit işlemler uygulayıp, geri kaydedebiliriz.</p>
+<p>Yazıyı burada bitiriyorum, buradaki fonksiyonlarla yetinmeyip benzerlerine yardımdan bakmanızı ve dene-gör çalışmanızı tavsiye ederim.</p>
+<p><strong>Yararlandığım kaynaklar:</strong></p>
+<div>
+<ul>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/blogs.mathworks.com/steve/');"  href="http://blogs.mathworks.com/steve/" target="_blank">Steve on Image Processing</a></li>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/access/helpdesk/help/toolbox/images/');"  href="http://www.mathworks.com/access/helpdesk/help/toolbox/images/" target="_blank">Image Processing Toolbox Belgeleri</a></li>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.sp-studio.de/');"  href="http://www.sp-studio.de/" target="_blank">Southpark Studio</a></li>
+</ul>
+</div>
+
+			
+			</div>
+
+
+			<div class="post-meta-bottom well well-small"><span class="pull-left">Kategori: <a href="../../kategori/programlama/index.html" title="Programlama kategorisindeki tüm yazıları göster" rel="category tag">Programlama</a>  <span class="separator">|</span> Etiketler: <a href="../../etiket/matlab/index.html" rel="tag">matlab</a></span>
+                        <span class="pull-right">Son güncelleme: 15 Kasım 2013                                                </span></br>
+			<span class="pull-left"> &laquo; <a href="../matlab-programlamaya-giris/index.html" rel="prev">MATLAB Programlamaya Giriş</a></span>
+			<span class="pull-right"><a href="../en-guzeli-en-sadesi/index.html" rel="next">En güzeli en sadesi</a> &raquo;</span><br/>
+			</div>
+			<div class="clear"></div>
+		</div><!-- .post -->
+		<p><!-- Hupso Share Buttons - http://www.hupso.com/share/ --><a class="hupso_counters" href="http://www.hupso.com/share/"><img src="../../wp-content/uploads/2013/05/paylas.png" style="border:0px; padding-top:2px; float:left;" alt="Share Button"/></a><script type="text/javascript">var hupso_services_c=new Array("twitter","facebook_like","google");var hupso_counters_lang = "tr_TR";</script><script type="text/javascript" src="http://static.hupso.com/share/js/counters.js"></script><!-- Hupso Share Buttons --></p>
+		<p><a href="http://feeds.feedburner.com/ismailari"><img src=../../wp-content/uploads/2013/05/abone_ol.png></a> <a href="http://feeds.feedburner.com/ismailari"><img src="http://feeds.feedburner.com/~fc/ismailari?bg=FFFFFF&fg=003300&anim=0&label=okur" height="26" width="88" style="border:0" alt="Yazılara abone ol" title="Yazılara abone ol" /></a></p>
+
+		<div id="comments">
+
+
+<!-- You can start editing here. -->
+
+	<h2 class="section-title">32 yorum</h2>
+
+	<ol>
+
+	
+		<li class="alt" id="comment-94">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 17 Mart 2009</div>
+								
+				<p>Önceden şöyle bi yazı yazmışım, sonra silmişim. Belki işe yarar:</p>
+<p>Resimlerde indeksleme yaparken “<b>doğrusal</b> indeksleme” (linear indexing) kullanmak çok faydalı olabiliyor. Bu konu hakkında yazmayı düşündüm.</p>
+<p>Şimdi küçük bir matris oluşturarak başlayalım. Bir sihirli matris yaratalım :)</p>
+<div>
+<div>
+<pre>A = <span style="color:rgb(0, 0, 255)">magic</span><span style="color:rgb(0, 136, 0)">(</span><span style="color:rgb(51, 51, 255)">5</span><span style="color:rgb(0, 136, 0)">)</span></pre>
+</div>
+</div>
+<blockquote>
+<pre>A =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9</pre>
+</blockquote>
+<p>SORU: A(17) kaçtır?</p>
+<p><span></span></p>
+<div>
+<div>
+<pre>A<span style="color:rgb(0, 136, 0)">(</span><span style="color:rgb(51, 51, 255)">17</span><span style="color:rgb(0, 136, 0)">)</span></pre>
+</div>
+</div>
+<blockquote>
+<pre>ans =
+
+    14</pre>
+</blockquote>
+<p>MATLAB, matrisler için tek indeks kullandığımızda, (c gibi çoğu programlama dilinin tersine) sütun sırası ile gider. Yani A(17), 4. sütunun 2. satırıdır: A(2,4).</p>
+<div>
+<div>
+<pre>A<span style="color:rgb(0, 136, 0)">(</span><span style="color:rgb(51, 51, 255)">2</span>, <span style="color:rgb(51, 51, 255)">4</span><span style="color:rgb(0, 136, 0)">)</span></pre>
+</div>
+</div>
+<blockquote>
+<pre>ans =
+
+    14</pre>
+</blockquote>
+<p>Şimdi yaptıklarımızın imge işleme ile ne ilgisi olduğuna bakalım. Varsayalım ki A bizim imgemiz, birkaç hesap sonunda alttaki satır ve sütunların aradığımız piksellerin indeksleri olduğunu bulduk:</p>
+<div>
+<div>
+<pre>satir = <span style="color:rgb(0, 136, 0)">[</span><span style="color:rgb(51, 51, 255)">2</span> <span style="color:rgb(51, 51, 255)">1</span> <span style="color:rgb(51, 51, 255)">5</span><span style="color:rgb(0, 136, 0)">]</span>;
+sutun = <span style="color:rgb(0, 136, 0)">[</span><span style="color:rgb(51, 51, 255)">1</span> <span style="color:rgb(51, 51, 255)">3</span> <span style="color:rgb(51, 51, 255)">4</span><span style="color:rgb(0, 136, 0)">]</span>;</pre>
+</div>
+</div>
+<p>Bu piksellere tek ifade ile erişebilir miyiz? Deneyelim:</p>
+<div>
+<div>
+<pre>A<span style="color:rgb(0, 136, 0)">(</span>satir, sutun<span style="color:rgb(0, 136, 0)">)</span></pre>
+</div>
+</div>
+<blockquote>
+<pre>ans =
+
+    23     7    14
+    17     1     8
+    11    25     2</pre>
+</blockquote>
+<p>Ne yazık ki üç yerine dokuz değer döndü, bizim istediğimiz bu değildi. MATLAB bu ifadeyi yazdığımız satır ve sütun değerlerinin kesişimi olarak verdi. Yani toplamda dokuz kesişim noktası.</p>
+<p>Çift indeks yerine tek indeks kullanmamız gerekiyor. Yani:</p>
+<div>
+<div>
+<pre>M = <span style="color:rgb(0, 0, 255)">size</span><span style="color:rgb(0, 136, 0)">(</span>A, <span style="color:rgb(51, 51, 255)">1</span><span style="color:rgb(0, 136, 0)">)</span>;
+indeksler = M * <span style="color:rgb(0, 136, 0)">(</span>sutun - <span style="color:rgb(51, 51, 255)">1</span><span style="color:rgb(0, 136, 0)">)</span> + satir</pre>
+</div>
+</div>
+<blockquote>
+<pre>indeksler =
+
+     2    11    20</pre>
+</blockquote>
+<p>A(indeksler) ifadesi bizim istediğimiz üç değeri döndürecek:</p>
+<div>
+<div>
+<pre>A<span style="color:rgb(0, 136, 0)">(</span>indeksler<span style="color:rgb(0, 136, 0)">)</span><span style="color:rgb(0, 136, 0)">(</span>A, <span style="color:rgb(51, 51, 255)">1</span><span style="color:rgb(0, 136, 0)">)</span>;
+indeksler = M * <span style="color:rgb(0, 136, 0)">(</span>sutun - <span style="color:rgb(51, 51, 255)">1</span><span style="color:rgb(0, 136, 0)">)</span> + satir</pre>
+</div>
+</div>
+<blockquote>
+<pre>ans =
+
+    23     1     2</pre>
+</blockquote>
+<p>Bu değerleri değiştirebilirdik de:</p>
+<div>
+<div>
+<pre>A<span style="color:rgb(0, 136, 0)">(</span>indeksler<span style="color:rgb(0, 136, 0)">)</span> = <span style="color:rgb(0, 0, 255)">Inf</span></pre>
+</div>
+</div>
+<blockquote>
+<pre>A =
+
+    17    24   Inf     8    15
+   Inf     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25   Inf     9</pre>
+</blockquote>
+<p>Aslında yaptığımız işlem MATLAB’da fonksiyon olarak bulunuyor. sub2ind ve ind2sub fonksiyonları satır-sütun indekslemesi ve <b>doğrusal</b> indeksleme arasında dönüşüm sağlıyor.</p>
+<div>
+<div>
+<pre>indeksler = <span style="color:rgb(0, 0, 255)">sub2ind</span><span style="color:rgb(0, 136, 0)">(</span><span style="color:rgb(0, 0, 255)">size</span><span style="color:rgb(0, 136, 0)">(</span>A<span style="color:rgb(0, 136, 0)">)</span>, satir, sutun<span style="color:rgb(0, 136, 0)">)</span></pre>
+</div>
+</div>
+<blockquote>
+<pre>indeksler =
+
+     2    11    20</pre>
+</blockquote>
+<div>
+<div>
+<pre><span style="color:rgb(0, 136, 0)">[</span>satir, sutun<span style="color:rgb(0, 136, 0)">]</span> = <span style="color:rgb(0, 0, 255)">ind2sub</span><span style="color:rgb(0, 136, 0)">(</span><span style="color:rgb(0, 0, 255)">size</span><span style="color:rgb(0, 136, 0)">(</span>A<span style="color:rgb(0, 136, 0)">)</span>, indeksler<span style="color:rgb(0, 136, 0)">)</span></pre>
+</div>
+</div>
+<blockquote>
+<pre>satir =
+
+     2     1     5
+
+sutun =
+
+     1     3     4</pre>
+</blockquote>
+<p>Yani <code>A = A(:)</code> ile matrisi doğrusal yapabilirsiniz. Ama sütunlar arka arkaya eklenir, satırlar değil, dikkat etmek lazım.</p>
+<p>İyi çalışmalar.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-437">
+
+			<div class="comment-gravatar">
+							</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a onclick="javascript:pageTracker._trackPageview('/outgoing/electronious.wordpress.com/2011/08/28/goruntu-isleme/');"  href='http://electronious.wordpress.com/2011/08/28/goruntu-isleme/' rel='external nofollow' class='url'>Görüntü İşleme &laquo; electronious</a>, 28 Ağustos 2011</div>
+								
+				<p>[...] İsmail Arı – Matlab ile İmge İşleme [...]</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-487">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/e4d063b55d59b699ffb7e0b73ceb4c30?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">yeni matlabci, 30 Eylül 2011</div>
+								
+				<p>matlabi öğrenmeye yeni başladım.bir resmin boyutunu 2 ye çıkarmak için ancak görüntüde bir bozulma olmaması için nasıl bir yol izlemeliyim.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-488">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 30 Eylül 2011</div>
+								
+				<p>@yeni matlabci: Eldeki az bilgiden çok bilgi elde etmek programlama dilinin yeteneğinden çok araştırmacının yeteneği. Bahsettiğiniz konu, yani "image upsampling", hala araştırma konusu. Örneğin: <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.cs.huji.ac.il/~yoavhacohen/upsampling/');"  href="http://www.cs.huji.ac.il/~yoavhacohen/upsampling/" rel="nofollow">http://www.cs.huji.ac.il/~yoavhacohen/upsampling/</a> veya <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.cs.huji.ac.il/~raananf/projects/upsampling/results.html');"  href="http://www.cs.huji.ac.il/~raananf/projects/upsampling/results.html" rel="nofollow">http://www.cs.huji.ac.il/~raananf/projects/upsampling/results.html</a>.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-616">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/3c5ed4be86ff64ed9a0546cff0dedb9d?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">MatDevelop, 04 Mart 2012</div>
+								
+				<p>merhaba ismail hocam. Öncelikle yapmış olduğunuz çalışmadan dolayı size minnettarım. Şimdi bu çalışmadan bayağı bilgi edindim yalnız benim kendi kullanmak istediğim şey; örneğin kameradan optik form okuyup bunu işlemek istiyorum. Hangi şıkların işaretlendiğini anlamak ve resmin hangi yönünün doğru yön olduğunu anlamam için ne tür işlem yapmam gerekiyor. Ya da bu işlemi iyi bi şekilde anlatan bi link varsa o da olabilir. Şimdiden teşekkürler, iyi çalışmalar...</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-617">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 07 Mart 2012</div>
+								
+				<p>Teşekkür ederim güzel iltifatlarınız için. Maalesef, optik okuyucularda hiç çalışma yapmadım şimdiye kadar. Google'a sorma yoluna gitmem lazım :( Aslında yerinizde olsam bunu <a onclick="javascript:pageTracker._trackPageview('/outgoing/dsp.stackexchange.com/');"  href="http://dsp.stackexchange.com/" rel="nofollow">http://dsp.stackexchange.com/</a> adresinde sorarım, yeterince açıklayıcı bir şekilde sorarsanız mutlaka güzel cevaplar gelecektir.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-834">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/a248dfd321f02918ae54e567ffd04b43?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a onclick="javascript:pageTracker._trackPageview('/outgoing/bil-doc.blogspot.com/');"  href='http://bil-doc.blogspot.com/' rel='external nofollow' class='url'>mustafa</a>, 19 Aralık 2012</div>
+								
+				<p>X: [200x320 double]<br />
+map: [81x3 double]<br />
+caption: [2x1 char]</p>
+<p>bu üç değeri nasıl oluşturdunuz anlatabilir misiniz...?</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-836">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 21 Aralık 2012</div>
+								
+				<p>Bu üç değer <code>clown.mat</code> isimli MATLAB ile hazır gelen veri dosyasının içinde bulunuyor. <code>load</code> ile yükleniyor. <em>Indexed</em> diye tabir edilen imgeler bu biçimde tutuluyor. Buradaki <code>X</code> matrisi 1 ile 81 arasında değerler içeriyor. Bunlar <code>map</code>'deki satırda gösterilen renk değerlerine denk geliyor. Örneğin <code>X(3,5)</code> değeri 2 ise ve <code>map(2,:)</code> değeri <code>[0 0 1]</code> ise, demek ki resmin (3,5) konumundaki piksel maviymiş diyebiliğriz. Çünkü <code>[0 0 1]</code> değeri kırmızı ve yeşilin 0, mavinin ise 1 olduğunu gösteriyor. Bu değerleri ben oluşturmadım, palyaço resmi için hazır geliyor. </p>
+<p>Biz oluşturmak istersek, resimdeki renklerin bir histogramını oluşturabilir, ardından nicemleme yapabiliriz. Konu ile ilgili <a onclick="javascript:pageTracker._trackPageview('/outgoing/en.wikipedia.org/wiki/Color_quantization');"  href="http://en.wikipedia.org/wiki/Color_quantization" rel="nofollow"><em>color quantization</em></a> yazısına bakabilirsiniz.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-843">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/59046307e500409ea06385f10a07bdf9?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">eren, 06 Ocak 2013</div>
+								
+				<p>bir bmp objesinin kenar koordinatlarını nasıl çekebiliriz ?</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-844">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/946a4d1b4a52abc3eb6e0f7876192591?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Murat, 06 Ocak 2013</div>
+								
+				<p>Bir şekli daha az hatayla temsil edebilmek için şekilleri çevreleyen polygon’u nasıl bulabiliriz?<br />
+Mesela convhull,regionprops komutlarını kullanarak.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-845">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 07 Ocak 2013</div>
+								
+				<p>eren: </p>
+<pre>img = imread('dosyaAdi.bmp');
+size(img)</pre>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-846">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 07 Ocak 2013</div>
+								
+				<p>Murat: Bunlar pek bildiğim konular değil. <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/matlabcentral/fileexchange/6243-hullfit');"  href="http://www.mathworks.com/matlabcentral/fileexchange/6243-hullfit" rel="nofollow">Şuradaki</a> hullfit'in fonksiyon dosyasının 'help doc' kısmında örnek var. Yardımcı olacaktır.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-848">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/59046307e500409ea06385f10a07bdf9?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">eren, 07 Ocak 2013</div>
+								
+				<p>teşekkürler ismail abi verdiğin bilgiler için</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-907">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/a09955e13f617db2ad804bf7ccf01f24?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">yunus, 20 Mart 2013</div>
+								
+				<p>hocam merhaba<br />
+şöyle bir sorum olacaktı;<br />
+bir dosya içerisinde 1 den 200 kadar numarayla adlandırılmış görüntü dosyası var ve ben bunların üzerinde pratikçe işlem yapmak için şu şekilde başlayan  kod yazdım<br />
+for i=1:200;<br />
+r=imread('C:\Users\User\Desktop\brainweb\ i .gif'); ancak burada benim istediğim ve beklediğim matlab in  for döngüsü içindeki i nin değerini görüntü açma kısmındaki i ye atayarak görüntüleri sırayla okumasıydı ama olmuyor.<br />
+bunu nasıl sağlayabilirim acaba, kısa zamanda  aydınlatırsanız çok memnun olurum hocam iyi çalışmalar</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-908">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 20 Mart 2013</div>
+								
+				<pre>imread('C:\Users\User\Desktop\brainweb\ i .gif'); </pre>
+<p>yerine</p>
+<pre>imread(['C:\Users\User\Desktop\brainweb\' num2str(i) '.gif']); </pre>
+<p>yazın.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-909">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/a09955e13f617db2ad804bf7ccf01f24?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">yunus, 20 Mart 2013</div>
+								
+				<p>çok teşekkürler hocam iyi çalışmalar :)</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1020">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/11a7b0c73ee073bf10d1d3782edab328?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">mustafa, 08 Mayıs 2013</div>
+								
+				<p>iki farklı resmi üstüte yapıştırmak istiyorum. nasıl yapabilirim. mesela bir tarfik işaretinin aynı çerçeveye farklı kontuarlar ile göstermek istiyorum. cevabınız için tşk ederim.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1021">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 08 Mayıs 2013</div>
+								
+				<p>Image Processing Toolbox'taki <code>imadd</code> fonksiyonunu kullanabilirsiniz. Eğer ikili (binary) bir maske koymak isterseniz <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mathworks.com/matlabcentral/fileexchange/10502-image-overlay');"  href="http://www.mathworks.com/matlabcentral/fileexchange/10502-image-overlay" rel="nofollow"><code>imoverlay</code></a>'e bakın.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1049">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/f7bc7b9d44ae1c8364c10331b97a07d0?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Durgun Duran, 02 Haziran 2013</div>
+								
+				<p>MATLAB'da y&lt;1-x ve x&lt;1 doğrularını birlikte çizdirmek istiyorum. Aralıklar ise x={-sonsuz, 1}, y={-sonsuz, 1}. Yardımcı olursanız sevinirim. Teşekkürler</p>
+<p>Mail: <a onclick="javascript:pageTracker._trackPageview('/mailto/durgunduran@hotmail.com');"  href="mailto:durgunduran@hotmail.com">durgunduran@hotmail.com</a></p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1050">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 02 Haziran 2013</div>
+								
+				<p>Bahsettiğiniz eşitsizlikler doğru değil, alan. Alan olarak çizmelisiniz. Ayrıca sonsuzu limit olarak çizemezsiniz.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1051">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/f7bc7b9d44ae1c8364c10331b97a07d0?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">Durgun Duran, 02 Haziran 2013</div>
+								
+				<p>y=1-x  doğrusu ve x=1 doğrusunu aynı grafik üzerinde gösterebilecek bi komut yazsanız yeter, gerisini ben hallederim..</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1052">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 02 Haziran 2013</div>
+								
+				<pre>x = -10:0.1:10;
+y1 = 1-x;
+y2 = ones(size(x));
+plot(x, y1, x, y2)</pre>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1074">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/bebefeaf51d20ec56d5a723611fc4df3?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a onclick="javascript:pageTracker._trackPageview('/outgoing/twitter.com/bluejacketman');"  href='https://twitter.com/bluejacketman' rel='external nofollow' class='url'>volkan</a>, 01 Ağustos 2013</div>
+								
+				<p>hocam; A matrisinde 14 sayısının hangi satır ve sütünda olduğunu belirleyebilirmiyiz</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1075">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 01 Ağustos 2013</div>
+								
+				<p>Kısaca şöyle yazabilirsiniz: <code>[m n] = ind2sub(size(A), find(A==14))</code></p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1097">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/4ebf0e621dfb3d36b6babbb1b6935483?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">ömer faruk, 09 Eylül 2013</div>
+								
+				<p>Kolay gelsin; bir resim üzerindeki sayı değerlerini nasıl elde edebilirim? Mesela bir hız zaman grafiği resmindeki bütün verileri, 5. saniyedeki hızının kaç olduğunu, rakamsal olarak kaç olduğunu vs elde etmek istiyorum bunun bir yolu var mıdır?</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1115">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/673b482af9c7eb46c46cd6a12475d044?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">murat aşkın, 09 Ekim 2013</div>
+								
+				<p>Hocam öncelikle çalışmanız için tebrikler ve teşekkürler. imresize() fonksiyonu hakkında bilgi rica edecektim. örneğin;<br />
+x1=imresize(imresize(f,1/2),2);<br />
+x2=imresize(imresize(f,1/2),4);<br />
+x3=imresize(imresize(f,1/2),8);</p>
+<p>buradaki '1/2' '2,4,8' sayılarının amacı. kısaca bu fonksiyonun kullanımındaki detayı anlatırsanız çok sevinirim.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1118">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 13 Ekim 2013</div>
+								
+				<p>Bu fonksiyon resmin tekrar boyutlandırılmasını yapar. 1/2 dediğinizde resmin en ve boylarının yarısı kadarlık bir resim elde edersiniz örneğin.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1149">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/4dd87d4b157c074cee2c4a138ab2ecb3?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">ismail, 28 Kasım 2013</div>
+								
+				<p>Merhaba İsmail hocam . yapmış olduğunuz çalışma için teşekkürler. birici olarak faydalanabileceğimiz türkçe kaynak<br />
+var mı bildiğiniz. ikinci olarak median:(ortanca) filtresinin matlab algoritmasını ve komutlarını nasıl öğrenebilirim? yardımcı olursanız çok sevinirim şimdiden teşekkürler.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1150">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/63599379c65924f2bdb805743119520f?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta"><a href='../../index.html' rel='external nofollow' class='url'>İsmail Arı</a>, 28 Kasım 2013</div>
+								
+				<p>Bu sitedeki MATLAB Programlamaya Giriş yazısını okuyabilirsiniz. Ortanca filtre <code>medfilt1</code> ve <code>medfilt2</code> komutları ile yapılıyor. Dokümantasyondan aratıp örneklere bakabilirsiniz.</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1151">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/4dd87d4b157c074cee2c4a138ab2ecb3?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">ismail, 28 Kasım 2013</div>
+								
+				<p>teşekkür ederim hocam ama galiba derdimi anlatamadım benım median filtrenin algoritmasına akış şemasına ihtiyacım var. çok sağolun şimdiden.</p>
+			</div>
+		</li>
+
+	
+	
+		<li class="alt" id="comment-1162">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://0.gravatar.com/avatar/6fdd7687e6e2ab0b8ed9a9cc711651f1?s=60&d=http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">esat, 08 Aralık 2013</div>
+								
+				<p>merhaba  hocam. benım webcamda aldıgım goruntu jpg formatında ama uzerınde calıstıgım program bmp formatında calıstırıyo.ben matlabda jpg yı bmp ye nasıl dönüştürebilirim?</p>
+			</div>
+		</li>
+
+	
+	
+		<li id="comment-1173">
+
+			<div class="comment-gravatar">
+				<img alt='' src='http://1.gravatar.com/avatar/70d4210c89afcc984b26122c8fdac19e?s=60&d=http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60&r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>	
+		
+			<div class="comment-data">
+				<div class="comment-meta">murat, 20 Aralık 2013</div>
+								
+				<p>Merhaba Hocam,<br />
+Güzel ve açıklayıcı olan bu paylaşımlarınız için teşekkür ederim. Bir konu hakkında bilginize başvurmak isterim, bir fotoğrafın üzerinden rastgele seçeceğimiz noktaların pixel koordinatlarını resim koordinatlarına nasıl dönüştürebilirim? Bunun için hangi kodları kullanmam lazım yardımcı olabilir misiniz?<br />
+Şimdiden teşekkür eder çalışmalarınızda başarılar dilerim.</p>
+			</div>
+		</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+
+
+
+<div id="respond">
+
+	<h2 class="section-title">Yorum ekle</h2>
+
+	<form method="post" action="http://ismailari.com/wp-comments-post.php">	
+	
+		<div id="comment-form">
+	
+			
+		<label for="author">İsim (gerekli)</label></br>
+		<input type="text" name="author" id="author" value="" size="40" tabindex="1" aria-required='true' />
+
+		<label for="email">E-posta (yayınlanmayacaktır) (gerekli)</label></br>
+		<input type="text" name="email" id="email" value="" size="40" tabindex="2" aria-required='true' />
+
+		<label for="url">İnternet sitesi</label>
+		<input type="text" name="url" id="url" value="" size="40" tabindex="3" /></br>
+		
+				<label for="comment">Yorum</label>
+		<textarea name="comment" id="comment" cols="80%" rows="10" class="span8" tabindex="4"></textarea>
+		
+		</div>							
+
+		<input name="submit" type="submit" id="submit" tabindex="5" value="Yorumu gönder" />
+		<input type="hidden" name="comment_post_ID" value="1515" />
+		<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="248826159f" /></p><!-- BEGIN: subscribe to comments reloaded --><p><input style='width:30px' type='checkbox' name='subscribe-reloaded' id='subscribe-reloaded' value='yes' /> Yorumları bana e-posta ile yolla. Yorum girmeden de <a href='../../index-page_id=345&srp=1515&sra=s.html'>abone</a> olabilirsiniz.</p><!-- END: subscribe to comments reloaded -->
+	</form>
+
+</div>
+
+
+
+		
+
+<div id="footer">
+<br />
+<hr noshade="noshade" color="#CCCCCC"/>	
+    ismailari.com &copy; 2015</div><!-- #footer -->
+</div></div>
+<script>function hefo_popup(url, width, height) {
+var left = Math.round(screen.width/2-width/2); var top = 0;
+if (screen.height > height) top = Math.round(screen.height/2-height/2);
+window.open(url, "share", "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+return false;
+}</script>
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1563790-10");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<div id="un-thankyou" style="display: none;">
+	<h2>Teşekkürler</h2>
+	<p>
+		Geribildiriminiz iletilmiştir.	</p>
+	<a href="#" id="un-feedback-close"><img src="../../wp-content/plugins/usernoise/images/ok.png" id="thankyou-image" alt="Close"></a>
+</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201515'></script>
+
+	<script src="http://stats.wordpress.com/e-201515.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7.2',blog:'10049041',post:'1515',tz:'2'});
+	var load_cmc = function(){linktracker_init(10049041,1515,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+<script src="../../wp-content/themes/iacom/assets/js/jquery.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-transition.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-alert.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-modal.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-dropdown.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-scrollspy.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tab.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-tooltip.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-popover.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-button.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-collapse.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-carousel.js"></script>
+<script src="../../wp-content/themes/iacom/assets/js/bootstrap-typeahead.js"></script>
+
+<script>
+$('.gist').each(
+ function() { if($(this).find('.gist-data').height() < 80) {
+                  $(this).find('.line-numbers').hide(); 
+              }
+            }
+);
+$('.gist-meta').hide();
+</script>
+
+
+</body>
+</html>
+<!-- Localized -->

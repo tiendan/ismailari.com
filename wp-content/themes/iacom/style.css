@@ -1,0 +1,332 @@
+/*
+THEME NAME: iacom
+THEME URI: http://ismailari.com
+DESCRIPTION: iacom
+AUTHOR: <a href="http://www.ismailari.com">İsmail Arı</a>
+AUTHOR URI: http://www.ismailari.com
+*/
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,latin-ext);
+
+body {
+	font-family: 'PT Serif', serif;
+	font-size: 1em;
+	color: #333;
+}
+
+p {
+	padding: 0.2em;
+	line-height: 1.8em;
+}
+
+#footer {
+	font-size: 0.85em;
+	/*line-height: 1.3em;*/
+	color: #666;
+	text-align: right;
+}
+
+h1, h2, h3, h4 {
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  font-weight: 700;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 20px 0 15px 0px;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+h3 {
+	font-size: 1.25em;
+}
+h4 {
+	font-size: 1.0em;
+}
+h5 {
+	font-size: 1.0em;
+}
+
+body > .navbar,.post-meta-bottom {
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  font-size: 1em;
+}
+
+a:link {
+	color: #CC3300;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #900;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF3300;
+}
+a:active {
+	text-decoration: none;
+	color: #FF6600;
+}
+
+img {
+	border: none; 
+}
+
+em {
+	font-size: 0.98em;
+}
+
+code, tt {
+  padding: 2px 4px;
+  background-color: #fdfdfe;
+  border: 1px solid #e1e1e8;
+}
+
+.separator {
+	color: #CCC;
+	font-weight: bold;
+	padding: 0 5px;
+}
+
+.comment-gravatar{
+	float:right;
+}
+
+.comment-data {
+	font-size: 0.9em;
+	border: 1px #EFEFEF solid;
+	padding: 5px;
+	margin-bottom: 5px;
+	line-height:1.6em;
+	background: #FAFAFA;
+}
+
+.comment-meta {
+	font-weight: bold;
+}
+
+.post-meta-top{
+	font-size: 0.95em;
+	margin-top: -15px;
+	margin-bottom: 15px;
+	font-style:italic;
+	color: #999;
+}
+.post-meta-bottom{
+	font-size: 0.9em;
+	color: #666;
+}
+
+hr {
+	border: none 0;
+	border-bottom: 2px solid #EFEFEF;
+	height: 1px;
+	background: #CCC;
+}
+
+blockquote {
+	font-style: italic;
+	background: url(images/quotes.gif) no-repeat top left;
+	background-position: 12px 12px;
+	color: #595959;
+	margin: 5px 0;
+	padding: 8px 15px 8px 60px;
+}
+
+blockquote p{
+	font-size: 0.97em;
+}
+
+.alignright {
+	float:right;
+}
+
+.alignleft {
+	float:left;
+}
+
+.aligncenter {
+	display: block;   margin-left: auto;   margin-right: auto;
+}
+
+ul {
+	line-height: 1.0em;
+}
+li {
+	line-height: 1.5em;
+}
+
+
+#sidebar{
+	font-size: 0.9em;
+	line-height: 1.3em;
+}
+
+.nav-previous {
+	float:left;
+}
+.nav-next {
+	float:right;
+}
+
+.iacom-example, .iacom-theorem, iacom-proof {
+	position: relative;
+	margin: 15px 0;
+	padding: 39px 19px 14px;
+	background-color: white;
+	border: 1px solid #DDD;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	display: block;
+}
+
+.iacom-example::after, .iacom-theorem::after, .iacom-theorem::proof {
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: whiteSmoke;
+	border: 1px solid #DDD;
+	color: #9DA0A4;
+	-webkit-border-radius: 4px 0 4px 0;
+	-moz-border-radius: 4px 0 4px 0;
+	border-radius: 4px 0 4px 0;
+}
+
+.iacom-example::after {
+	content: "Örnek";
+}
+
+.iacom-theorem::after {
+	content: "Teorem";
+}
+
+.iacom-theorem::proof {
+	content: "İspat";
+}
+
+.navigation{
+	margin-top: 10px;
+}
+
+.note {
+	background-image: url(assets/img/not_01.png), url(assets/img/not_03.png), url(assets/img/not_02.png);
+	background-position:top left, bottom left, top left;
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	text-indent: 20px;
+	padding:35px 35px 35px 50px;
+	float: right;
+	margin-right: -417px;
+	margin-left: 27px;
+	width: 330px;
+	min-height:40px;
+}
+
+.note-indent {
+	margin-right: -285px;
+	margin-left: 20px;
+}
+
+.note2 {
+	background-image: url(assets/img/not2_01.png), url(assets/img/not2_03.png), url(assets/img/not2_02.png);
+	background-position:top left, bottom left, top left;
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	text-indent: 0;
+	padding:25px 30px 25px 32px;
+	float: right;
+	margin-right: -417px;
+	margin-left: 27px;
+	width: 330px;
+	min-height:25px;
+        color: #666;
+}
+
+.note dd, .note dl, .note dt, 
+.note2 dd, .note2 dl, .note2 dt {
+	text-indent: 0;
+	font-size: smaller;
+}
+
+.note h3, .note2 h3{
+	padding-right: 0.5em;
+	margin-bottom:0;
+}
+
+.note2 h3{
+	margin: 0;
+}
+
+.note dl, .note2 dl{
+	margin:0;
+}
+
+.note dt, .note2 dt{
+	padding-top: 1em;
+	padding-bottom: 0.2em;
+}
+.note dd, .note2 dd{
+	padding-left: 0.5em;
+}
+
+.note li, .note2 li{
+        text-indent: 0em;
+        padding-left: 0.2em;
+}
+
+.note blockquote, .note2 blockquote {
+	background: none;
+	padding: 8px 15px 8px 10px;
+}
+
+.note, .note2{
+	font-size: 0.9em;
+}
+
+.note2{
+	line-height: 1.8em;
+}
+
+
+
+.dropdown-menu li > a {
+        color: #666;
+        font-size: 0.9em;
+}
+
+.searchquery{
+        font-family: Georgia,"Times New Roman",Times,serif;
+        padding: 6px 14px 2px 14px;
+}
+
+.gist .gist-file .gist-meta {
+  /*overflow: auto; overflow-x: hidden; visibility:hidden;*/
+}
+
+pre.prettyprint {
+  background: #fdfdfe;
+}
+
+pre {
+  background: white;
+  border: dashed 1px #666;
+  color: #777;
+}
+
+
+.related-posts-type {
+  padding-bottom: 2em;
+}
+
+.related-posts-type li {
+  margin-left: 2em;
+}
+/* Localized */
